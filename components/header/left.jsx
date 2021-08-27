@@ -49,6 +49,7 @@ class MenuLeft extends React.Component {
                 </div>
                 {this.props.btnSite}
                 <br />
+                <br />
                 <BtnLink icon={<SvgHome/>} link="/">{this.state.inicio}</BtnLink>
 
                 <BtnLink icon={<SvgUser/>} link="/visitantes">{this.state.visitantes}</BtnLink>
