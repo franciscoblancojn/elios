@@ -1,0 +1,56 @@
+{
+    "title":{
+
+    },
+    "menu":{
+        "inicio":"Inicio",
+        "visitantes":"Visitantes",
+        "leads":"Leads",
+        "carrito":"Agregados al carrito",
+        "whatsapp":"Whatsapp",
+        "formularios":"Formularios",
+        "clientes":"Clientes",
+        "compras":"Compras",
+        "fieles":"Fieles",
+        "recurrencia":"Posible Recurrencia",
+        "potencial":"Cliente Potencial",
+        "configuracion":"Configuración",
+        "descargar_plugins":"Descargar Plugins",
+        "cerrar_sesion":"Cerrar Sesión"
+    },
+    "inicion":{
+        "title":"Bienvenido a elios!",
+        "text1":"Por favor comienza conectando",
+        "text2":"tu tienda virtual o sitio web.",
+        "titleList":"Selecciona la integración:",
+        "btn":{
+            "conectar":"CONECTAR",
+            "proximamente":"PROXIMAMENTE"
+        }
+    },
+    "configuraciones":{
+        "subtitle":"Configuraciones",
+        "config":[
+            {
+                "id":"perfil",
+                "title":"Perfil",
+                "text":"Ve y actualiza los detalles de tu cuenta, fotos de perfil, cambio de contraseña etc."
+            },
+            {
+                "id":"pagos_planes",
+                "title":"Pagos y Planes",
+                "text":"Ve la información del plan y gestiona lo que los empleados pueden ver o hacer en tu cuenta."
+            },
+            {
+                "id":"configuraciones",
+                "title":"Configuraciones",
+                "text":"Configura detalles generales de tu perfil."
+            },
+            {
+                "id":"idiomas",
+                "title":"Idiomas",
+                "text":"Gestiona el idioma  de tu cuenta de ELIOS."
+            }
+        ]
+    }
+}

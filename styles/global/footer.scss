@@ -1,0 +1,14 @@
+footer{
+    @extend .font; 
+    font-size: getRemSize(8.5px);
+    font-weight: 300;
+    line-height: 1.41;
+    letter-spacing: 0.34px;
+    color: var(--greyish);
+    text-align: center;
+    padding: scale(5.5px) 10px;
+    margin-top: auto;
+    p{
+        margin: 0;
+    }
+}

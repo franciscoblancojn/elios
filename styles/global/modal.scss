@@ -1,0 +1,38 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    &:not(.open){
+        display: none;
+    }
+    .bgModal{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &-body{
+        position: relative;
+        background-color: var(--white);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+.btnModal{
+    margin: auto 5px;
+    height: 25px;
+    min-height: 0;
+    background: var(--white);
+    color: var(--greyish-two);
+    border-radius: 10px;
+    padding: 0 3px;
+    font-size: 13px;
+}

@@ -1,0 +1,9 @@
+@function getRemSize($sizePx) {
+    @return scale(($sizePx / 16px) * 1rem);
+}
+@function scale($sizeX) {
+    $vwZeplin:960;
+    $newVw:1440;
+
+    @return $sizeX * ($newVw / $vwZeplin );
+}

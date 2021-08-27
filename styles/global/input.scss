@@ -1,0 +1,91 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+.input{
+    display: block;
+    width: 100%;
+    height: scale(40px);
+    padding: 0 30px;
+    border-radius: scale(7px);
+    background-color: var(--white-fourteen);
+    color: var(--greyish-two);
+    @extend .font-input;  
+    border:0;
+    outline: none;
+}
+.content-Input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .required{
+        @extend .font;  
+        font-size: getRemSize(12.5px);
+        font-weight: 300;
+        line-height: 1.44;  
+        color: var(--greyish-three);
+    }
+    .spanInput{
+        @extend .font;  
+        font-size: getRemSize(15px);
+        line-height: 1.44;   
+        color: var(--warm-grey-three);
+        margin-bottom: 7.5px;
+    }
+    .div-input{
+        width: 100%;
+        position: relative;
+    }
+    .icon{
+        position: absolute;
+        top:0;
+        left:9px;
+        bottom:0;
+        margin:auto;
+        display: flex;
+        align-items: center;
+        + input{
+            padding-left: scale(30px);
+        }
+    }
+}
+.content-Input-checkbox{
+    @extend .font;  
+    font-size: getRemSize(12.5px);
+    line-height: 1.44;
+    color: var(--warm-grey-three);
+    input{
+        margin-right: scale(10px);
+    }
+}
+.content-Input-Select{
+    .options[active="true"]{
+        display: block;
+    }
+    .options{
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        margin: 0;
+        left: 0;
+        padding: 13px 0;
+        border-radius: 10px;
+        box-shadow: 0 1.5px 3px 0 var(--black-16);
+        border: solid 0.5px var(--white-fifteen);
+        background-color: var(--white);
+        list-style: none;
+        z-index: 9999;
+        display: none;
+        li{
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.67;
+            color: var(--warm-grey-three);
+            padding: 5px 23px;
+            &:hover{
+                background-color: var(--white-eighteen);
+
+            }
+        }
+    }
+}

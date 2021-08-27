@@ -1,0 +1,70 @@
+:root{
+    --baby-blue-two:#b5dcff;
+    --pastel-blue:#a7b5ff;
+    --pastel-blue-two:#b5c1ff;
+
+    --white:#fff;
+    --white-three:#f7f7f7;
+    --white-fourteen:#f3f3f3;
+    --white-five:#f2f2f2;
+    --white-ten:#e1e1e1;
+    --white-thirteen:#fafafa;
+    --white-eight:#dfdfdf;    
+    --white-nine:#ececec;
+    --white-seventeen:#eaeaea;
+    --white-nineteen:#dbdbdb;
+
+    --greyish:#a3a3a3;
+    --greyish-two:#b8b8b8;
+    --black-16:rgba(0, 0, 0, 0.16);
+
+    --brownish-grey:#646464;
+    --brownish-grey-three:#616161;
+    --brownish-grey-four:#656565;
+    --brownish-grey-five:#686868;
+    --warm-grey-five:#8b8b8b;
+    --warm-grey-six:#878787;
+    --greyish-brown-three:#565656;
+    --greyish-brown-four:#535353;
+    --pinkish-grey-two:#c9c9c9;
+    --white-sixteen:#e4e4e4;
+    --warm-grey-three:#707070;
+    --warm-grey-seven:#7e7e7e;
+    --greyish-three:#b9b9b9;
+    --white-eighteen:#f1f1f1;
+
+    --french-blue:#4267b2;
+    --periwinkle:#778dff;
+    --dodger-blue:#3f92ff;
+
+    --black-two:#2d2d2d;
+    --black-four:#111111;
+    --black-six:#161616;
+    --black-seven:#373737;
+    --warm-grey-two:#3b3939;
+    --ice-blue:#f0f3ff;
+    --pale-lavender:#fefeff;
+    --very-light-blue:#eff2ff;
+    --greyish-brown:#4e4e4e;
+    --pinkish-grey-three:#bbbbbb;
+
+    --peachy-pink:#fe8989;
+}
+*{
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0;
+}
+img{
+    max-width: 100%;
+}
+.radius{
+    border-radius: 10px;
+}
+html{
+    overflow: auto;
+}
+body{
+    overflow: hidden;
+}

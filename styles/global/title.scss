@@ -1,0 +1,31 @@
+.titleIcon{
+    text-align: center;
+    margin-top: scale(22px);
+    margin-bottom: scale(33px);
+    h1{
+        @extend .font;
+        font-size: getRemSize(38px);
+        font-weight: 900;
+        line-height: 1.43;
+        letter-spacing: 1.52px;
+        color: var(--black-two); 
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3px;
+        img{
+            width: scale(55px);
+            margin-right: 17px;
+        }
+    }
+    h2{
+        @extend .font;
+        font-size: getRemSize(20px);
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.8px;
+        color: var(--greyish);
+        margin: 0;
+    }
+}

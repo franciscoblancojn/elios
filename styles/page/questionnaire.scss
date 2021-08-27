@@ -1,0 +1,25 @@
+.page-questionnaire{
+    .contentTitle{
+        margin-top: 5px;
+        margin-bottom: 30px;
+        h1,h2{
+            @extend .font;
+            font-size: scale(26px);
+            font-weight: 300;
+            line-height: 1.44;
+            text-align: center;
+            color: var(--warm-grey-three);
+            margin-bottom: 0;
+        }
+        strong{
+            font-weight: 700;
+        }
+        h2{
+            font-size: scale(18px);
+            font-weight: normal;
+        }
+    }
+    .content-Input{
+        margin-bottom: scale(20px);
+    }
+}

@@ -1,0 +1,38 @@
+@import './normalize.scss';
+
+@import './global/color.scss';
+@import './global/col.scss';
+@import './global/functions.scss';
+@import './global/setting.scss';
+@import './global/font.scss';
+@import './global/btn.scss';
+@import './global/input.scss';
+@import './global/card.scss';
+@import './global/form.scss';
+@import './global/header.scss';
+@import './global/points.scss';
+@import './global/footer.scss';
+@import './global/page.scss';
+@import './global/msg.scss';
+@import './global/title.scss';
+@import './global/list.scss';
+@import './global/table.scss';
+@import './global/pagination.scss';
+@import './global/text.scss';
+@import './global/filtro.scss';
+@import './global/scroll.scss';
+@import './global/select.scss';
+@import './global/modal.scss';
+@import './global/dateRange.scss';
+
+
+@import './page/login.scss';
+@import './page/questionnaire.scss';
+@import './page/plan.scss';
+@import './page/recover_password.scss';
+@import './page/email_send.scss';
+@import './page/configuracion.scss';
+@import './page/404.scss';
+@import './page/privacy-policy.scss';
+@import './page/visitantes.scss';
+@import './page/leads.scss';

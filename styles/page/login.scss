@@ -1,0 +1,90 @@
+.page-login{
+    .LoginForm,
+    .LoginRS{
+        min-height: 50vh;
+        padding: 0 15px;
+        background-color: var(--white-five);
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .LoginRS{
+        min-height: 40vh;
+        background-color: var(--ice-blue);
+        h1{
+            @extend .font; 
+            font-size: scale(33.5px);
+            font-weight: 900;
+            line-height: 0.69;
+            text-align: center;
+            color: var(--black-four);
+        }
+        h2{
+            @extend .font; 
+            font-size: scale(14.5px);
+            font-weight: 900;
+            line-height: 1.1;
+            text-align: center;
+            color: var(--brownish-grey-four);
+            margin-top: 40px;
+        }
+        .btn{
+            margin-bottom: scale(7px);
+        }
+        &.register{
+            min-height: 100vh;
+            .btn{
+                margin-bottom: scale(13px);
+            }
+            hr{
+                border:0;
+                border-top: solid .5px var(--pinkish-grey-two);  
+                width: scale(228.2px);
+                max-width: 100%;
+                margin-top: scale(20px);
+            }
+        }
+    }
+    .LoginForm{
+        min-height: 60vh;
+    }
+    .contentLogo{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 100vh;
+    }
+    .iconElios{
+        width: 100%;
+        max-width: scale(200px);
+    }
+    .recover_password{
+        display: block;
+        margin: 20px 0;
+    }
+    [code="auth/invalid-name"]{
+        [name="name"]{
+            border: solid 0.5px var(--peachy-pink);
+        }
+    }
+    [code="auth/invalid-surname"]{
+        [name="surname"]{
+            border: solid 0.5px var(--peachy-pink);
+        }
+    }
+    [code="auth/invalid-email"],[code="auth/user-not-found"]{
+        [name="email"]{
+            border: solid 0.5px var(--peachy-pink);
+        }
+    }
+    [code="auth/wrong-password"],[code="auth/weak-password"]{
+        [name="password"]{
+            border: solid 0.5px var(--peachy-pink);
+        }
+    }
+}

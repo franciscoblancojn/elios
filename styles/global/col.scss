@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i}{
+        width: (100% * ($i /12) );
+    }
+}
+
+.mt-auto{
+    margin-top: auto;
+}
+.text-center{
+    text-align: center;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mt-auto{
+    margin-bottom: auto;
+}

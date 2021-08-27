@@ -1,0 +1,52 @@
+.filters.filters{
+    background: linear-gradient(to bottom, var(--baby-blue-two), var(--pastel-blue));
+    .filtro{
+        display: flex;
+        padding: 0 5px;
+        min-width: 200px;
+        --size-btn:45px;
+        --height-btn:25px;
+        --radius:10px;
+        .input{
+            width: calc(100% - var(--size-btn));
+            height: var(--height-btn);
+            background-color: var(--white);
+            border-radius: var(--radius);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 0 3px;
+            font-size: 13px;
+        }
+        .btn{
+            width: var(--size-btn);
+            height: var(--height-btn);
+            min-height: 0;
+            border-radius: var(--radius);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 0;
+            background: var(--very-light-blue);
+            svg{
+                width: 11px;
+                color: var(--black-two);
+            }
+        }
+    
+    }
+    .clear{
+        --size-btn:30px;
+        width: var( --size-btn);
+        height: var( --size-btn);
+        border-radius: 100%;
+        padding: 0;
+        background: transparent;
+        margin: auto;
+        color: var(--white);
+    }
+    + thead{
+        border-radius:0;
+        th{
+            border-radius:0;
+        }
+    }
+}

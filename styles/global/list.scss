@@ -1,0 +1,77 @@
+.list{
+    &-integracion{
+        width: 100%;
+        max-width: scale(531px);
+        margin: 0 auto;
+        h3{
+            font-size: getRemSize(20px);
+            font-weight: bold;
+            line-height: 1;
+            color: var(--black-four);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                font-size: getRemSize(20px);
+                line-height: 1;
+                color: var(--warm-grey-five);
+                margin-bottom: scale(17px);
+                img{
+                    width: scale(34px);
+                    margin-right: scale(24px);
+                }
+                .btn{
+                    margin-left: auto;
+                    width: scale(134.6px);
+                    height: scale(34.1px);
+                    font-size: getRemSize(9.5px);
+                }
+                &[disabled]{
+                    img,.btn{
+                        filter: grayscale(1);
+                    }
+                }
+            }
+        }
+    }
+    &-number{
+        list-style: none;
+        padding: 0;
+        counter-reset: cc;
+        li{
+            @extend .font;
+            font-size: getRemSize(15px);
+            font-weight: 500;
+            line-height: 1.07;
+            letter-spacing: 0.6px;
+            color: var(--black-two);
+            margin-bottom: scale(16px);
+            counter-increment: section;
+            display: flex;
+            align-items: center;
+            &:before{
+                content: counter(section);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: scale(32.5px);
+                height: scale(32.5px);
+                border-radius: 100%;  
+                background-color: var(--pastel-blue);
+                margin-right: 10px;
+            }
+            span{
+                display: block;
+                $size : scale(32.5px);
+                width: calc(100% - 10px - #{$size} );
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.page-email-send{
+    h1{
+        @extend .font;  
+        font-size: getRemSize(20.5px);
+        line-height: 1.1;
+        color: var(--brownish-grey-five);
+    }
+    p{
+        @extend .font;  
+        font-size: getRemSize(11px);
+        line-height: 1.09;
+        text-align: center;
+        color: var(--brownish-grey-five);
+    }
+    .btn{
+        width: scale(226px);
+    }
+}

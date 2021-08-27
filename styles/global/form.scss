@@ -1,0 +1,81 @@
+.formLogin,
+.CreateAccount{
+    width: scale(233px);
+    max-width: 100%;
+    padding: 10px 0;
+    label{
+        margin-bottom: 10px;
+        display: block;
+    }
+    .spanInput{
+        display: block;
+        margin-bottom: scale(5px);
+        @extend .font-spanInput; 
+        color: var(--warm-grey-five);
+    }
+    .inputLogin{
+        background: var(--white);
+        color: var(--warm-grey-six);
+    }
+    .result{
+        text-align: center;
+        
+    }
+    .inputSubmit{
+        width: 100%;
+        margin-top: scale(13px);
+    }
+    .btn{
+        width: 100%;
+    }
+}
+.ToCreateAccount{
+    width: scale(233px);
+    max-width: 100%;
+    padding: 10px 0;
+    h3{
+        @extend .font; 
+        font-size: getRemSize(14.5px);
+        font-weight: 900;
+        line-height: 1.1;
+        text-align: center;
+    }
+    button{
+        width: 100%;
+    }
+}
+.formQuestionnaire{
+    width: scale(521.5px);
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    .btn{
+        margin-left: auto;
+    }
+}
+.ok{
+    color: green;
+}
+.error{
+    color:red;
+}
+
+.terminos_condiciones{
+    @extend .font; 
+    font-size: getRemSize(8px);
+    font-weight: normal;
+    line-height: 1.13;
+    text-align: center;
+    color: var(--black-four);
+    text-decoration: underline;
+}
+[code="empty/I_am"]{
+    [name="I_am"]{
+        border: solid 0.5px var(--peachy-pink);
+    }
+}
+[code="empty/n_employees"]{
+    [name="n_employees"]{
+        border: solid 0.5px var(--peachy-pink);
+    }
+}

@@ -1,0 +1,51 @@
+.content-points{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --separation:30px;
+    .point{
+        display: block;
+        width: scale(16px);
+        height: scale(16px);
+        border: solid 2px var(--white-sixteen);
+        border-radius: 100%;
+        position: relative;
+        &:not(:last-child){
+            margin-right: var(--separation);
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                width: var(--separation);
+                top: 0;
+                bottom: 0;
+                left: calc(100% + 2px);
+                margin: auto;
+                height:2px;
+                background:var(--white-sixteen);
+                display: block;
+            }
+        }
+        &.select{
+            background-color: var(--periwinkle); 
+            border-color: var(--periwinkle); 
+            .span{
+                color: var(--periwinkle);
+            }
+        }
+        .span{
+            @extend .font;
+            font-size: getRemSize(10px);
+            line-height: 1.35;
+            color: var(--white-nine);
+
+            position: absolute;
+            width: auto;
+            white-space: nowrap;
+            top: calc(100% + 7px);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
