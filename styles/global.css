@@ -472,7 +472,7 @@ button-select .card-simple ul,
 .card-simple button-facebook,
 .card-simple .btn-facebook,
 .card-simple button-correo,
-.card-simple .btn-correo, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id {
+.card-simple .btn-correo, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id, .page-leads .id {
   font-family: "brandon-grotesque"; }
   .font-btn, .font-btn-2, button-2,
   .btn-2,
@@ -1621,7 +1621,8 @@ footer {
   color: var(--warm-grey-seven); }
   .textItem strong {
     color: var(--greyish-brown);
-    margin-right: 10px; }
+    margin-right: 10px;
+    text-transform: capitalize; }
   .textItem img {
     margin-right: 10px; }
   .textItem .content-i {
@@ -2031,5 +2032,14 @@ button-select .page-email-send ul,
     /* paragraph to one line */
     overflow: hidden;
     /* older browsers */ }
+.page-leads .titleP {
+  font-size: 3.28125rem;
+  font-weight: 900; }
+.page-leads .id {
+  font-size: 1.3125rem;
+  line-height: 1.42;
+  letter-spacing: 0.38px;
+  color: var(--pinkish-grey-three);
+  margin-bottom: 25px; }
 
 /*# sourceMappingURL=global.css.map */
