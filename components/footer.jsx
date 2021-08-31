@@ -2,7 +2,7 @@ const Footer = (pros) => {
     return (
         <footer>
             <p>
-                All rights reserved 2021 - THEADGROUP |  StartsCo - UppConsulting - MediaLop - Almma Studio
+                All rights reserved 2021 - Elios
             </p>
             {/* <div className="btnTheme" onClick={()=>{
                 localStorage.setItem('themeDarck',!(localStorage.themeDarck=="true"))
