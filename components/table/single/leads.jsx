@@ -62,10 +62,12 @@ class SingleLeads extends React.Component {
                 <Link href={`/leads/`}>
                     <a className="before">
                         <ArrowRight/>
-                        Volver a Leadss
+                        Volver a Leads
                     </a>
                 </Link>
-                <br />
+                <h1 className="titleP">
+                    Lead
+                </h1>
                 <div className="id">
                     ID: {this.props.id}
                 </div>
