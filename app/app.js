@@ -2,7 +2,7 @@
 
 
 import a_CreateAccount from '@/app/CreateAccount'
-export const CreateAccount = () => a_CreateAccount
+export const CreateAccount = async (e) => await a_CreateAccount(e)
 export const GetUser = ({uid,email}, respondOk = (e) => console.log(e), respondError = (e) => console.log(e)) => {
     request(
         "getUser",

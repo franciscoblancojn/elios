@@ -35,7 +35,7 @@ import f_isLogin from '@/firebase/isLogin'
 export const isLogin = () => f_isLogin(firebase) 
 
 import f_loginGoogle from '@/firebase/loginGoogle'
-export const loginGoogle = () => f_loginGoogle(firebase)() 
+export const loginGoogle = f_loginGoogle(firebase)
 /**
  * loginFacebook
  * @description genera popup para login con facebook

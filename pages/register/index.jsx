@@ -5,7 +5,7 @@ import BtnGoogle from "@/components/btn/btnGoogle"
 import BtnFacebook from "@/components/btn/btnFacebook"
 import BtnCorreo from "@/components/btn/btnCorreo"
 import ToCreateAccount from "@/components/form/toCreateAccount"
-import {CreateAccount} from '@/components/app'
+import {CreateAccount} from '@/app/app'
 
 class Register extends React.Component {
     render() {

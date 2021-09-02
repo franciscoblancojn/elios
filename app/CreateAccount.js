@@ -1,12 +1,13 @@
 import request from "@/app/request"
 
 const CreateAccount = async (data) => {
-    await request({
-        method = "POST", 
+    const respond = await request({
+        method : "POST", 
         json : {
             data
         }, 
         rute : "user"
     })
+    return respond
 }
 export default CreateAccount
