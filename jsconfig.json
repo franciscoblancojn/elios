@@ -5,6 +5,7 @@
       "@/public/*": ["public/*"],
       "@/components/*": ["components/*"],
       "@/firebase/*": ["firebase/*"],
+      "@/functions/*": ["functions/*"],
       "@/languajes/*": ["languajes/*"],
       "@/styles/*": ["styles/*"]
     }

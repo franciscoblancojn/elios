@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 import InputText from "@/components/input/inputText"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
-import {resetPassword} from "@firebase/firebase"
+import {resetPassword} from "@/firebase/firebase"
 
 class formRecoverPassword extends React.Component {
     state = {
