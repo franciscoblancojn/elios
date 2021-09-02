@@ -36,22 +36,9 @@ export const isLogin = () => f_isLogin(firebase)
 
 import f_loginGoogle from '@/firebase/loginGoogle'
 export const loginGoogle = f_loginGoogle(firebase)
-/**
- * loginFacebook
- * @description genera popup para login con facebook
- */
-export const loginFacebook = () => {
-    var provider = new firebase.auth.FacebookAuthProvider();
-    firebase
-        .auth()
-        .signInWithPopup(provider)
-        .then((result)=>{
-            CreateAccount(mapUser(result.user))
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-}
+
+import f_loginFacebook from '@/firebase/loginFacebook'
+export const loginFacebook = f_loginFacebook(firebase)
 /**
  * loginEmailPassword
  * @description generar login por firebase con Email y Password
