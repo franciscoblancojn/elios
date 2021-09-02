@@ -13,11 +13,18 @@ import {CreateAccount} from '@/app/app'
             const token = result.token
             document.cookie = token
         }else{
-            console.log(result);
-            throw 'error in login'
+            return {
+                type:"error",
+                error:result.error,
+                msj : result.msj,
+            }
         }
     } catch (error) {
-        console.log(error);
+        return {
+            type:"error",
+            error,
+            msj : `${error}`
+        }
     }
 }
 export default loginFacebook

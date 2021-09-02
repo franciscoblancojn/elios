@@ -39,29 +39,9 @@ export const loginGoogle = f_loginGoogle(firebase)
 
 import f_loginFacebook from '@/firebase/loginFacebook'
 export const loginFacebook = f_loginFacebook(firebase)
-/**
- * loginEmailPassword
- * @description generar login por firebase con Email y Password
- * @param {e returnMessage fLogin} 
- */
-export const loginEmailPassword = (e , returnMessage,fLogin) => {
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(e.email, e.password)
-        .then((result) => {
-            fLogin()
-        })
-        .catch((error) => {
-            returnMessage({
-                msj : (
-                    <span className="error">
-                        {error.message}
-                    </span>
-                ),
-                ...error
-            })
-        });
-}
+
+import f_loginEmailPassword from '@/firebase/loginEmailPassword'
+export const loginEmailPassword = f_loginEmailPassword(firebase)
 
 /**
  * createAccount

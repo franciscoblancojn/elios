@@ -2,13 +2,13 @@ import {mapUser} from '@/functions/index'
 import {CreateAccount} from '@/app/app'
 
 /**
- * loginGoogle
- * @description genera popup para login con google
+ * loginEmailPassword
+ * @description generar login por firebase con Email y Password
+ * @param {e returnMessage fLogin} 
  */
-const loginGoogle =  (firebase) => async () => {
+const loginEmailPassword = (firebase) => async (user) => {
     try {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        const respond = await firebase.auth().signInWithPopup(provider)
+        const respond = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         const result = await CreateAccount(mapUser(respond.user))
         if(result.type == "ok"){
             const token = result.token
@@ -28,4 +28,4 @@ const loginGoogle =  (firebase) => async () => {
         }
     }
 }
-export default loginGoogle
+export default loginEmailPassword
