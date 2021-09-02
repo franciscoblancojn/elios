@@ -31,20 +31,8 @@ const mapUser = (user) => {
     }
 }
 
-/**
- * isLogin
- * @description verifica si es login o no 
- * @param {*} onChange 
- * @returns {*} promesa
- */
-export const isLogin = (onChange) =>{
-    return firebase
-    .auth()
-    .onAuthStateChanged(user => {
-        const UserR = mapUser(user)
-        onChange(UserR)
-    })
-}
+import f_isLogin from '@/firebase/isLogin'
+export const isLogin = () => f_isLogin(firebase) 
 /**
  * loginGoogle
  * @description genera popup para login con google

@@ -1,3 +1,5 @@
+import {mapUser} from '@/functions/index'
+
 
 /**
  * isLogin
@@ -5,7 +7,7 @@
  * @param {*} onChange 
  * @returns {*} promesa
  */
- export const isLogin = (onChange) =>{
+const isLogin = (firebase)=>(onChange) =>{
     return firebase
     .auth()
     .onAuthStateChanged(user => {
@@ -13,3 +15,4 @@
         onChange(UserR)
     })
 }
+export default isLogin
