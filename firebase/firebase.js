@@ -1,5 +1,4 @@
 import firebase from 'firebase'
-import {CreateAccount} from '@/app/app'
 
 /**
  * @description configuracion para firebase
@@ -15,20 +14,6 @@ const firebaseConfig = {
 };
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
-}
-
-/**
- * mapUser
- * @description mapea el resultado para retornar user
- * @param {*} user 
- * @returns {email , password}
- */
-const mapUser = (user) => {
-    if(user == undefined)return undefined
-    return {
-        email:user.email,
-        uid:user.uid
-    }
 }
 
 import f_isLogin from '@/firebase/isLogin'
