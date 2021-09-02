@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Link from 'next/link'
 
-import {getEvents} from "@/components/app"
+import {getEvents} from "@/app/app"
 import {printValue,TableRow,printFilter} from "@/components/functions"
 import LimitText from "@/components/card/limitText"
 import SvgView from "../svg/view"

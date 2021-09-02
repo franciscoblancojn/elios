@@ -1,6 +1,6 @@
 import React,{Component} from "react"
 import ls from 'local-storage'
-import App from "./app";
+import App from "@/app/app";
 
 class UserActive extends React.Component {
     state = {

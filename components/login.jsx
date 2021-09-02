@@ -1,7 +1,7 @@
 import React,{Component} from "react"
 import ls from 'local-storage'
 
-import app from "./app"
+import app from "@/app/app"
 import Icon from "./icon"
 
 class Login extends React.Component {

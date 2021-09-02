@@ -6,6 +6,7 @@
       "@/components/*": ["components/*"],
       "@/firebase/*": ["firebase/*"],
       "@/functions/*": ["functions/*"],
+      "@/app/*": ["app/*"],
       "@/languajes/*": ["languajes/*"],
       "@/styles/*": ["styles/*"]
     }

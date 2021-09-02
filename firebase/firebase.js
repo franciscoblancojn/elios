@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import {CreateAccount} from '@/components/app'
+import {CreateAccount} from '@/app/app'
 
 /**
  * @description configuracion para firebase
@@ -33,22 +33,9 @@ const mapUser = (user) => {
 
 import f_isLogin from '@/firebase/isLogin'
 export const isLogin = () => f_isLogin(firebase) 
-/**
- * loginGoogle
- * @description genera popup para login con google
- */
-export const loginGoogle = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-        .auth()
-        .signInWithPopup(provider)
-        .then((result)=>{
-            CreateAccount(mapUser(result.user))
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-}
+
+import f_loginGoogle from '@/firebase/loginGoogle'
+export const loginGoogle = () => f_loginGoogle(firebase)() 
 /**
  * loginFacebook
  * @description genera popup para login con facebook

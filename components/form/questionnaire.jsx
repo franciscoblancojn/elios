@@ -4,7 +4,7 @@ import InputText from "@/components/input/inputText"
 import InputSelect from "@/components/input/inputSelect"
 import InputCheckboxt from "@/components/input/inputCheckbox"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
-import {PutQuestionnaire} from "@/components/app"
+import {PutQuestionnaire} from "@/app/app"
 
 const ROL = [
     "Dueño de negocio o fundador",

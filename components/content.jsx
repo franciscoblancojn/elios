@@ -4,7 +4,7 @@ import React, { Component ,useEffect,useState} from "react"
 
 import Footer from '@/components/footer'
 import {isLogin} from "@/firebase/firebase"
-import {GetUser} from "@/components/app"
+import {GetUser} from "@/app/app"
 import MenuLeft from "@/components/header/left";
 import MenuDropDown from "@/components/header/dropDown";
 import BtnSites from "@/components/btn/btnSites"

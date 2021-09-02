@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Link from 'next/link'
 
-import {getClientes} from "@/components/app"
+import {getClientes} from "@/app/app"
 import {printValue,TableRow,printFilter} from "@/components/functions"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
