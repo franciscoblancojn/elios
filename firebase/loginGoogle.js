@@ -12,7 +12,7 @@ const loginGoogle =  (firebase) => async () => {
         const result = await CreateAccount(mapUser(respond.user))
         if(result.type == "ok"){
             const token = result.token
-            console.log(token);
+            document.cookie = token
         }else{
             console.log(result);
             throw 'error in login'
