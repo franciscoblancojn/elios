@@ -49,17 +49,5 @@ export const createAccount = f_createAccount(firebase)
 import f_resetPassword from '@/firebase/resetPassword'
 export const resetPassword = f_resetPassword(firebase)
 
-/**
- * logout
- * @description cerrar sesion
- */
-export const logout = () => {
-    firebase
-        .auth()
-        .signOut()
-        .then(() => {
-            console.log("logout");
-        }).catch((error) => {
-            console.log("error",error);
-        });
-}
+import f_logout from '@/firebase/logout'
+export const logout = f_logout(firebase)
