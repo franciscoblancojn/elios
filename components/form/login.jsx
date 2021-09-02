@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import InputText from "@/components/input/inputText"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
 
-import {loginEmailPassword} from "@/components/firebase"
+import {loginEmailPassword} from "@firebase/firebase"
 
 class Login extends React.Component {
     state = {

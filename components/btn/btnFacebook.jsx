@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import {loginFacebook} from "@/components/firebase"
+import {loginFacebook} from "@firebase/firebase"
 
 class BtnFacebook extends React.Component {
     render() {

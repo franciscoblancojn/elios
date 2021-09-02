@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
 import BtnLink from "@/components/btn/btnLink"
-import {logout} from "@/components/firebase"
+import {logout} from "@firebase/firebase"
 
 import SvgSettings from "@/components/svg/settings"
 import SvgLogout from "@/components/svg/logout"
