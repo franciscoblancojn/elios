@@ -46,31 +46,9 @@ export const loginEmailPassword = f_loginEmailPassword(firebase)
 import f_createAccount from '@/firebase/createAccount'
 export const createAccount = f_createAccount(firebase)
 
-/**
- * resetPassword
- * @description Envia Correo Electronico para cambiar contrase;a
- * @param {email,respondOk,respondError} 
- */
-export const resetPassword = ({email},respondOk = (e) => console.log(e),respondError = (e) => console.log(e)) => {
-    firebase
-        .auth()
-        .sendPasswordResetEmail(email)
-        .then((e) => {
-            respondOk({
-                message : "Check your email"
-            })
-        })
-        .catch((error) => {
-            respondError({
-                msj : (
-                    <span className="error">
-                        {error.message}
-                    </span>
-                ),
-                ...error
-            })
-        })
-}
+import f_resetPassword from '@/firebase/resetPassword'
+export const resetPassword = f_resetPassword(firebase)
+
 /**
  * logout
  * @description cerrar sesion
