@@ -43,72 +43,9 @@ export const loginFacebook = f_loginFacebook(firebase)
 import f_loginEmailPassword from '@/firebase/loginEmailPassword'
 export const loginEmailPassword = f_loginEmailPassword(firebase)
 
-/**
- * createAccount
- * @description crea usuario por firebase con Email y Password
- * @param {e returnMessage fLogin} 
- */
-export const createAccount = (e , returnMessage) => {
-    if(e.name.replaceAll(" ","") == ""){
-        returnMessage({
-            msj : (
-                <span className="error">
-                    Name Empty
-                </span>
-            ),
-            code:"auth/invalid-name"
-        })
-        return;
-    }
-    if(e.surname.replaceAll(" ","") == ""){
-        returnMessage({
-            msj : (
-                <span className="error">
-                    Surname Empty
-                </span>
-            ),
-            code:"auth/invalid-surname"
-        })
-        return;
-    }
-    firebase
-        .auth()
-        .createUserWithEmailAndPassword(e.email, e.password)
-        .then((userCredential) => {
-            var user = mapUser(userCredential.user)
-            console.log(user);
-            CreateAccount(
-                {
-                    ...user,
-                    ...e
-                },
-                (result) => {
-                    if(result.type == "error"){
-                        returnMessage({
-                            msj : (
-                                <span className="error">
-                                    {result.msj}
-                                </span>
-                            ),
-                            ...result
-                        })
-                    }else{
-                        console.log("yes");
-                    }
-                }
-            )
-        })
-        .catch((error) => {
-            returnMessage({
-                msj : (
-                    <span className="error">
-                        {error.message}
-                    </span>
-                ),
-                ...error
-            })
-        });
-}
+import f_createAccount from '@/firebase/createAccount'
+export const createAccount = f_createAccount(firebase)
+
 /**
  * resetPassword
  * @description Envia Correo Electronico para cambiar contrase;a
