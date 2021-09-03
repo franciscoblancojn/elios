@@ -2,10 +2,11 @@ const RUTE = "https://pixeltracking.startscoinc.com/api"
 const VERSION = "v2"
 
 const request = async ({method = "GET", json = {}, rute = ""}) => {
+    const cookie = JSON.parse(document.cookie)
     var myHeaders = new Headers();
     myHeaders.append("token", process.env.NEXT_PUBLIC_KEY);
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${document.cookie}`);
+    myHeaders.append("Authorization", `Bearer ${cookie.token}`);
     
     var requestOptions = {
       method,
