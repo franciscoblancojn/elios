@@ -15,8 +15,14 @@ const isLogin = (firebase) => async () =>{
                 const result = await CreateAccount(mapUser(user))
                 if(result.type == "ok"){
                     const token = result.token
-                    document.cookie = token
+                    document.cookie = JSON.stringify({
+                        login:true,
+                        token
+                    })
                 }else{
+                    document.cookie = JSON.stringify({
+                        login:false
+                    })
                     return {
                         type:"error",
                         error:result.error,
@@ -24,6 +30,9 @@ const isLogin = (firebase) => async () =>{
                     }
                 }
             } catch (error) {
+                document.cookie = JSON.stringify({
+                    login:false
+                })
                 return {
                     type:"error",
                     error,
