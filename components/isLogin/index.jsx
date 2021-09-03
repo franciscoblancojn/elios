@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 
+import LoaderCircle from "@/components/loader/circle";
+
 const Islogin = ({children}) => {
-    const [content, setContent] = useState()
+    const [content, setContent] = useState(<LoaderCircle/>)
     const router = useRouter()
 
     const loadContent = () => {
