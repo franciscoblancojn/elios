@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
 import Link from 'next/link'
 
 import SvgArrow from "@/components/svg/arrow"
@@ -6,7 +8,7 @@ import SvgSearch from "@/components/svg/search"
 
 import {getUser} from "@/functions/index";
 
-class BtnSites extends React.Component {
+class BtnSites2 extends React.Component {
     state = {
         style:false,
         hidden:false,
@@ -153,5 +155,79 @@ class BtnSites extends React.Component {
             </>
         )
     }
+}
+const BtnSites = ({className}) => {
+    const [showList, setShowList] = useState(false)
+    const user = getUser()
+    const sites = user.sites || []
+
+    const toggleShowList = () => setShowList(!showList)
+    return <>
+        {
+            (sites.length == 0)?
+            (
+                <Link href="/">
+                    <a 
+                    className={`btn-2 ${className || ""}`}
+                    >
+                        <img src="/icons/+.svg" alt="+" className="iconM"/>
+                        AGREGAR SITIO NUEVO
+                    </a>
+                </Link>
+            )
+            :
+            (
+                <div className={`btn-select ${className || ""}`}>
+                    <button
+                    className="btn-2"
+                    onClick={toggleShowList}
+                    >
+                        <span className="select">
+                            <img src={`/icons/icon-${icon[select]}.png`} alt={select} className="iconHost"/>
+                            {select}
+                            <SvgArrow/>
+                        </span>
+                    </button>
+                    <ul hidden={this.state.hidden} id="ulSites">
+                        <li>
+                            <div className="search">
+                                <SvgSearch></SvgSearch>
+                                <input type="text" name="searchSite" id="searchSite" onChange={this.onChangeSearchSite} value={this.state.searchSite} placeholder="Buscar Sitio"/>
+                            </div>
+                        </li>
+                        <li>
+                            <Link href="/">
+                                <a 
+                                className={`btn ${this.props.className || ""}`}
+                                >
+                                    AGREGAR SITIO NUEVO
+                                </a>
+                            </Link>
+                        </li>
+                        {
+                            siteShow.length > 0 ?
+                            siteShow.map((e,i)=>(
+                                <li key={i} value={e}
+                                onClick={
+                                    ()=>{
+                                        this.onChangeSite(e)
+                                        this.toggleHidden()
+                                    }
+                                }
+                                >
+                                    <img src={`/icons/icon-${icon[e]}.png`} alt={e} className="iconHost"/>
+                                    {e}
+                                </li>
+                            ))
+                            :
+                            (
+                                <li className="noFound">No found</li>
+                            )
+                        }
+                    </ul>
+                </div>
+            )
+        }
+    </>
 }
 export default BtnSites

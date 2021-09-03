@@ -12,3 +12,6 @@ export const saveCookie = f_saveCookie
 
 import f_getUser from '@/functions/getUser'
 export const getUser = f_getUser
+
+import f_getSiteSelected from '@/functions/getSiteSelected'
+export const getSiteSelected = f_getSiteSelected
