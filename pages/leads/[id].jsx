@@ -1,17 +1,23 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import SingleLeads from "@/components/table/single/leads";
 
 
 const Index = ({id}) => {
     return (
-        <Content 
-        title="Leads"
-        className="cMenu page-leads"
-        >
-            <SingleLeads id={id}></SingleLeads>
-        </Content>
+        <Islogin>
+            <Content 
+            title="Leads"
+            className="cMenu page-leads"
+            >
+                <ExistOneSite>
+                    <SingleLeads id={id}></SingleLeads>
+                </ExistOneSite>
+            </Content>
+        </Islogin>
     )
 }
 
