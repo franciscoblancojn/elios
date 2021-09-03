@@ -14,16 +14,7 @@ const createAccount = (firebase) => async (user) => {
             ...user,
             ...mapUser(respond.user)
         })
-        if(result.type == "ok"){
-            const token = result.token
-            document.cookie = token
-        }else{
-            return {
-                type:"error",
-                error:result.error,
-                msj : result.msj,
-            }
-        }
+        return result
     } catch (error) {
         return {
             type:"error",

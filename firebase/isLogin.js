@@ -7,12 +7,22 @@ import {mapUser} from '@/functions/index'
  * @param {*} onChange 
  * @returns {*} promesa
  */
-const isLogin = (firebase)=>(onChange) =>{
-    return firebase
-    .auth()
-    .onAuthStateChanged(user => {
-        const UserR = mapUser(user)
-        onChange(UserR)
-    })
+const isLogin = (firebase) => async (onChange) =>{
+    try {
+        const respond = await firebase.auth()
+        console.log(respond);
+        const resutl = await respond.onAuthStateChanged(user => {
+            console.log(user);
+            const UserR = mapUser(user)
+            console.log(UserR)
+        })
+        console.log(resutl());
+    } catch (error) {
+        return {
+            type:"error",
+            error,
+            msj : `${error}`
+        }
+    }
 }
 export default isLogin

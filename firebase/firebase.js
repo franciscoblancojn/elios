@@ -17,7 +17,7 @@ if (!firebase.apps.length) {
 }
 
 import f_isLogin from '@/firebase/isLogin'
-export const isLogin = () => f_isLogin(firebase) 
+export const isLogin = f_isLogin(firebase) 
 
 import f_loginGoogle from '@/firebase/loginGoogle'
 export const loginGoogle = f_loginGoogle(firebase)

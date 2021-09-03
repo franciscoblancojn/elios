@@ -10,16 +10,7 @@ const loginGoogle =  (firebase) => async () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         const respond = await firebase.auth().signInWithPopup(provider)
         const result = await CreateAccount(mapUser(respond.user))
-        if(result.type == "ok"){
-            const token = result.token
-            document.cookie = token
-        }else{
-            return {
-                type:"error",
-                error:result.error,
-                msj : result.msj,
-            }
-        }
+        return result
     } catch (error) {
         return {
             type:"error",

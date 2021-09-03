@@ -10,16 +10,7 @@ const loginEmailPassword = (firebase) => async (user) => {
     try {
         const respond = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         const result = await CreateAccount(mapUser(respond.user))
-        if(result.type == "ok"){
-            const token = result.token
-            document.cookie = token
-        }else{
-            return {
-                type:"error",
-                error:result.error,
-                msj : result.msj,
-            }
-        }
+        return result
     } catch (error) {
         return {
             type:"error",
