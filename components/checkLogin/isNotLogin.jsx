@@ -1,25 +1,14 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 
+import {onChangeCookie} from "@/functions/index";
+
 import LoaderCircle from "@/components/loader/circle";
 
 const IsNotlogin = ({children}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const router = useRouter()
 
-    const onChangeCookie = (onChange) => {
-        let lastCookie = document.cookie;
-        setInterval(()=> {
-            let cookie = document.cookie;
-            if (cookie !== lastCookie) {
-                try {
-                    onChange()
-                } finally {
-                    lastCookie = cookie;
-                }
-            }
-        }, 1000);
-    }
     const loadContent = () => {
         try {
             const cookie = JSON.parse(document.cookie)
