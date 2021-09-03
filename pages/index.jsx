@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import Islogin from "@/components/isLogin";
+import Islogin from "@/components/checkLogin/isLogin";
 import Content from "@/components/content";
 import TitelIcon from "@/components/title/titleIcon";
 import ListIntegracion from "@/components/list/integracion";
