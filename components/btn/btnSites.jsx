@@ -6,7 +6,7 @@ import Link from 'next/link'
 import SvgArrow from "@/components/svg/arrow"
 import SvgSearch from "@/components/svg/search"
 
-import {getUser} from "@/functions/index";
+import {getUser,getSiteSelected,setSiteSelected} from "@/functions/index";
 
 class BtnSites2 extends React.Component {
     state = {
@@ -157,11 +157,23 @@ class BtnSites2 extends React.Component {
     }
 }
 const BtnSites = ({className}) => {
-    const [showList, setShowList] = useState(false)
     const user = getUser()
     const sites = user.sites || []
+    const site = getSiteSelected()
+
+    const [showList, setShowList] = useState(false)
+    const [siteShow, setSiteShow] = useState(sites)
+    const [textSearch, setTextSearch] = useState("")
 
     const toggleShowList = () => setShowList(!showList)
+    const onChangeSite = (e) => {
+        console.log(e);
+    }
+    const search = (e) => {
+        const value = e.target.value
+        setTextSearch(value)
+        setSiteShow(sites.filter((e)=>e.host.indexOf(value)>-1))
+    }
     return <>
         {
             (sites.length == 0)?
@@ -183,22 +195,22 @@ const BtnSites = ({className}) => {
                     onClick={toggleShowList}
                     >
                         <span className="select">
-                            <img src={`/icons/icon-${icon[select]}.png`} alt={select} className="iconHost"/>
-                            {select}
+                            <img src={`/icons/icon-${site.icon || site.cms}.png`} alt={site.host} className="iconHost"/>
+                                {site.host}
                             <SvgArrow/>
                         </span>
                     </button>
-                    <ul hidden={this.state.hidden} id="ulSites">
+                    <ul hidden={showList} id="ulSites">
                         <li>
                             <div className="search">
                                 <SvgSearch></SvgSearch>
-                                <input type="text" name="searchSite" id="searchSite" onChange={this.onChangeSearchSite} value={this.state.searchSite} placeholder="Buscar Sitio"/>
+                                <input type="text" name="searchSite" id="searchSite" onChange={search} value={textSearch} placeholder="Buscar Sitio"/>
                             </div>
                         </li>
                         <li>
                             <Link href="/">
                                 <a 
-                                className={`btn ${this.props.className || ""}`}
+                                className={`btn ${className|| ""}`}
                                 >
                                     AGREGAR SITIO NUEVO
                                 </a>
@@ -207,16 +219,16 @@ const BtnSites = ({className}) => {
                         {
                             siteShow.length > 0 ?
                             siteShow.map((e,i)=>(
-                                <li key={i} value={e}
+                                <li key={i} value={e.host}
                                 onClick={
                                     ()=>{
-                                        this.onChangeSite(e)
-                                        this.toggleHidden()
+                                        onChangeSite(e)
+                                        toggleShowList()
                                     }
                                 }
                                 >
-                                    <img src={`/icons/icon-${icon[e]}.png`} alt={e} className="iconHost"/>
-                                    {e}
+                                    <img src={`/icons/icon-${e.icon || e.cms}.png`} alt={e.host} className="iconHost"/>
+                                    {e.host}
                                 </li>
                             ))
                             :
