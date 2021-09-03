@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import Content from "@/components/content";
 import Card from "@/components/card/card";
 import MsgTop from "@/components/msg/top";
+import Islogin from "@/components/checkLogin/isLogin";
 
 import SvgUser from "@/components/svg/user";
 import SvgInfo from "@/components/svg/info";
@@ -49,38 +50,40 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-configuracion"
-            >
-                {/* <MsgTop
-                    title="¡Bienvenido a tu versión de prueba Emprendedor!"
-                    icon={<SvgInfo/>}
-                    text={(
-                        <>
-                            Tienes 14 días para probar las <a href="/plan">funcionalidades de pago</a> de Elios, <a href="/plan">mejora</a> tu plan en cualquier momento por tan solo $ 89,99/Mes.
-                        </>
-                    )}
-                /> */}
-                <div className="content-info-page">
-                    <h1>
-                        {this.state.subtitle}
-                    </h1>
-                    <div className="row">
-                        {
-                            this.state.config.map((e)=>(
-                                <Card
-                                key={e.id}
-                                title={e.title}
-                                icon={<SvgUser/>}
-                                link={`/configuracion/${e.id}`}
-                                >
-                                    {e.text}
-                                </Card>))
-                        }
+            <Islogin><samp></samp>
+                <Content 
+                title={this.state.title}
+                className="cMenu page-configuracion"
+                >
+                    {/* <MsgTop
+                        title="¡Bienvenido a tu versión de prueba Emprendedor!"
+                        icon={<SvgInfo/>}
+                        text={(
+                            <>
+                                Tienes 14 días para probar las <a href="/plan">funcionalidades de pago</a> de Elios, <a href="/plan">mejora</a> tu plan en cualquier momento por tan solo $ 89,99/Mes.
+                            </>
+                        )}
+                    /> */}
+                    <div className="content-info-page">
+                        <h1>
+                            {this.state.subtitle}
+                        </h1>
+                        <div className="row">
+                            {
+                                this.state.config.map((e)=>(
+                                    <Card
+                                    key={e.id}
+                                    title={e.title}
+                                    icon={<SvgUser/>}
+                                    link={`/configuracion/${e.id}`}
+                                    >
+                                        {e.text}
+                                    </Card>))
+                            }
+                        </div>
                     </div>
-                </div>
-            </Content>
+                </Content>
+            </Islogin>
         )
     }
 }
