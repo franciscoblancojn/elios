@@ -1,7 +1,8 @@
 import React, { Component } from "react"
+import { useState, useEffect } from "react"
 import Link from 'next/link'
 
-import {getEvents} from "@/app/app"
+import {getLeads} from "@/app/app"
 import {printValue,TableRow,printFilter} from "@/components/functions"
 import LimitText from "@/components/card/limitText"
 import SvgView from "../svg/view"
@@ -27,7 +28,7 @@ const DefaultKeysHead = {
 
 }
 
-class TableLeads extends TableRow {
+class TableLeads2 extends TableRow {
     onLoad = () => {
         this.setState({
             load:true
@@ -170,5 +171,17 @@ class TableLeads extends TableRow {
             </div>
         )
     }
+}
+const TableLeads = () => {
+    const loadLeads = async () => {
+        const leads = await getLeads({})
+        console.log(leads);
+    }
+    useEffect(() => {
+        loadLeads()
+    }, [])
+    return <div>
+
+    </div>
 }
 export default TableLeads
