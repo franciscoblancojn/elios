@@ -1,28 +1,33 @@
 import {mapUser} from '@/functions/index'
-import {CreateAccount} from '@/app/app'
+import {saveCookie} from "@/functions/index";
 
+import {CreateAccount} from '@/app/app'
 
 /**
  * isLogin
  * @description verifica si es login o no 
  * @returns {*} promesa
  */
-const isLogin = (firebase) => async () =>{
+const isLogin = (firebase) => async (after = () =>{}) =>{
     firebase
         .auth()
         .onAuthStateChanged( async user => {
             try {
+                console.log(mapUser(user));
                 const result = await CreateAccount(mapUser(user))
+                console.log(result);
                 if(result.type == "ok"){
                     const token = result.token
-                    document.cookie = JSON.stringify({
+                    saveCookie(JSON.stringify({
                         login:true,
                         token
-                    })
+                    }))
+                    after()
                 }else{
-                    document.cookie = JSON.stringify({
+                    saveCookie(JSON.stringify({
                         login:false
-                    })
+                    }))
+                    after()
                     return {
                         type:"error",
                         error:result.error,
@@ -30,9 +35,11 @@ const isLogin = (firebase) => async () =>{
                     }
                 }
             } catch (error) {
-                document.cookie = JSON.stringify({
+                console.log('error',error);
+                saveCookie(JSON.stringify({
                     login:false
-                })
+                }))
+                after()
                 return {
                     type:"error",
                     error,

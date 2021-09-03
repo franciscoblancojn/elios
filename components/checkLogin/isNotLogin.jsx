@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 
 import {onChangeCookie} from "@/functions/index";
+import {getCookie} from "@/functions/index";
+import {isLogin} from "@/firebase/firebase"
 
 import LoaderCircle from "@/components/loader/circle";
 
@@ -11,7 +13,7 @@ const IsNotlogin = ({children}) => {
 
     const loadContent = () => {
         try {
-            const cookie = JSON.parse(document.cookie)
+            const cookie = JSON.parse(getCookie())
             if(cookie.login){
                 router.push("/")
             }else{
@@ -21,9 +23,11 @@ const IsNotlogin = ({children}) => {
             setContent(children)
         }
     }
-    useEffect(() => {
-        loadContent()
-        onChangeCookie(loadContent)
+    useEffect( async () => {
+        await isLogin(()=>{
+            loadContent()
+            onChangeCookie(loadContent)
+        })
     }, [])
     return <>{content}</>
 }

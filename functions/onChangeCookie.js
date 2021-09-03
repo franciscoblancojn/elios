@@ -1,3 +1,4 @@
+import {getCookie} from "@/functions/index";
 
 /**
  * onChangeCookie
@@ -5,9 +6,9 @@
  * @param {*} onChange 
  */
 const onChangeCookie = (onChange) => {
-    let lastCookie = document.cookie;
+    let lastCookie = getCookie();
     setInterval(()=> {
-        let cookie = document.cookie;
+        let cookie = getCookie();
         if (cookie !== lastCookie) {
             try {
                 onChange()

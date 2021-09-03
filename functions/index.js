@@ -3,3 +3,9 @@ export const mapUser = f_mapUser
 
 import f_onChangeCookie from '@/functions/onChangeCookie'
 export const onChangeCookie = f_onChangeCookie
+
+import f_getCookie from '@/functions/getCookie'
+export const getCookie = f_getCookie
+
+import f_saveCookie from '@/functions/saveCookie'
+export const saveCookie = f_saveCookie

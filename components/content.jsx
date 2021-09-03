@@ -174,45 +174,6 @@ class content extends React.Component {
             )
         })
     }
-    componentDidMount(){
-        isLogin((e)=>{
-            if(e == undefined){
-                if (this.props.redirect == undefined && !UrlsNoRouterPush.includes(Router.route)) {
-                    Router.push("/login")
-                }
-            }else{
-                if(UrlsNoRouterPush.includes(Router.route) && !NoRedirectInLogin.includes(Router.route)){
-                    Router.push("/")
-                }else{
-                    GetUser(
-                        e,
-                        (result) => {
-                            var r = result[0]
-                            var hostSelect = ""
-                            if(!localStorage.getItem("hostSelect")){
-                                hostSelect = r.host[0]
-                                localStorage.setItem("hostSelect",hostSelect)
-                            }else{
-                                hostSelect = localStorage.getItem("hostSelect")
-                            }
-                            this.loadContent({
-                                currentUser: r,
-                                hostSelect
-                            })
-
-                            if(r.questionnaire == undefined){
-                                if(![
-                                    "/questionnaire"
-                                ].includes(Router.route)){
-                                    Router.push("/questionnaire")
-                                }
-                            }
-                        }
-                    )
-                }
-            }
-        })
-    }
     render(){
         const pageProps = this.props
         const user = this.state?.currentUser
