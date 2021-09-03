@@ -9,3 +9,6 @@ export const getCookie = f_getCookie
 
 import f_saveCookie from '@/functions/saveCookie'
 export const saveCookie = f_saveCookie
+
+import f_getUser from '@/functions/getUser'
+export const getUser = f_getUser

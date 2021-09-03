@@ -4,6 +4,8 @@ import Link from 'next/link'
 import SvgArrow from "@/components/svg/arrow"
 import SvgSearch from "@/components/svg/search"
 
+import {getUser} from "@/functions/index";
+
 class BtnSites extends React.Component {
     state = {
         style:false,
@@ -58,6 +60,7 @@ class BtnSites extends React.Component {
             this.setState({select:e})
             this.props.onChange(e)
         }) ?? ((e) => {})
+        getUser()
     }
     onChangeSite = () => {}
     toggleHidden = () => {

@@ -47,7 +47,7 @@ class MenuLeft extends React.Component {
                 <div className="content-imgLogo">
                     <img src="/img/elios_logo_h.png" alt="Elios" className="imgLogo"/>
                 </div>
-                {this.props.btnSite}
+                <BtnSites/>
                 <br />
                 <br />
                 <BtnLink icon={<SvgHome/>} link="/">{this.state.inicio}</BtnLink>
