@@ -1,11 +1,15 @@
+import {getUser} from "@/functions/index";
+
 const Host = (props) => {
+    const user = getUser()
+    const sites = user.sites
     return (
         <div className="msg-host"> 
-            {props.currentUser.host.map((e,i)=>{
+            {sites.map((site,i)=>{
                 return(
                     <div className="item" key={i}>
                         <img src="/icons/iconList.png" alt="ok"/>
-                        {e}
+                        {site.host}
                     </div>
                 )
             })}

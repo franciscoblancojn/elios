@@ -43,7 +43,7 @@ class Index extends React.Component {
                         <div className="text-center">
                             <a 
                             className="btn"
-                            href="/file/plugin.zip"
+                            href="https://gitlab.com/eliosapp/plugin-wordpress/-/archive/master/plugin-wordpress-master.zip"
                             target="blanck"
                             onClick={this.downloadPlugin}
                             >DESCARGAR</a>
