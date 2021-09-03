@@ -50,7 +50,7 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Islogin><samp></samp>
+            <Islogin>
                 <Content 
                 title={this.state.title}
                 className="cMenu page-configuracion"
