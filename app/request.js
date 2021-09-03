@@ -5,6 +5,7 @@ const request = async ({method = "GET", json = {}, rute = ""}) => {
     var myHeaders = new Headers();
     myHeaders.append("token", process.env.NEXT_PUBLIC_KEY);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${document.cookie}`);
     
     var requestOptions = {
       method,
