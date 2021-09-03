@@ -15,3 +15,6 @@ export const getUser = f_getUser
 
 import f_getSiteSelected from '@/functions/getSiteSelected'
 export const getSiteSelected = f_getSiteSelected
+
+import f_setSiteSelected from '@/functions/setSiteSelected'
+export const setSiteSelected = f_setSiteSelected
