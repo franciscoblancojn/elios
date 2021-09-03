@@ -1,28 +1,35 @@
 import {mapUser} from '@/functions/index'
+import {CreateAccount} from '@/app/app'
 
 
 /**
  * isLogin
  * @description verifica si es login o no 
- * @param {*} onChange 
  * @returns {*} promesa
  */
-const isLogin = (firebase) => async (onChange) =>{
-    try {
-        const respond = await firebase.auth()
-        console.log(respond);
-        const resutl = await respond.onAuthStateChanged(user => {
-            console.log(user);
-            const UserR = mapUser(user)
-            console.log(UserR)
+const isLogin = (firebase) => async () =>{
+    firebase
+        .auth()
+        .onAuthStateChanged( async user => {
+            try {
+                const result = await CreateAccount(mapUser(user))
+                if(result.type == "ok"){
+                    const token = result.token
+                    document.cookie = token
+                }else{
+                    return {
+                        type:"error",
+                        error:result.error,
+                        msj : result.msj,
+                    }
+                }
+            } catch (error) {
+                return {
+                    type:"error",
+                    error,
+                    msj : `${error}`
+                }
+            }
         })
-        console.log(resutl());
-    } catch (error) {
-        return {
-            type:"error",
-            error,
-            msj : `${error}`
-        }
-    }
 }
 export default isLogin

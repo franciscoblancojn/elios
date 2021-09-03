@@ -14,7 +14,6 @@ const createAccount = (firebase) => async (user) => {
             ...user,
             ...mapUser(respond.user)
         })
-        return result
     } catch (error) {
         return {
             type:"error",
