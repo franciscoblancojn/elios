@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TitelIcon from "@/components/title/titleIcon";
 import ListIntegracion from "@/components/list/integracion";
@@ -35,21 +36,23 @@ class Index extends React.Component {
                 title="Elios"
                 className="cMenu home"
                 >
-                    <TitelIcon
-                    title={this.state.title}
-                    subtitle={(
-                        <>
-                            {this.state.text1}
-                            <br/>
-                            {this.state.text2}
-                        </>
-                    )}
-                    icon={(<img src="/img/elios.png" alt="Elios" />)}
-                    />
-                    <ListIntegracion
-                    title={this.state.titleList}
-                    btn={this.state.btn}
-                    />
+                    <ExistOneSite>
+                        <TitelIcon
+                        title={this.state.title}
+                        subtitle={(
+                            <>
+                                {this.state.text1}
+                                <br/>
+                                {this.state.text2}
+                            </>
+                        )}
+                        icon={(<img src="/img/elios.png" alt="Elios" />)}
+                        />
+                        <ListIntegracion
+                        title={this.state.titleList}
+                        btn={this.state.btn}
+                        />
+                    </ExistOneSite>
                 </Content>
             </Islogin>
         )
