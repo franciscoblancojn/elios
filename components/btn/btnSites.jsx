@@ -159,15 +159,18 @@ class BtnSites2 extends React.Component {
 const BtnSites = ({className}) => {
     const user = getUser()
     const sites = user.sites || []
-    const site = getSiteSelected()
 
-    const [showList, setShowList] = useState(false)
+    const [site, setSite] = useState(getSiteSelected())
+    const [showList, setShowList] = useState(true)
     const [siteShow, setSiteShow] = useState(sites)
     const [textSearch, setTextSearch] = useState("")
 
-    const toggleShowList = () => setShowList(!showList)
+    const toggleShowList = () => {
+        setShowList(!showList)
+    }
     const onChangeSite = (e) => {
-        console.log(e);
+        setSite(e);
+        setSiteSelected(e)
     }
     const search = (e) => {
         const value = e.target.value

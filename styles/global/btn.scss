@@ -105,8 +105,6 @@ button,
             align-items: flex-start;
             align-content: flex-start;
             z-index: 9999;
-            z-index: -1;
-            opacity: 0;
             overflow: auto;
             &[hidden]{
                 display: none;

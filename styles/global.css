@@ -664,8 +664,6 @@ button-correo,
       align-items: flex-start;
       align-content: flex-start;
       z-index: 9999;
-      z-index: -1;
-      opacity: 0;
       overflow: auto; }
       button-select ul[hidden],
       .btn-select ul[hidden] {
