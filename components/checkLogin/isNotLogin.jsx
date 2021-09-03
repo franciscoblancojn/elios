@@ -7,6 +7,19 @@ const IsNotlogin = ({children}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const router = useRouter()
 
+    const onChangeCookie = (onChange) => {
+        let lastCookie = document.cookie;
+        setInterval(()=> {
+            let cookie = document.cookie;
+            if (cookie !== lastCookie) {
+                try {
+                    onChange()
+                } finally {
+                    lastCookie = cookie;
+                }
+            }
+        }, 1000);
+    }
     const loadContent = () => {
         try {
             const cookie = JSON.parse(document.cookie)
@@ -21,6 +34,7 @@ const IsNotlogin = ({children}) => {
     }
     useEffect(() => {
         loadContent()
+        onChangeCookie(loadContent)
     }, [])
     return <>{content}</>
 }
