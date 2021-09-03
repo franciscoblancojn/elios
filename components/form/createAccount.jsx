@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
 import InputText from "@/components/input/inputText"
 
-import {createAccount} from "@/components/firebase"
+import {createAccount} from "@/firebase/firebase"
 
 class CreateAccount extends React.Component {
     state = {

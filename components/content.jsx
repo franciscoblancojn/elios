@@ -3,8 +3,8 @@ import Router,{ useRouter } from "next/router"
 import React, { Component ,useEffect,useState} from "react"
 
 import Footer from '@/components/footer'
-import {isLogin} from "@/components/firebase"
-import {GetUser} from "@/components/app"
+import {isLogin} from "@/firebase/firebase"
+import {GetUser} from "@/app/app"
 import MenuLeft from "@/components/header/left";
 import MenuDropDown from "@/components/header/dropDown";
 import BtnSites from "@/components/btn/btnSites"

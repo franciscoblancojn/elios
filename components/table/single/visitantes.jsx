@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Link from 'next/link'
 
-import {getClientes} from "@/components/app"
+import {getClientes} from "@/app/app"
 import {printValue} from "@/components/functions"
 
 import ArrowRight from "@/components/svg/right-arrow"
