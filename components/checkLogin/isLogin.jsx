@@ -25,10 +25,9 @@ const Islogin = ({children}) => {
         }
     }
     useEffect( async () => {
-        await isLogin(()=>{
-            loadContent()
-            onChangeCookie(loadContent)
-        })
+        await isLogin()
+        loadContent()
+        onChangeCookie(loadContent)
     }, [])
     return <>{content}</>
 }
