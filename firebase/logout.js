@@ -1,17 +1,16 @@
-import { useRouter } from "next/router"
+import {redirect} from '@/functions/index'
 
 /**
  * logout
  * @description cerrar sesion
  */
 const logout = (firebase) => async () => {
-    const router = useRouter()
     try {
         const respond = await firebase.auth().signOut()
         document.cookie = JSON.stringify({
             login:false
         })
-        router.push("/login")
+        redirect("/login")
         return respond
     } catch (error) {
         return {
