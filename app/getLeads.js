@@ -9,7 +9,6 @@ const getLeads = async ({npage=10,page=1,query={},sort={}}) => {
         query : JSON.stringify(query),
         sort : JSON.stringify(sort)
     }
-    console.log(arg);
     const params = Object.keys(arg).map(key => key + '=' + arg[key]).join('&');
     const respond = await request({
         method : "GET", 

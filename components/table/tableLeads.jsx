@@ -7,6 +7,7 @@ import {printValue,TableRow,printFilter} from "@/components/functions"
 import LimitText from "@/components/card/limitText"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
+import LoaderCircle from "@/components/loader/circle";
 
 const DefaultKeysHead = {
     _id      :"ID",
@@ -27,58 +28,18 @@ const DefaultKeysHead = {
     date:"Fecha",
 
 }
-
 class TableLeads2 extends TableRow {
     onLoad = () => {
         this.setState({
-            load:true
+            rowF:this.props.row
         })
-        const user = this.props.currentUser
-        const key = user.key
-        const host = this.props.getHostSelect()
-        if(!user.host.includes(host)){
-            this.setState({
-                error:true,
-                msjError:"Debe agregar un Sitio Web"
-            })
-            return;
-        }
-        var query = this.props.query ?? {
-            event:{
-                $exists: true
-            }
-        }
-        var _return = {}
-        this.clearConfig()
-        getEvents({
-            key,
-            host,
-            query,
-            _return,
-            respondOk : (r) => {
-                if(r.type == "error"){
-                    console.log(r);
-                    this.setState({
-                        error:true,
-                        msjError:r.msj
-                    })
-                }else{
-                    this.setState({
-                        rowF:r
-                    })
-                    this.setRow(r)
-                    this.setState({
-                        load:false
-                    })
-                }
-            }
-        })
+        this.setRow(this.props.row)
     }
     render(){
         const KeysHead = this.props.keys ?? DefaultKeysHead
         const idKeys = Object.keys(KeysHead)
         if(this.state.error)return<div className="content-table">{this.state.msjError || "Error"}</div>
-        if(this.state.load)return<div className="content-table">Load.....</div>
+        // if(this.state.load)return<div className="content-table">Load.....</div>
         if(this.state.rowF.length ==0){
             return (<div className="content-table">No existen elementos</div>)
         }
@@ -173,15 +134,20 @@ class TableLeads2 extends TableRow {
     }
 }
 const TableLeads = () => {
+    const [content, setContent] = useState(<LoaderCircle/>)
     const loadLeads = async () => {
-        const leads = await getLeads({})
-        console.log(leads);
+        const leads = await getLeads({
+            query:{
+                event:{
+                    $exists: true
+                }
+            }
+        })
+        setContent(<TableLeads2 row={leads}></TableLeads2>)
     }
     useEffect(() => {
         loadLeads()
     }, [])
-    return <div>
-
-    </div>
+    return <>{content}</>
 }
 export default TableLeads

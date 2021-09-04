@@ -106,7 +106,7 @@ export class TableRow extends React.Component {
     }
     componentDidMount(){
         this.onLoad()
-        this.props.hookChangeHost(()=>{this.onLoad()})
+        // this.props.hookChangeHost(()=>{this.onLoad()})
     }
 }
 
