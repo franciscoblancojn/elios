@@ -136,13 +136,14 @@ class TableLeads2 extends TableRow {
 const TableLeads = () => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const loadLeads = async () => {
-        const leads = await getLeads({
+        const result = await getLeads({
             query:{
                 event:{
                     $exists: true
                 }
             }
         })
+        const leads = result.leads
         setContent(<TableLeads2 row={leads}></TableLeads2>)
     }
     useEffect(() => {

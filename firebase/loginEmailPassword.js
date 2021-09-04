@@ -1,5 +1,6 @@
 import {mapUser} from '@/functions/index'
 import {CreateAccount} from '@/app/app'
+import { useRouter } from "next/router"
 
 /**
  * loginEmailPassword
@@ -7,9 +8,11 @@ import {CreateAccount} from '@/app/app'
  * @param {e returnMessage fLogin} 
  */
 const loginEmailPassword = (firebase) => async (user) => {
+    const router = useRouter()
     try {
         const respond = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         const result = await CreateAccount(mapUser(respond.user))
+        router.push("/")
         return result
     } catch (error) {
         return {
