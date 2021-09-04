@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TableClientes from "@/components/table/tableClientes";
 
@@ -21,14 +23,18 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu clientes"
-            >
-                <TableClientes
-                    minVentas={2}
-                ></TableClientes>
-            </Content>
+            <Islogin>
+                <Content 
+                title={this.state.title}
+                className="cMenu clientes"
+                >
+                    <ExistOneSite>
+                        <TableClientes
+                            minVentas={2}
+                        ></TableClientes>
+                    </ExistOneSite>
+                </Content>
+            </Islogin>
         )
     }
 }

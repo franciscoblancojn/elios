@@ -2,6 +2,10 @@
     "title":{
 
     },
+    "btnSites":{
+        "addNewSite":"AGREGAR SITIO NUEVO",
+        "noFound": "No hay resultados"
+    },
     "menu":{
         "inicio":"Inicio",
         "visitantes":"Visitantes",

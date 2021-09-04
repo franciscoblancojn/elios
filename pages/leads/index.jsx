@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TableLeads from "@/components/table/tableLeads";
 
@@ -21,12 +23,16 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-leads"
-            >
-                <TableLeads></TableLeads>
-            </Content>
+            <Islogin>
+                <Content 
+                title={this.state.title}
+                className="cMenu page-leads"
+                >
+                    <ExistOneSite>
+                        <TableLeads></TableLeads>
+                    </ExistOneSite>
+                </Content>
+            </Islogin>
         )
     }
 }

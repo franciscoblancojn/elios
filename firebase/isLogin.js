@@ -1,6 +1,7 @@
 import {mapUser} from '@/functions/index'
-import {CreateAccount} from '@/app/app'
+import {saveCookie} from "@/functions/index";
 
+import {CreateAccount} from '@/app/app'
 
 /**
  * isLogin
@@ -15,14 +16,14 @@ const isLogin = (firebase) => async () =>{
                 const result = await CreateAccount(mapUser(user))
                 if(result.type == "ok"){
                     const token = result.token
-                    document.cookie = JSON.stringify({
+                    saveCookie(JSON.stringify({
                         login:true,
                         token
-                    })
+                    }))
                 }else{
-                    document.cookie = JSON.stringify({
+                    saveCookie(JSON.stringify({
                         login:false
-                    })
+                    }))
                     return {
                         type:"error",
                         error:result.error,
@@ -30,9 +31,10 @@ const isLogin = (firebase) => async () =>{
                     }
                 }
             } catch (error) {
-                document.cookie = JSON.stringify({
+                console.log('error',error);
+                saveCookie(JSON.stringify({
                     login:false
-                })
+                }))
                 return {
                     type:"error",
                     error,

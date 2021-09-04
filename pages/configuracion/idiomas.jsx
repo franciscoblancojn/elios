@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Content from "@/components/content";
+import Islogin from "@/components/checkLogin/isLogin";
 
 import languajes from "@/languajes/languaje";
 
@@ -36,23 +37,25 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-configuracion"
-            >
-                <div className="content-info-page">
-                    <h2>
-                        {this.state.actual}
-                    </h2>
-                    <select className="select-ss" onChange={(e)=>this.changeLanguaje(e.target.value)} defaultValue={this.state.lang}>
-                        {this.state.languajes.map((e,i)=>{
-                            return(
-                                <option key={i} value={e}>{e}</option>
-                            )
-                        })}
-                    </select>
-                </div>
-            </Content>
+            <Islogin>
+                <Content 
+                title={this.state.title}
+                className="cMenu page-configuracion"
+                >
+                    <div className="content-info-page">
+                        <h2>
+                            {this.state.actual}
+                        </h2>
+                        <select className="select-ss" onChange={(e)=>this.changeLanguaje(e.target.value)} defaultValue={this.state.lang}>
+                            {this.state.languajes.map((e,i)=>{
+                                return(
+                                    <option key={i} value={e}>{e}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                </Content>
+            </Islogin>
         )
     }
 }

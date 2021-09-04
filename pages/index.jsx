@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TitelIcon from "@/components/title/titleIcon";
 import ListIntegracion from "@/components/list/integracion";
@@ -29,26 +31,30 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title="Elios"
-            className="cMenu home"
-            >
-                <TitelIcon
-                title={this.state.title}
-                subtitle={(
-                    <>
-                        {this.state.text1}
-                        <br/>
-                        {this.state.text2}
-                    </>
-                )}
-                icon={(<img src="/img/elios.png" alt="Elios" />)}
-                />
-                <ListIntegracion
-                title={this.state.titleList}
-                btn={this.state.btn}
-                />
-            </Content>
+            <Islogin>
+                <Content 
+                title="Elios"
+                className="cMenu home"
+                >
+                    <ExistOneSite>
+                        <TitelIcon
+                        title={this.state.title}
+                        subtitle={(
+                            <>
+                                {this.state.text1}
+                                <br/>
+                                {this.state.text2}
+                            </>
+                        )}
+                        icon={(<img src="/img/elios.png" alt="Elios" />)}
+                        />
+                        <ListIntegracion
+                        title={this.state.titleList}
+                        btn={this.state.btn}
+                        />
+                    </ExistOneSite>
+                </Content>
+            </Islogin>
         )
     }
 }

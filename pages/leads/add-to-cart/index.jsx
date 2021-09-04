@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TableLeads from "@/components/table/tableLeads";
 
@@ -21,36 +23,40 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-leads"
-            >
-                <TableLeads 
-                query={{
-                    "type": "checkouts-update"
-                }}
-                keys={{
-                    _id      :"ID",
-                    // ip      :"IP",
-                    // user_id         :"User ID",
+            <Islogin>
+                <Content 
+                title={this.state.title}
+                className="cMenu page-leads"
+                >
+                    <ExistOneSite>
+                        <TableLeads 
+                        query={{
+                            "type": "checkouts-update"
+                        }}
+                        keys={{
+                            _id      :"ID",
+                            // ip      :"IP",
+                            // user_id         :"User ID",
 
-                    billing_address:"Billing Address",
-                    shipping_address:"Shipping Address",
-                    currency    :"Currency",
-                    customer    :"Customer",
-                    line_items :"Items",
+                            billing_address:"Billing Address",
+                            shipping_address:"Shipping Address",
+                            currency    :"Currency",
+                            customer    :"Customer",
+                            line_items :"Items",
 
-                    // phone  :"Phone",
-                    updated_at:"Date Update",
-                    date:"Fecha",
-                
-                }}
-                noPrint={[
-                    "default_address",
-                    "properties"
-                ]}
-                ></TableLeads>
-            </Content>
+                            // phone  :"Phone",
+                            updated_at:"Date Update",
+                            date:"Fecha",
+                        
+                        }}
+                        noPrint={[
+                            "default_address",
+                            "properties"
+                        ]}
+                        ></TableLeads>
+                    </ExistOneSite>
+                </Content>
+            </Islogin>
         )
     }
 }

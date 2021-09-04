@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
 import TableVisitantes from "@/components/table/tableVisitantes";
 
@@ -21,12 +23,16 @@ class Index extends React.Component {
     }
     render() {
         return (
-            <Content 
-            title={this.state.visitantes}
-            className="cMenu visitantes"
-            >
-                <TableVisitantes></TableVisitantes>
-            </Content>
+            <Islogin>
+                <Content 
+                title={this.state.visitantes}
+                className="cMenu visitantes"
+                >
+                    <ExistOneSite>
+                        <TableVisitantes></TableVisitantes>
+                    </ExistOneSite>
+                </Content>
+            </Islogin>
         )
     }
 }

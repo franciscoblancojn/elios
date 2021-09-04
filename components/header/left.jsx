@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Link from 'next/link'
 
 import BtnSites from "@/components/btn/btnSites"
 import BtnLink from "@/components/btn/btnLink"
@@ -45,10 +46,13 @@ class MenuLeft extends React.Component {
                 className="header-left"
             >
                 <div className="content-imgLogo">
-                    <img src="/img/elios_logo_h.png" alt="Elios" className="imgLogo"/>
+                    <Link href="/">
+                        <a>
+                            <img src="/img/elios_logo_h.png" alt="Elios" className="imgLogo"/>
+                        </a>
+                    </Link>
                 </div>
-                {this.props.btnSite}
-                <br />
+                <BtnSites/>
                 <br />
                 <BtnLink icon={<SvgHome/>} link="/">{this.state.inicio}</BtnLink>
 

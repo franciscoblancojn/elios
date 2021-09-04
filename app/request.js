@@ -1,8 +1,10 @@
+import {getCookie} from "@/functions/index";
+
 const RUTE = "https://pixeltracking.startscoinc.com/api"
 const VERSION = "v2"
 
 const request = async ({method = "GET", json = {}, rute = ""}) => {
-    const cookie = JSON.parse(document.cookie)
+    const cookie = JSON.parse(getCookie())
     var myHeaders = new Headers();
     myHeaders.append("token", process.env.NEXT_PUBLIC_KEY);
     myHeaders.append("Content-Type", "application/json");
