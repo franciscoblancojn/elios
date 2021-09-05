@@ -103,9 +103,13 @@ const TableLeads = ({query}) => {
     }
     const loadTable = async () => {
         await loadLeads()
-        const tbody = document.querySelector('.tbody')
-        tbody.scrollTop = 0
     }
+    useEffect(() => {
+        const tbody = document.querySelector('.tbody')
+        if(tbody){
+            tbody.scrollTop = 0
+        }
+    }, [content])
     useEffect(() => {
         loadTable()
     }, [page,npage])
