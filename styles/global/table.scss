@@ -75,16 +75,6 @@
         }
     }
 }
-.subTable.subTable{
-    padding: 0;
-    overflow: auto;
-    tr{
-        border: 1px solid  var(--white-eight);
-    }
-    td{
-        padding: 5px;
-    }
-}
 .overflow.overflow{
     width: 100%;
     overflow: auto;
@@ -113,5 +103,17 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+    }
+}
+.subTable.subTable{
+    padding: 0;
+    overflow: auto;
+    tr{
+        border: 1px solid  var(--white-eight);
+    }
+    td{
+        padding: 5px;
+        width: auto !important;
+        text-align: left;
     }
 }

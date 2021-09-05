@@ -85,7 +85,8 @@ const TableLeads = () => {
             query,
             sort:{
                 date:-1
-            }
+            },
+            npage:20
         })
         console.log(result);
         setCountItems(result.countLeads)
