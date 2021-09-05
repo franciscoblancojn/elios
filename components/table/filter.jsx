@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import FilterDate from "@/components/filters/date"
 
 import SvgSearch from "@/components/svg/search"
 
@@ -17,10 +18,20 @@ const Filter = ({filter,setFilter}) => {
     
 
     const swFilterType = {
-        string : <Search id={filter.id} name={filter.name} search={(value)=>()=>setFilter({[filter.id]:value})}/>
+        search : <Search id={filter.id} name={filter.name} search={(value)=>()=>setFilter({[filter.id]:value})}/>,
+        date : <FilterDate onChange={(value)=>{
+                const query = {
+                    createdAt:{
+                        $gte:value.startDate.toISOString(),
+                        $lt:value.endDate.toISOString()
+                    }
+                }
+                setFilter(query)
+            }
+        }/>
     }
-    if(swFilterType[filter.type]){
-        return swFilterType[filter.type]
+    if(swFilterType[filter.filter]){
+        return swFilterType[filter.filter]
     }   
     return <div>{filter.id}</div>
 }

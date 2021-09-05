@@ -8,72 +8,86 @@ const KEYS = [
     {
         id : "_id",
         name : "ID",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "ipAddress",
         name : "IP",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "continentName",
         name : "Continente",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "countryCode",
         name : "Pais Code",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "countryName",
         name : "Pais",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "stateProv",
         name : "State",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "city",
         name : "Ciudad",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "os",
         name : "OS",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "platform",
         name : "Platforma",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "system",
         name : "System",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "browser",
         name : "Navegador",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "pageUrl",
         name : "Url",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "get",
         name : "GET",
-        type : "object"
+        type : "object",
+        filter : 'search'
     },
     {
         id : "date",
         name : "Fecha",
-        type : "date"
+        type : "date",
+        filter : 'date'
     },
 ]
 const TableLeads = ({query}) => {
@@ -116,7 +130,7 @@ const TableLeads = ({query}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={setFilter}/>)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
         }
     }, [rows])
     return <>{content}</>

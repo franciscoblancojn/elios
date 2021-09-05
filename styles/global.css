@@ -1708,7 +1708,6 @@ footer {
   .filters.filters .filtro {
     display: flex;
     padding: 0 5px;
-    min-width: 200px;
     --size-btn:45px;
     --height-btn:25px;
     --radius:10px; }
@@ -1819,20 +1818,25 @@ footer {
     border-radius: 10px; }
 
 .btnModal {
-  margin: auto 5px;
+  margin: auto;
   height: 25px;
   min-height: 0;
   background: var(--white);
   color: var(--greyish-two);
   border-radius: 10px;
   padding: 0 3px;
-  font-size: 13px; }
+  font-size: 13px;
+  max-width: 100%;
+  min-width: 0; }
 
 .rdrStaticRangeLabel {
   color: #000; }
 
 .rdrDefinedRangesWrapper {
   display: none; }
+
+.rdrStartEdge, .rdrInRange, .rdrEndEdge, .rdrDateDisplayItemActive {
+  color: var(--periwinkle) !important; }
 
 .maintenance {
   position: fixed;
