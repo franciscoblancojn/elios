@@ -36,6 +36,7 @@ const Pagination = ({page,setNpage,npage,setPage,countItems}) => {
     return (
         <div className="pagination">
             <div className="Npage pages">
+                Items
                 <input type="number" value={npage} className="nItems npage" onChange={changeNpage} />
             </div>
             <div className="pages">
