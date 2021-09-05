@@ -116,7 +116,7 @@ const TableLeads = ({query}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage}/>)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={setFilter}/>)
         }
     }, [rows])
     return <>{content}</>
