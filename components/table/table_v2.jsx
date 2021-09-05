@@ -8,7 +8,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows,countItems,keys}) => {
+const Table = ({rows,countItems,keys,page,setNpage,npage,setPage}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -26,7 +26,7 @@ const Table = ({rows,countItems,keys}) => {
     return  (
         <div className="content-table">
             <div className="top-table">
-                <Pagination/>
+                <Pagination page={page} setPage={setPage} npage={npage} setNpage={setNpage} countItems={countItems}/>
             </div>
             <div className="overflow" >
                 <table className="table-h">

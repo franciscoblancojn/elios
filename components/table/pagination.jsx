@@ -1,62 +1,47 @@
 import React,{ useState } from "react"
 
-const Pagination = ({page,pageT,changePage,nItems,changeNItems}) => {
-    const [newPage,setNewPage] = useState(page)
-    const [newNItems,setNewNItems] = useState(nItems)
-
+const Pagination = ({page,setNpage,npage,setPage,countItems}) => {
+    const pageT = Math.ceil(countItems / npage)
     const onNext = () => {
         if (page < pageT) {
             page++
-            changePage(page)
-            setNewPage(page)
+            setPage(page)
         }
     }
     const onPrev = () => {
-        if(page > 0){
+        if(page > 1){
             page--
-            changePage(page)
-            setNewPage(page)
+            setPage(page)
         }
     }
     const onInit = () => {
-        if(page != 0){
-            page = 0
-            changePage(page)
-            setNewPage(page)
+        if(page != 1){
+            page = 1
+            setPage(page)
         }
     }
     const onEnd = () => {
         if(page != pageT){
             page = pageT
-            changePage(page)
-            setNewPage(page)
+            setPage(page)
         }
     }
     const changeNpage = (e) => {
-        setNewPage(parseInt(e.target.value) -1 )
+        setNpage(parseInt(e.target.value))
+        setPage(1)
     }
-    const changeNumItems = (e) => {
-        const value = parseInt(e.target.value)
-        setNewPage(0)
-        setNewNItems(value)
-        changeNItems(value)
-
-    }
-    const irPage = () => {
-        if(page != newPage){
-            changePage(newPage)
-        }
+    const changePage = (e) => {
+        setPage(parseInt(e.target.value))
     }
     return (
         <div className="pagination">
             <div className="Npage pages">
-                <input type="number" value={newNItems} className="nItems npage" onChange={changeNumItems} />
+                <input type="number" value={npage} className="nItems npage" onChange={changeNpage} />
             </div>
             <div className="pages">
-                <div className="ir b" onClick={irPage}>Ir</div>
                 Paginas
-                <input type="number" min="1" value={newPage + 1} max={pageT + 1} className="npage" onChange={changeNpage} />
-                - {pageT + 1}
+                <input type="number" min="1" value={page} max={pageT} className="npage" onChange={changePage} />
+                - {pageT}
             </div>
             <div className="init b" onClick={onInit} disabled={page==0}>init</div>
             <div className="prev b" onClick={onPrev} disabled={page==pageT}>prev</div>

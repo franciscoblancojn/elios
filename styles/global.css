@@ -1645,7 +1645,7 @@ footer {
       margin: 0 10px;
       outline: none; }
     .pagination .pages .nItems {
-      width: 37.5px;
+      width: auto;
       font-size: 0.9375rem;
       font-weight: 500;
       line-height: 1.45;

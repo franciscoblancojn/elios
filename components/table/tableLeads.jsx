@@ -80,13 +80,16 @@ const TableLeads = () => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
+    const [page, setPage] = useState(1)
+    const [npage, setNpage] = useState(20)
     const loadLeads = async (query={event:{$exists: true}}) => {
         const result = await getLeads({
             query,
             sort:{
                 date:-1
             },
-            npage:20
+            page,
+            npage,
         })
         console.log(result);
         setCountItems(result.countLeads)
@@ -97,10 +100,10 @@ const TableLeads = () => {
     }
     useEffect(() => {
         loadTable()
-    }, [])
+    }, [page,npage])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} />)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage}/>)
         }
     }, [rows])
     return <>{content}</>
