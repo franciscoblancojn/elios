@@ -76,15 +76,21 @@ const KEYS = [
         type : "date"
     },
 ]
-const TableLeads = () => {
+const TableLeads = ({query}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
-    const loadLeads = async (query={event:{$exists: true}}) => {
+    const [filter, setFilter] = useState({})
+
+    const loadLeads = async (defaultQuery={event:{$exists: true}}) => {
         const result = await getLeads({
-            query,
+            query:{
+                ...defaultQuery,
+                ...(query || {}),
+                ...filter
+            },
             sort:{
                 date:-1
             },
