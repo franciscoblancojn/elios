@@ -85,6 +85,7 @@ const TableLeads = ({query}) => {
     const [filter, setFilter] = useState({})
 
     const loadLeads = async (defaultQuery={event:{$exists: true}}) => {
+        setContent(<LoaderCircle/>)
         const result = await getLeads({
             query:{
                 ...defaultQuery,
@@ -112,7 +113,7 @@ const TableLeads = ({query}) => {
     }, [content])
     useEffect(() => {
         loadTable()
-    }, [page,npage])
+    }, [page,npage,filter])
     useEffect(() => {
         if(rows){
             setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage}/>)
