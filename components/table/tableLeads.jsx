@@ -74,7 +74,7 @@ const KEYS = [
     {
         id : "pageUrl",
         name : "Url",
-        type : "string",
+        type : "a",
         filter : 'search'
     },
     {

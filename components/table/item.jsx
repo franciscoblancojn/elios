@@ -27,10 +27,14 @@ const Item = ({item,type}) => {
             })}
         </ul>
     }
+    const printLink = (url) => {
+        return <a href={url} target="_blank">{url}</a>
+    }
     const swType = {
         "string":item,
         "date":(new Date(item)).toLocaleString(),
         "object":printObject(item),
+        "a":printLink(item)
     }
     if(swType[type]){
         return swType[type]
