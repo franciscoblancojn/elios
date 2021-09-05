@@ -67,7 +67,7 @@ const BtnSites = ({className}) => {
                     >
                         <span className="select">
                             <img src={`/icons/icon-${site.icon || site.cms}.png`} alt={site.host} className="iconHost"/>
-                                {site.host}
+                                <span className="text">{site.host}</span>
                             <SvgArrow/>
                         </span>
                     </button>
@@ -99,7 +99,7 @@ const BtnSites = ({className}) => {
                                 }
                                 >
                                     <img src={`/icons/icon-${e.icon || e.cms}.png`} alt={e.host} className="iconHost"/>
-                                    {e.host}
+                                    <span className="text">{e.host}</span>
                                 </li>
                             ))
                             :

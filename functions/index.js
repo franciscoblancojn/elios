@@ -18,3 +18,9 @@ export const getSiteSelected = f_getSiteSelected
 
 import f_setSiteSelected from '@/functions/setSiteSelected'
 export const setSiteSelected = f_setSiteSelected
+
+import f_redirect from '@/functions/redirect'
+export const redirect = f_redirect
+
+import f_reloadUser from '@/functions/reloadUser'
+export const reloadUser = f_reloadUser

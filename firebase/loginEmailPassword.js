@@ -1,4 +1,4 @@
-import {mapUser} from '@/functions/index'
+import {mapUser,redirect} from '@/functions/index'
 import {CreateAccount} from '@/app/app'
 
 /**
@@ -10,6 +10,7 @@ const loginEmailPassword = (firebase) => async (user) => {
     try {
         const respond = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         const result = await CreateAccount(mapUser(respond.user))
+        redirect("/")
         return result
     } catch (error) {
         return {

@@ -1,4 +1,4 @@
-import {mapUser} from '@/functions/index'
+import {mapUser,redirect} from '@/functions/index'
 import {CreateAccount} from '@/app/app'
 /**
  * loginFacebook
@@ -9,6 +9,7 @@ import {CreateAccount} from '@/app/app'
         var provider = new firebase.auth.FacebookAuthProvider();
         const respond = await firebase.auth().signInWithPopup(provider)
         const result = await CreateAccount(mapUser(respond.user))
+        redirect("/")
         return result
     } catch (error) {
         return {

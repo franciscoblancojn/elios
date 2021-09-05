@@ -1,4 +1,4 @@
-import {mapUser} from '@/functions/index'
+import {mapUser,redirect} from '@/functions/index'
 import {CreateAccount} from '@/app/app'
 
 /**
@@ -10,6 +10,7 @@ const loginGoogle =  (firebase) => async () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         const respond = await firebase.auth().signInWithPopup(provider)
         const result = await CreateAccount(mapUser(respond.user))
+        redirect("/")
         return result
     } catch (error) {
         return {

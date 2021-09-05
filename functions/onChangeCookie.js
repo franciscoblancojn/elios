@@ -9,8 +9,11 @@ const onChangeCookie = (onChange) => {
     let lastCookie = getCookie();
     setInterval(()=> {
         let cookie = getCookie();
-        if (cookie !== lastCookie) {
+        console.log(cookie);
+        console.log(lastCookie);
+        if (cookie != lastCookie) {
             try {
+                console.log('change');
                 onChange()
             } finally {
                 lastCookie = cookie;

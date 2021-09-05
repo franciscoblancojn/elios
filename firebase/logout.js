@@ -1,3 +1,4 @@
+import {redirect} from '@/functions/index'
 
 /**
  * logout
@@ -9,6 +10,7 @@ const logout = (firebase) => async () => {
         document.cookie = JSON.stringify({
             login:false
         })
+        redirect("/login")
         return respond
     } catch (error) {
         return {
