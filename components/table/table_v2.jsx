@@ -8,7 +8,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows,countItems,keys,page,setNpage,npage,setPage}) => {
+const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -33,14 +33,14 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage}) => {
                     <thead className="filters">
                         <tr >
                             <th>
-                                <button className="btn clear">
+                                <button className="btn clear" onClick={()=>setFilter({})}>
                                     <SvgReload></SvgReload>
                                 </button>
                             </th>
                             {
                                 keys.map((key,i)=>(
                                     <th key={i} id={key.id} order="none">
-                                        <Filter filter={key}/>
+                                        <Filter filter={key} setFilter={setFilter}/>
                                     </th>
                                 ))
                             }

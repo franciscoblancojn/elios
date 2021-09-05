@@ -8,83 +8,104 @@ const KEYS = [
     {
         id : "_id",
         name : "ID",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "ipAddress",
         name : "IP",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "continentName",
         name : "Continente",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "countryCode",
         name : "Pais Code",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "countryName",
         name : "Pais",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "stateProv",
         name : "State",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "city",
         name : "Ciudad",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "os",
         name : "OS",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "platform",
         name : "Platforma",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "system",
         name : "System",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "browser",
         name : "Navegador",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "pageUrl",
         name : "Url",
-        type : "string"
+        type : "string",
+        filter : 'search'
     },
     {
         id : "get",
         name : "GET",
-        type : "object"
+        type : "object",
+        filter : 'search'
     },
     {
         id : "date",
         name : "Fecha",
-        type : "date"
+        type : "date",
+        filter : 'date'
     },
 ]
-const TableLeads = () => {
+const TableLeads = ({query}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
-    const loadLeads = async (query={event:{$exists: true}}) => {
+    const [filter, setFilter] = useState({})
+
+    const loadLeads = async (defaultQuery={event:{$exists: true}}) => {
+        setContent(<LoaderCircle/>)
         const result = await getLeads({
-            query,
+            query:{
+                ...defaultQuery,
+                ...(query || {}),
+                ...filter
+            },
             sort:{
                 date:-1
             },
@@ -97,15 +118,19 @@ const TableLeads = () => {
     }
     const loadTable = async () => {
         await loadLeads()
-        const tbody = document.querySelector('.tbody')
-        tbody.scrollTop = 0
     }
     useEffect(() => {
+        const tbody = document.querySelector('.tbody')
+        if(tbody){
+            tbody.scrollTop = 0
+        }
+    }, [content])
+    useEffect(() => {
         loadTable()
-    }, [page,npage])
+    }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage}/>)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
         }
     }, [rows])
     return <>{content}</>
