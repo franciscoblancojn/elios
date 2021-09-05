@@ -93,6 +93,10 @@
     tbody {
         display:block;
         overflow:auto;
+        &::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
     }
     thead, tbody tr {
         display:table;
