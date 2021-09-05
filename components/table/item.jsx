@@ -1,4 +1,6 @@
-const Item = ({item,type}) => {
+import Img from '@/components/img'
+
+const Item = ({item,type,image}) => {
     if(item == null){
         return ""
     }
@@ -37,8 +39,16 @@ const Item = ({item,type}) => {
         "a":printLink(item)
     }
     if(swType[type]){
-        return swType[type]
+        
+        return <>
+            {image &&
+                <Img src={`/icons/${item.toLowerCase().replace(" ","-")}.png`} alt={item} />
+            }
+            {swType[type]}
+        </>
     }
-    return <div>{JSON.stringify(item)}</div>
+    return <div>
+        {JSON.stringify(item)}
+    </div>
 }
 export default Item

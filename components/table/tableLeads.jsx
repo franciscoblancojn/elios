@@ -27,7 +27,8 @@ const KEYS = [
         id : "countryCode",
         name : "Pais Code",
         type : "string",
-        filter : 'search'
+        filter : 'search',
+        image:true
     },
     {
         id : "countryName",
@@ -51,7 +52,8 @@ const KEYS = [
         id : "os",
         name : "OS",
         type : "string",
-        filter : 'search'
+        filter : 'search',
+        image:true
     },
     {
         id : "platform",
@@ -69,7 +71,8 @@ const KEYS = [
         id : "browser",
         name : "Navegador",
         type : "string",
-        filter : 'search'
+        filter : 'search',
+        image:true
     },
     {
         id : "pageUrl",

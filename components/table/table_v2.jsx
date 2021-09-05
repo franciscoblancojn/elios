@@ -73,7 +73,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter}) => 
                                         keys.map((key,j)=>{
                                             return (
                                                 <td key={`${i}-${j}`}>
-                                                    <Item item={element[key.id]} type={key.type}/>
+                                                    <Item item={element[key.id]} type={key.type} image={key.image}/>
                                                 </td>
                                             )
                                         })
