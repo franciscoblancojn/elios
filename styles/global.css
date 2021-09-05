@@ -472,7 +472,7 @@ button-select .card-simple ul,
 .card-simple button-facebook,
 .card-simple .btn-facebook,
 .card-simple button-correo,
-.card-simple .btn-correo, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .maintenance h1, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id, .page-leads .id {
+.card-simple .btn-correo, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .maintenance h1, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id {
   font-family: "brandon-grotesque"; }
   .font-btn, .font-btn-2, button-2,
   .btn-2,
@@ -1494,20 +1494,6 @@ footer {
   width: 100%;
   padding: 18.75px 45px; }
 
-.overflow {
-  width: 100%;
-  overflow: auto;
-  padding-bottom: 20px; }
-  .overflow table {
-    overflow: hidden; }
-  .overflow tbody {
-    display: block;
-    overflow: auto; }
-  .overflow thead, .overflow tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed; }
-
 .top-table {
   display: flex;
   flex-wrap: wrap;
@@ -1540,7 +1526,6 @@ footer {
   .table-h tr:not(:last-child) {
     border-bottom: solid 0.5px var(--white-eight); }
   .table-h tr td {
-    min-width: 120px;
     padding: 15px 5px;
     text-align: center; }
     .table-h tr td:not(:last-child) {
@@ -1569,6 +1554,31 @@ footer {
     border: 1px solid var(--white-eight); }
   .subTable.subTable td {
     padding: 5px; }
+
+.overflow.overflow {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 20px; }
+  .overflow.overflow table {
+    overflow: hidden; }
+    .overflow.overflow table th, .overflow.overflow table td {
+      width: 200px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding: 5px;
+      border: 1px solid var(--white-eight);
+      box-sizing: border-box; }
+  .overflow.overflow tbody {
+    display: block;
+    overflow: auto; }
+  .overflow.overflow thead, .overflow.overflow tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+  .overflow.overflow td {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
 
 .pagination {
   display: inline-flex;
@@ -2077,29 +2087,6 @@ button-select .page-email-send ul,
   font-size: 3.28125rem;
   font-weight: 900; }
 .page-visitantes .id {
-  font-size: 1.3125rem;
-  line-height: 1.42;
-  letter-spacing: 0.38px;
-  color: var(--pinkish-grey-three);
-  margin-bottom: 25px; }
-
-.page-leads .table-h {
-  margin-right: 20px; }
-  .page-leads .table-h tr td {
-    min-width: 120px;
-    max-width: 250px;
-    text-overflow: ellipsis;
-    /* will make [...] at the end */
-    width: 370px;
-    /* change to your preferences */
-    white-space: nowrap;
-    /* paragraph to one line */
-    overflow: hidden;
-    /* older browsers */ }
-.page-leads .titleP {
-  font-size: 3.28125rem;
-  font-weight: 900; }
-.page-leads .id {
   font-size: 1.3125rem;
   line-height: 1.42;
   letter-spacing: 0.38px;

@@ -1,4 +1,4 @@
 const Filter = ({filter}) => {
-    return <div>{JSON.stringify(filter)}</div>
+    return <div>{filter.id}</div>
 }
 export default Filter

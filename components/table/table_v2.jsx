@@ -20,7 +20,7 @@ const Table = ({rows,countItems,keys}) => {
     }
     useEffect(() => {
         const tbody = document.querySelector('.tbody')
-        const height = window.outerHeight - getOffsetTop(tbody) + 100
+        const height = window.outerHeight - getOffsetTop(tbody) + 120
         setStyleOverflow({height})
     }, [])
     return  (
