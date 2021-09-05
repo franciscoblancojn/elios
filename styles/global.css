@@ -1486,6 +1486,15 @@ footer {
   width: 100%;
   overflow: auto;
   padding-bottom: 20px; }
+  .overflow table {
+    overflow: hidden; }
+  .overflow tbody {
+    display: block;
+    overflow: auto; }
+  .overflow thead, .overflow tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
 
 .top-table {
   display: flex;

@@ -6,6 +6,23 @@
     width: 100%;
     overflow: auto;
     padding-bottom: 20px;
+    table{
+        overflow: hidden;
+    }
+    td{
+        // border: 1px solid  var(--white-eight);
+        // border-spacing: 0px;
+        
+    }
+    tbody {
+        display:block;
+        overflow:auto;
+    }
+    thead, tbody tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
 }
 .top-table{
     display: flex;
@@ -85,7 +102,7 @@
     padding: 0;
     overflow: auto;
     tr{
-        border: 1px solid  var(--white-eight);;
+        border: 1px solid  var(--white-eight);
     }
     td{
         padding: 5px;

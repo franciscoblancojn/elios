@@ -1,21 +1,34 @@
+import { useState, useEffect } from "react"
 import Link from 'next/link'
 
 import Pagination from "@/components/table/pagination"
 import Filter from "@/components/table/filter"
 import Item from "@/components/table/item"
 
-import {printValue,TableRow,printFilter} from "@/components/functions"
-
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
 const Table = ({rows,countItems,keys}) => {
+    const [styleOverflow, setStyleOverflow] = useState({})
+    const getOffsetTop = ( elem ) => {
+        var offsetTop = 0;
+        while(elem){
+            offsetTop += elem.offsetTop
+            elem = elem.parentElement
+        }
+        return offsetTop;
+    }
+    useEffect(() => {
+        const tbody = document.querySelector('.tbody')
+        const height = window.outerHeight - getOffsetTop(tbody) + 100
+        setStyleOverflow({height})
+    }, [])
     return  (
         <div className="content-table">
             <div className="top-table">
                 <Pagination/>
             </div>
-            <div className="overflow">
+            <div className="overflow" >
                 <table className="table-h">
                     <thead className="filters">
                         <tr >
@@ -45,7 +58,7 @@ const Table = ({rows,countItems,keys}) => {
                             }
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="tbody overflow-auto" style={styleOverflow}>
                         {
                             rows.map((element,i)=>(
                                 <tr key={i} ip={element._id}>
