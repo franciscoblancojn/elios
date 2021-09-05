@@ -68,12 +68,12 @@ const KEYS = [
     {
         id : "get",
         name : "GET",
-        type : "text"
+        type : "object"
     },
     {
         id : "date",
         name : "Fecha",
-        type : "text"
+        type : "date"
     },
 ]
 const TableLeads = () => {
@@ -81,7 +81,12 @@ const TableLeads = () => {
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
     const loadLeads = async (query={event:{$exists: true}}) => {
-        const result = await getLeads({query})
+        const result = await getLeads({
+            query,
+            sort:{
+                date:-1
+            }
+        })
         console.log(result);
         setCountItems(result.countLeads)
         setRows(result.leads)

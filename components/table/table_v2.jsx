@@ -60,7 +60,7 @@ const Table = ({rows,countItems,keys}) => {
                                         keys.map((key,j)=>{
                                             return (
                                                 <td key={`${i}-${j}`}>
-                                                    <Item item={element[key.id]}/>
+                                                    <Item item={element[key.id]} type={key.type}/>
                                                 </td>
                                             )
                                         })
