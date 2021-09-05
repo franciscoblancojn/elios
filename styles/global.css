@@ -654,7 +654,7 @@ button-correo,
       padding: 10px 0;
       margin: 0;
       position: absolute;
-      min-width: 100%;
+      max-width: 250px;
       width: auto;
       height: auto;
       top: calc(100% + 10px);
@@ -714,6 +714,12 @@ button-correo,
       .btn-select li[value] {
         padding-top: 5px;
         padding-bottom: 5px; }
+        button-select li[value] .text,
+        .btn-select li[value] .text {
+          width: calc(100% - 40px);
+          text-overflow: ellipsis;
+          display: block;
+          overflow: hidden; }
         button-select li[value]:hover,
         .btn-select li[value]:hover {
           background-color: var(--white-three); }
@@ -722,6 +728,12 @@ button-correo,
       display: flex;
       align-items: center;
       width: 100%; }
+      button-select .select .text,
+      .btn-select .select .text {
+        width: calc(100% - 50px);
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden; }
       button-select .select svg,
       .btn-select .select svg {
         width: 13px;
