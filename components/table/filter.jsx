@@ -20,10 +20,12 @@ const Filter = ({filter,setFilter}) => {
     const swFilterType = {
         search : <Search id={filter.id} name={filter.name} search={(value)=>()=>setFilter({[filter.id]:value})}/>,
         date : <FilterDate onChange={(value)=>{
-            console.log();
+                const init = value.startDate.getTime()
+                const fin = value.endDate.getTime()
                 const query = {
-                    $where: function() {
-                        return (new Date(this.date)).getTime() > value.startDate.getTime() && (new Date(this.date)).getTime() < value.endDate.getTime()
+                    date:{
+                        $gte:init,
+                        $lt:fin
                     }
                 }
                 setFilter(query)
