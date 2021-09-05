@@ -1541,6 +1541,14 @@ footer {
       margin: 0;
       padding-left: 20px; }
 
+.subTable.subTable {
+  padding: 0;
+  overflow: auto; }
+  .subTable.subTable tr {
+    border: 1px solid var(--white-eight); }
+  .subTable.subTable td {
+    padding: 5px; }
+
 .pagination {
   display: inline-flex;
   flex-wrap: wrap;

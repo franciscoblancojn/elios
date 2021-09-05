@@ -8,62 +8,62 @@ const KEYS = [
     {
         id : "_id",
         name : "ID",
-        type : "text"
+        type : "string"
     },
     {
         id : "ipAddress",
         name : "IP",
-        type : "text"
+        type : "string"
     },
     {
         id : "continentName",
         name : "Continente",
-        type : "text"
+        type : "string"
     },
     {
         id : "countryCode",
         name : "Pais Code",
-        type : "text"
+        type : "string"
     },
     {
         id : "countryName",
         name : "Pais",
-        type : "text"
+        type : "string"
     },
     {
         id : "stateProv",
         name : "State",
-        type : "text"
+        type : "string"
     },
     {
         id : "city",
         name : "Ciudad",
-        type : "text"
+        type : "string"
     },
     {
         id : "os",
         name : "OS",
-        type : "text"
+        type : "string"
     },
     {
         id : "platform",
         name : "Platforma",
-        type : "text"
+        type : "string"
     },
     {
         id : "system",
         name : "System",
-        type : "text"
+        type : "string"
     },
     {
         id : "browser",
         name : "Navegador",
-        type : "text"
+        type : "string"
     },
     {
         id : "pageUrl",
         name : "Url",
-        type : "text"
+        type : "string"
     },
     {
         id : "get",
