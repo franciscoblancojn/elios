@@ -97,6 +97,8 @@ const TableLeads = () => {
     }
     const loadTable = async () => {
         await loadLeads()
+        const tbody = document.querySelector('.tbody')
+        tbody.scrollTop = 0
     }
     useEffect(() => {
         loadTable()
