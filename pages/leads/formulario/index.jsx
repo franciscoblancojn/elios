@@ -30,6 +30,7 @@ class Index extends React.Component {
                 >
                     <ExistOneSite>
                         <TableLeads 
+                        queryUrl={this.props.queryUrl || {}}
                         query={{
                             "event.type":"Form Submit",
                         }}
@@ -39,5 +40,8 @@ class Index extends React.Component {
             </Islogin>
         )
     }
+}
+export async function getServerSideProps({query}) {
+    return { props: { queryUrl : query } }
 }
 export default Index

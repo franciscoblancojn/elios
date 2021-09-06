@@ -29,11 +29,14 @@ class Index extends React.Component {
                 className="cMenu clientes"
                 >
                     <ExistOneSite>
-                        <TableClientes></TableClientes>
+                        <TableClientes queryUrl={this.props.queryUrl || {}}></TableClientes>
                     </ExistOneSite>
                 </Content>
             </Islogin>
         )
     }
+}
+export async function getServerSideProps({query}) {
+    return { props: { queryUrl : query } }
 }
 export default Index
