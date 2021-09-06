@@ -33,25 +33,109 @@ class Index extends React.Component {
                         query={{
                             "type": "orders-paid"
                         }}
-                        keys={{
-                            _id      :"ID",
-                            // ip      :"IP",
-                            // user_id         :"User ID",
-
-                            billing_address:"Billing Address",
-                            shipping_address:"Shipping Address",
-                            currency    :"Currency",
-                            customer    :"Customer",
-                            line_items :"Items",
-
-                            // phone  :"Phone",
-                            updated_at:"Date Update",
-                            date:"Fecha",
-                        
-                        }}
-                        noPrint={[
-                            "default_address",
-                            "properties"
+                        KEYS={[
+                            {
+                                id : "_id",
+                                name : "ID",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "email",
+                                name : "Email",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "phone",
+                                name : "Phone",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "browser_ip",
+                                name : "IP",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "order_number",
+                                name : "Order Number",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "order_status_url",
+                                name : "Order Url",
+                                type : "a",
+                                filter : 'search'
+                            },
+                            {
+                                id : "currency",
+                                name : "Currency",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "gateway",
+                                name : "Gateway",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "subtotal_price",
+                                name : "Subtotal Price",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "total_weight",
+                                name : "Weight",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "customer",
+                                name : "Customer",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "billing_address",
+                                name : "Billing Address",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "shipping_address",
+                                name : "Shipping Address",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "line_items",
+                                name : "Line Items",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "discount_codes",
+                                name : "Discount Codes",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "note",
+                                name : "Note",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "date",
+                                name : "Date",
+                                type : "date",
+                                filter : 'date'
+                            },
                         ]}
                         ></TableLeads>
                     </ExistOneSite>
