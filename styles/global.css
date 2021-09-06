@@ -1489,6 +1489,11 @@ footer {
     .list-number li span {
       display: block;
       width: calc(100% - 10px - 48.75px ); }
+.list-sites {
+  padding: 25px 0; }
+  .list-sites a {
+    text-decoration: none;
+    color: var(--periwinkle); }
 
 .content-table {
   width: 100%;
