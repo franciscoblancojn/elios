@@ -43,13 +43,13 @@ class Index extends React.Component {
                             {
                                 id : "email",
                                 name : "Email",
-                                type : "string",
+                                type : "email",
                                 filter : 'search'
                             },
                             {
                                 id : "phone",
                                 name : "Phone",
-                                type : "string",
+                                type : "tel",
                                 filter : 'search'
                             },
                             {

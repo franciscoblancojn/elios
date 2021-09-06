@@ -32,11 +32,19 @@ const Item = ({item,type,image}) => {
     const printLink = (url) => {
         return <a href={url} target="_blank">{url}</a>
     }
+    const printTel = (tel) => {
+        return <a href={`tel:${tel}`} target="_blank">{tel}</a>
+    }
+    const printEmail = (email) => {
+        return <a href={`mailto:${email}`} target="_blank">{email}</a>
+    }
     const swType = {
         "string":item,
         "date":(new Date(item)).toLocaleString(),
         "object":printObject(item),
-        "a":printLink(item)
+        "a":printLink(item),
+        "tel":printTel(item),
+        "email":printEmail(item),
     }
     if(swType[type]){
         
