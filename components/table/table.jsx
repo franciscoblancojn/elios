@@ -20,8 +20,8 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter}) => 
     }
     useEffect(() => {
         const tbody = document.querySelector('.tbody')
-        const height = window.outerHeight - getOffsetTop(tbody) + 120
-        setStyleOverflow({height})
+        const maxHeight = window.outerHeight - getOffsetTop(tbody) + 120
+        setStyleOverflow({maxHeight})
     }, [])
     return  (
         <div className="content-table">

@@ -6,6 +6,9 @@ const Item = ({item,type,image,modal = true}) => {
         return ""
     }
     const printArray = (array) => {
+        if(array.length == 0){
+            return <></>
+        }
         const content = (
             <ul>
                 {array.map((element,i)=>{

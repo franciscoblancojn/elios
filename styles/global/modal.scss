@@ -5,11 +5,12 @@
     width: 100%;
     height: 100%;
     background-color: var(--black-16);
-    display: flex;
-    align-items: start;
+    display: grid;
+    align-items: center;
     justify-content: center;
     overflow: auto;
-    padding: 15px;
+    padding: 25px 15px;
+    z-index: 9999999999;
     &:not(.open){
         display: none;
     }
@@ -25,6 +26,23 @@
         background-color: var(--white);
         padding: 10px;
         border-radius: 10px;
+    }
+    &-close{
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: var(--white);
+        border-radius: 100%;
+        right: 5px;
+        bottom: calc(100% + 2.5px);
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+            width: 15px;
+        }
     }
 }
 .btnModal{
