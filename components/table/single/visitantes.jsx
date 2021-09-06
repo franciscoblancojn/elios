@@ -1,82 +1,107 @@
-import React, { Component } from "react"
+import { useState, useEffect } from "react"
 import Link from 'next/link'
 
-import {getClientes} from "@/app/app"
-import {printValue} from "@/components/functions"
+import {getClients} from "@/app/app"
+import LoaderCircle from "@/components/loader/circle";
+import Single from "@/components/table/single";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
-const KeysHead = {
-    continentCode: "Continente Code",
-    continentName: "Continente",
-    pais    :"Pais",
-    stateProv : "Estado",
-    countryCode  :"Country Code",
-    countryName  :"Ciudad",
-    os      :"OS",
-    browser :"Browser",
-    platform : "Platforma",
-    system : "System",
-
-    sesiones:"Sesiones",
-    events :"Eventos",
-    compras  :"Ventas",
-
-}
-
-class SingleVisitantes extends React.Component {
-    state = {
-        user : {}
-    }
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount(){
-        const _id = this.props.id
-        const user = this.props.currentUser
-        const key = user.key
-        const host = this.props.getHostSelect()
-        var query = {
-            _id
-        }
-        var _return = {}
-        getClientes({
-            key,
-            host,
-            query,
-            _return,
-            respondOk : (r) => {
-                console.log(r);
-                if(r.type == "error"){
-                    console.log(r);
-                    this.setState({
-                        error:true,
-                        msjError:r.msj
-                    })
-                }else if(r.length == 0){
-                    this.setState({
-                        error:true,
-                        msjError:"Usuario Invalido"
-                    })
-                }else{
-                    r = r.map((e)=>{
-                        return {
-                            ...e,
-                            sesiones : e?.sesiones || 0,
-                            events : e?.events || 0,
-                            compras : e?.compras || 0
-                        }
-                    })
-                    this.setState({
-                        user:r[0]
-                    })
-                }
+const DEFAULTKEYS = [
+    {
+        id : "ip",
+        name : "IP",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "continentName",
+        name : "Continente",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "countryCode",
+        name : "Pais Code",
+        type : "string",
+        filter : 'search',
+        image:true
+    },
+    {
+        id : "countryName",
+        name : "Pais",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "stateProv",
+        name : "State",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "city",
+        name : "Ciudad",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "os",
+        name : "OS",
+        type : "string",
+        filter : 'search',
+        image:true
+    },
+    {
+        id : "platform",
+        name : "Platforma",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "system",
+        name : "System",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "browser",
+        name : "Navegador",
+        type : "string",
+        filter : 'search',
+        image:true
+    },
+    {
+        id : "leads",
+        name : "Leads",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "compras",
+        name : "Compras",
+        type : "string",
+        filter : 'search',
+    },
+]
+const SingleVisitantes = ({id,KEYS=null}) =>{
+    const [content, setContent] = useState(<LoaderCircle/>)
+    const loadClients = async () => {
+        const result = await getClients({
+            query:{
+                _id : id
             },
         })
-    }
-    render(){
-        const idKeys = Object.keys(KeysHead)
-        return  (
+        console.log(result);
+        if(result.error || result.clients.length == 0){
+            setContent(<div className="content-table">
+                <h1>ID Invalid</h1>
+                </div>
+            )
+            return;
+        }
+        const client = result.clients[0];
+        setContent(
             <div className="content-table">
                 <Link href={`/visitantes/`}>
                     <a className="before">
@@ -85,29 +110,18 @@ class SingleVisitantes extends React.Component {
                     </a>
                 </Link>
                 <h1 className="titleP">
-                {
-                    this.state.user.ventas > 0 ?
-                    "Buyer Persona":
-                    "Persona"
-                }
+                    Visitante
                 </h1>
                 <div className="id">
-                    IP: {this.props.id}
+                    ID: {id}
                 </div>
-                {
-                    idKeys.map((e,i)=>(
-                        <div key={i} className={`textItem ${e}`}>
-                            <strong>{KeysHead[e]}: </strong>
-                            {printValue({
-                                key:e,
-                                value:this.state.user[e],
-                                KeysHead
-                            })}
-                        </div>
-                    ))
-                }
+                <Single item={client} keys={KEYS || DEFAULTKEYS}/>
             </div>
         )
     }
+    useEffect(() => {
+        loadClients()
+    }, [])
+    return <>{content}</>
 }
 export default SingleVisitantes
