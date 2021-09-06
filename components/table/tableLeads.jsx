@@ -4,7 +4,7 @@ import {getLeads} from "@/app/app"
 import LoaderCircle from "@/components/loader/circle";
 import Table from "@/components/table/table";
 
-const KEYS = [
+const DEFAULTKEYS = [
     {
         id : "_id",
         name : "ID",
@@ -93,7 +93,7 @@ const KEYS = [
         filter : 'date'
     },
 ]
-const TableLeads = ({query}) => {
+const TableLeads = ({query={event:{$exists: true}},KEYS=null}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -101,11 +101,10 @@ const TableLeads = ({query}) => {
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
 
-    const loadLeads = async (defaultQuery={event:{$exists: true}}) => {
+    const loadLeads = async () => {
         setContent(<LoaderCircle/>)
         const result = await getLeads({
             query:{
-                ...defaultQuery,
                 ...(query || {}),
                 ...filter
             },
@@ -133,7 +132,7 @@ const TableLeads = ({query}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS || DEFAULTKEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
         }
     }, [rows])
     return <>{content}</>
