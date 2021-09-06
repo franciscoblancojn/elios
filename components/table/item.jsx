@@ -1,33 +1,46 @@
 import Img from '@/components/img'
+import ModalP from '@/components/modal/modalP'
 
-const Item = ({item,type,image}) => {
+const Item = ({item,type,image,modal = true}) => {
     if(item == null){
         return ""
     }
     const printArray = (array) => {
-        return <ul>
-            {array.map((element,i)=>{
-                const type = typeof element
-                return <li key={i}>
-                    <Item item={element} type={type}/>
-                </li>
-            })}
-        </ul>
+        const content = (
+            <ul>
+                {array.map((element,i)=>{
+                    const type = typeof element
+                    return <li key={i}>
+                        <Item item={element} type={type} modal={false}/>
+                    </li>
+                })}
+            </ul>
+        )
+        if(!modal){
+            return content
+        }
+        return <ModalP>{content}</ModalP>
     }
     const printObject = (obj) => {
         if(Array.isArray(obj)) {
             return printArray(obj)
         }
         const keys = Object.keys(obj)
-        return <ul className="subTable">
-            {keys.map((key,i)=>{
-                const type = typeof obj[key]
-                return <tr key={i}>
-                    <td><strong>{key}: </strong></td>
-                    <td><Item item={obj[key]} type={type}/></td>
-                </tr>
-            })}
-        </ul>
+        const content = (
+            <ul className="subTable">
+                {keys.map((key,i)=>{
+                    const type = typeof obj[key]
+                    return <tr key={i}>
+                        <td><strong>{key}: </strong></td>
+                        <td><Item item={obj[key]} type={type} modal={false}/></td>
+                    </tr>
+                })}
+            </ul>
+        )
+        if(!modal){
+            return content
+        }
+        return <ModalP>{content}</ModalP>
     }
     const printLink = (url) => {
         return <a href={url} target="_blank">{url}</a>
