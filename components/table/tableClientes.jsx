@@ -87,7 +87,7 @@ const DEFAULTKEYS = [
         filter : 'search',
     },
 ]
-const TableClients = ({query,KEYS=null}) => {
+const TableClients = ({query,KEYS=null,queryUrl={}}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -101,6 +101,7 @@ const TableClients = ({query,KEYS=null}) => {
             query:{
                 ...defaultQuery,
                 ...(query || {}),
+                ...queryUrl,
                 ...filter
             },
             sort:{

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {getClients} from "@/app/app"
 import LoaderCircle from "@/components/loader/circle";
 import Single from "@/components/table/single";
+import BtnPrincipal from "@/components/btn/btnPrincipal";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
@@ -119,6 +120,23 @@ const SingleVisitantes = ({id,KEYS=null}) =>{
                     ID: {id}
                 </div>
                 <Single item={client} keys={KEYS || DEFAULTKEYS}/>
+                {
+                    client.leads > 0 && 
+                    <Link href={`/leads?ipAddress=${client.ip}`}>
+                        <a className="link">
+                            Ver todos los Leads
+                        </a>
+                    </Link>
+                }
+                <br />
+                {
+                    client.compras > 0 &&
+                    <Link href={`/clientes/compras?browser_ip=${client.ip}`}>
+                        <a className="link">
+                            Ver todas las Compras
+                        </a>
+                    </Link>
+                }
             </div>
         )
     }

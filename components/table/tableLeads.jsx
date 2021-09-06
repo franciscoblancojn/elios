@@ -99,7 +99,7 @@ const DEFAULTKEYS = [
         filter : 'date'
     },
 ]
-const TableLeads = ({query={event:{$exists: true}},KEYS=null}) => {
+const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -112,7 +112,8 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null}) => {
         const result = await getLeads({
             query:{
                 ...(query || {}),
-                ...filter
+                ...queryUrl,
+                ...filter,
             },
             sort:{
                 date:-1
@@ -153,4 +154,5 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null}) => {
     }, [rows])
     return <>{content}</>
 }
+
 export default TableLeads
