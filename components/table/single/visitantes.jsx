@@ -79,6 +79,18 @@ const DEFAULTKEYS = [
         filter : 'search',
     },
     {
+        id : "form",
+        name : "Formularios",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "whatsapp",
+        name : "Whatsapps",
+        type : "string",
+        filter : 'search',
+    },
+    {
         id : "compras",
         name : "Compras",
         type : "string",
@@ -122,20 +134,47 @@ const SingleVisitantes = ({id,KEYS=null}) =>{
                 <Single item={client} keys={KEYS || DEFAULTKEYS}/>
                 {
                     client.leads > 0 && 
-                    <Link href={`/leads?ipAddress=${client.ip}`}>
-                        <a className="link">
-                            Ver todos los Leads
-                        </a>
-                    </Link>
+                    <>
+                        <Link href={`/leads?ipAddress=${client.ip}`}>
+                            <a className="link">
+                                Ver todos los Leads
+                            </a>
+                        </Link>
+                        <br />
+                    </>
                 }
-                <br />
+                {
+                    client.form > 0 &&
+                    <>
+                        <Link href={`/leads/formulario?ipAddress=${client.ip}`}>
+                            <a className="link">
+                                Ver todos los Formularios
+                            </a>
+                        </Link>
+                        <br />
+                    </>
+                }
+                {
+                    client.whatsapp > 0 &&
+                    <>
+                        <Link href={`/leads/whatsapp?browser_ip=${client.ip}`}>
+                            <a className="link">
+                                Ver todos los Whatsapps
+                            </a>
+                        </Link>
+                        <br />
+                    </>
+                }
                 {
                     client.compras > 0 &&
-                    <Link href={`/clientes/compras?browser_ip=${client.ip}`}>
-                        <a className="link">
-                            Ver todas las Compras
-                        </a>
-                    </Link>
+                    <>
+                        <Link href={`/clientes/compras?browser_ip=${client.ip}`}>
+                            <a className="link">
+                                Ver todas las Compras
+                            </a>
+                        </Link>
+                        <br />
+                    </>
                 }
             </div>
         )
