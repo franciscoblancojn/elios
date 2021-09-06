@@ -4,7 +4,7 @@ import {getClients} from "@/app/app"
 import LoaderCircle from "@/components/loader/circle";
 import Table from "@/components/table/table";
 
-const KEYS = [
+const DEFAULTKEYS = [
     {
         id : "_id",
         name : "ID",
@@ -74,8 +74,20 @@ const KEYS = [
         filter : 'search',
         image:true
     },
+    {
+        id : "leads",
+        name : "Leads",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "compras",
+        name : "Compras",
+        type : "string",
+        filter : 'search',
+    },
 ]
-const TableClients = ({query}) => {
+const TableClients = ({query,KEYS=null}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -115,7 +127,7 @@ const TableClients = ({query}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
+            setContent(<Table rows={rows} countItems={countItems} keys={KEYS || DEFAULTKEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
         }
     }, [rows])
     return <>{content}</>
