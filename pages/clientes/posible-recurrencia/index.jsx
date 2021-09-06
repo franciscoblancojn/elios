@@ -30,7 +30,11 @@ class Index extends React.Component {
                 >
                     <ExistOneSite>
                         <TableClientes
-                            minVentas={1}
+                            query={{
+                                compras:{
+                                    $gte:1,
+                                }
+                            }}
                         ></TableClientes>
                     </ExistOneSite>
                 </Content>
