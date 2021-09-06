@@ -127,7 +127,17 @@ const TableClients = ({query,KEYS=null}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS || DEFAULTKEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
+            setContent(<Table 
+                url="visitantes"
+                rows={rows} 
+                countItems={countItems} 
+                keys={KEYS || DEFAULTKEYS} 
+                page={page} 
+                setPage={setPage} 
+                npage={npage} 
+                setNpage={setNpage} 
+                setFilter={(value)=>{setPage(1);setFilter(value)}}
+                />)
         }
     }, [rows])
     return <>{content}</>
