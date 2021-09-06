@@ -81,6 +81,18 @@ const DEFAULTKEYS = [
         filter : 'search',
     },
     {
+        id : "form",
+        name : "Formularios",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "whatsapp",
+        name : "Whatsapps",
+        type : "string",
+        filter : 'search',
+    },
+    {
         id : "compras",
         name : "Compras",
         type : "string",

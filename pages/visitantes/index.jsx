@@ -107,6 +107,18 @@ class Index extends React.Component {
                                         type : "string",
                                         filter : 'search',
                                     },
+                                    {
+                                        id : "form",
+                                        name : "Formularios",
+                                        type : "string",
+                                        filter : 'search',
+                                    },
+                                    {
+                                        id : "whatsapp",
+                                        name : "Whatsapps",
+                                        type : "string",
+                                        filter : 'search',
+                                    },
                                 ]
                             }
                         />
