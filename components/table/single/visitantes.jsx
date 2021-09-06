@@ -110,7 +110,10 @@ const SingleVisitantes = ({id,KEYS=null}) =>{
                     </a>
                 </Link>
                 <h1 className="titleP">
-                    Visitante
+                    {
+                        client.compras > 0 ?
+                        "Cliente":"Visitante"
+                    }
                 </h1>
                 <div className="id">
                     ID: {id}
