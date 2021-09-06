@@ -1510,8 +1510,8 @@ footer {
     border: 0; }
   .table-h th {
     min-width: 49.5px;
-    height: 66px;
     padding: 0;
+    vertical-align: middle;
     font-size: 1.21875rem;
     font-weight: bold;
     line-height: 1.44;
@@ -1559,7 +1559,8 @@ footer {
       padding-right: 5px;
       padding: 5px;
       border: 1px solid var(--white-eight);
-      box-sizing: border-box;
+      box-sizing: border-box; }
+    .overflow.overflow table td {
       vertical-align: initial; }
   .overflow.overflow tbody {
     display: block;
