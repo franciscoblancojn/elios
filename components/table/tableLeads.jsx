@@ -81,6 +81,12 @@ const DEFAULTKEYS = [
         filter : 'search'
     },
     {
+        id : "event",
+        name : "Event",
+        type : "object",
+        filter : 'search'
+    },
+    {
         id : "get",
         name : "GET",
         type : "object",
