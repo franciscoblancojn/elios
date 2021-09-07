@@ -50,7 +50,6 @@ const Site = ({host}) => {
     }
     useEffect(() => {
         // setLoader(true)
-        console.log(query);
         if(query){
             loadInfoHost()
         }
