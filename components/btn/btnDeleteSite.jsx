@@ -3,6 +3,8 @@ import { useRouter } from "next/router"
 
 import {deleteSite} from "@/app/app"
 
+import {reloadUser} from "@/functions/index";
+
 import Modal from '@/components/modal/modal'
 import LoaderCircle from "@/components/loader/circle";
 
@@ -13,6 +15,7 @@ const BtnDeleteSite = ({site}) => {
     const deleteSiteClick = async () => {
         setLoader(true)
         await deleteSite(site)
+        await reloadUser()
         router.push("/")
     }
     return <>
