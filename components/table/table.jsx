@@ -8,7 +8,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url=""}) => {
+const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={}}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -40,7 +40,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
                             {
                                 keys.map((key,i)=>(
                                     <th key={i} id={key.id} order="none">
-                                        <Filter filter={key} setFilter={setFilter}/>
+                                        <Filter filter={key} setFilter={setFilter} selects={selects[key.id]}/>
                                     </th>
                                 ))
                             }

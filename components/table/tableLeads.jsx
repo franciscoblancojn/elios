@@ -21,7 +21,7 @@ const DEFAULTKEYS = [
         id : "continentName",
         name : "Continente",
         type : "string",
-        filter : 'search'
+        filter : 'select'
     },
     {
         id : "countryCode",
@@ -106,6 +106,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
+    const [selects,setSelects] = useState({})
 
     const loadLeads = async () => {
         setContent(<LoaderCircle/>)
@@ -128,6 +129,17 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
     const loadTable = async () => {
         await loadLeads()
     }
+    const loadSelects = async () => {
+        const result = await getLeads({
+            query:{
+                ...(query || {}),
+                ...queryUrl,
+                ...filter,
+            },
+            distinct:"continentName;countryCode;countryName;stateProv;city;os;platform;system;browser"
+        })
+        setSelects(result);
+    }
     useEffect(() => {
         const tbody = document.querySelector('.tbody')
         if(tbody){
@@ -149,9 +161,13 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
                 npage={npage} 
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
+                selects={selects}
                 />)
         }
-    }, [rows])
+    }, [rows,selects])
+    useEffect(() => {
+        loadSelects()
+    }, [])
     return <>{content}</>
 }
 
