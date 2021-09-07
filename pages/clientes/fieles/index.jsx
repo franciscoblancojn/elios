@@ -30,12 +30,20 @@ class Index extends React.Component {
                 >
                     <ExistOneSite>
                         <TableClientes
-                            minVentas={2}
+                            queryUrl={this.props.queryUrl || {}}
+                            query={{
+                                compras:{
+                                    $gte:2,
+                                }
+                            }}
                         ></TableClientes>
                     </ExistOneSite>
                 </Content>
             </Islogin>
         )
     }
+}
+export async function getServerSideProps({query}) {
+    return { props: { queryUrl : query } }
 }
 export default Index

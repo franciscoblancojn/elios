@@ -203,3 +203,37 @@ button,
         margin-right: 12px;
     }
 }
+.btn-delete-site{
+    .btnModal{
+        font-size: getRemSize(10px);
+        color: var(--peachy-pink);
+        display: inline-flex;
+        align-items: center;
+        justify-content: right;
+        cursor: pointer;
+        font-weight: 400;
+        text-transform: initial;
+        img{
+            width: 14px;
+            margin-right: 10px;
+        }
+    }
+    .verifit-delete{
+        padding: 20px;
+        width: 600px;
+        max-width: 100%;
+        text-align: center;
+        .content-button{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button{
+                max-width: 40%;
+                min-height: 40px;
+                &.delete{
+                    background: var(--peachy-pink);
+                }
+            }
+        }
+    }
+}

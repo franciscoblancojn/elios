@@ -1,213 +1,174 @@
-import React, { Component } from "react"
-import Link from 'next/link'
+import { useState, useEffect } from "react"
 
-import {getClientes} from "@/app/app"
-import {printValue,TableRow,printFilter} from "@/components/functions"
-import SvgView from "../svg/view"
-import SvgReload from "../svg/reload"
+import {getClients} from "@/app/app"
+import LoaderCircle from "@/components/loader/circle";
+import Table from "@/components/table/table";
 
+const DEFAULTKEYS = [
+    {
+        id : "_id",
+        name : "ID",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "ip",
+        name : "IP",
+        type : "string",
+        filter : 'search'
+    },
+    {
+        id : "continentName",
+        name : "Continente",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "countryCode",
+        name : "Pais Code",
+        type : "string",
+        filter : 'select',
+        image:true
+    },
+    {
+        id : "countryName",
+        name : "Pais",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "stateProv",
+        name : "State",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "city",
+        name : "Ciudad",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "os",
+        name : "OS",
+        type : "string",
+        filter : 'select',
+        image:true
+    },
+    {
+        id : "platform",
+        name : "Platforma",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "system",
+        name : "System",
+        type : "string",
+        filter : 'select',
+    },
+    {
+        id : "browser",
+        name : "Navegador",
+        type : "string",
+        filter : 'select',
+        image:true
+    },
+    {
+        id : "leads",
+        name : "Leads",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "form",
+        name : "Formularios",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "whatsapp",
+        name : "Whatsapps",
+        type : "string",
+        filter : 'search',
+    },
+    {
+        id : "compras",
+        name : "Compras",
+        type : "string",
+        filter : 'search',
+    },
+]
+const TableClients = ({query,KEYS=null,queryUrl={}}) => {
+    const [content, setContent] = useState(<LoaderCircle/>)
+    const [rows, setRows] = useState()
+    const [countItems, setCountItems] = useState()
+    const [page, setPage] = useState(1)
+    const [npage, setNpage] = useState(20)
+    const [filter, setFilter] = useState({})
+    const [selects,setSelects] = useState({})
 
-const KeysHead = {
-    _id      :"ID",
-    ip      :"IP",
-    continentCode: "Continente Code",
-    continentName: "Continente",
-    pais    :"Pais",
-    stateProv : "Estado",
-    countryCode  :"Country Code",
-    countryName  :"Ciudad",
-    os      :"OS",
-    browser :"Browser",
-    platform : "Platforma",
-    system : "System",
-
-    sesiones:"Sesiones",
-    events :"Eventos",
-    compras  :"Ventas",
-}
-class TableClientes extends TableRow {
-    saveRowF = (result) => {
-        var row = {}
-        result.forEach(e => {
-            var ip = e.ipAddress || e.ip || e.browser_ip
-            if(ip){
-                row[ip] = row[ip] ? row[ip] : {
-                    id:window.btoa(ip),
-                    marca:"",
-                    ip,
-                    pais:e.countryCode,
-                    ciudad:e.stateProv,
-                    os:e.os,
-                    browser:[],
-                    sesiones:0,
-                    eventos:0,
-                    ventas:0,
-                }
-                
-                if(!row[ip].pais)row[ip].pais = e.countryCode
-                if(!row[ip].ciudad)row[ip].ciudad = e.stateProv
-                if(!row[ip].os)row[ip].os = e.os
-
-                if(row[ip].browser.indexOf(e.browser) == -1){
-                    row[ip].browser.push(e.browser)
-                }
-                if(e?.event?.type == "load"){
-                    row[ip].sesiones++
-                }
-                row[ip].eventos++
-            }
-            if(e.type=="orders-paid"){
-                var ip = e.browser_ip || e.ip
-                row[ip].ventas ++
-            }
-        });
-        result = Object.values(row)
-        result = result.filter((e)=>
-            e.ventas >= (this.props.minVentas ?? 0) && e.ventas <= (this.props.maxVentas ?? 99999999999) &&
-            e.eventos >= (this.props.minEventos ?? 0) && e.eventos <= (this.props.maxEventos ?? 99999999999)
-
-        )
-        this.setState({
-            rowF:result
-        })
-        this.setRow(result)
-        this.setState({
-            load:false
-        })
-    }
-    onLoad = () => {
-        this.setState({
-            load:true
-        })
-        this.clearConfig()
-        const user = this.props.currentUser
-        const key = user.key
-        const host = this.props.getHostSelect()
-        if(!user.host.includes(host)){
-            this.setState({
-                error:true,
-                msjError:"Debe agregar un Sitio Web"
-            })
-            return;
-        }
-        var query = {}
-        var _return = {}
-
-        getClientes({
-            key,
-            host,
-            query,
-            _return,
-            respondOk : (r) => {
-                if(r.type == "error"){
-                    console.log(r);
-                    this.setState({
-                        error:true,
-                        msjError:r.msj
-                    })
-                }else{
-                    r = r.map((e)=>{
-                        return {
-                            ...e,
-                            sesiones : e?.sesiones || 0,
-                            events : e?.events || 0,
-                            compras : e?.compras?.length || 0
-                        }
-                    }).filter((e)=>
-                        e.compras >= (this.props.minVentas ?? 0) && e.compras <= (this.props.maxVentas ?? 99999999999) &&
-                        e.events >= (this.props.minEventos ?? 0) && e.events <= (this.props.maxEventos ?? 99999999999)
-
-                    )
-                    this.setState({
-                        rowF:r
-                    })
-                    this.setRow(r)
-                    this.setState({
-                        load:false
-                    })
-                }
+    const loadClients = async (defaultQuery={}) => {
+        setContent(<LoaderCircle/>)
+        const result = await getClients({
+            query:{
+                ...defaultQuery,
+                ...(query || {}),
+                ...queryUrl,
+                ...filter
             },
+            sort:{
+                date:-1
+            },
+            page,
+            npage,
         })
+        console.log(result);
+        setCountItems(result.countClients)
+        setRows(result.clients)
     }
-    render(){
-        const idKeys = Object.keys(KeysHead)
-        if(this.state.error)return<div className="content-table">{this.state.msjError || "Error"}</div>
-        if(this.state.load)return<div className="content-table">Load.....</div>
-        if(this.state.rowF.length ==0){
-            return (<div className="content-table">No existen elementos</div>)
+    const loadTable = async () => {
+        await loadClients()
+    }
+    const loadSelects = async () => {
+        const result = await getClients({
+            query:{
+                ...(query || {}),
+                ...queryUrl,
+                ...filter,
+            },
+            distinct:"continentName;countryCode;countryName;stateProv;city;os;platform;system;browser"
+        })
+        setSelects(result);
+    }
+    useEffect(() => {
+        const tbody = document.querySelector('.tbody')
+        if(tbody){
+            tbody.scrollTop = 0
         }
-        return  (
-            <div className="content-table">
-                <div className="top-table">
-                    {this.pagination()}
-                </div>
-                <div className="overflow">
-                    <table className="table-h">
-                        <thead className="filters">
-                            <tr >
-                                <th>
-                                    <button className="btn clear" onClick={this.clearFilter}>
-                                        <SvgReload></SvgReload>
-                                    </button>
-                                </th>
-                                {
-                                    idKeys.map((e,i)=>(
-                                        <th key={`f${i}`} id={e} order="none">
-                                            {printFilter({
-                                                key : e,
-                                                row : this.state.rowF,
-                                                search : this.search,
-                                                select : this.select,
-                                                searchObj : this.searchObj,
-                                                KeysHead
-                                            })}
-                                        </th>
-                                    ))
-                                }
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                {
-                                    idKeys.map((e,i)=>(
-                                        <th key={`h${i}`} id={e} order="none">
-                                            {KeysHead[e]}
-                                        </th>
-                                    ))
-                                }
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.rowShow.map((r,i)=>(
-                                    <tr key={`tr${i}`} ip={r.id}>
-                                        <td className="view">
-                                            <Link href={`/visitantes/${r._id}`}>
-                                                <a>
-                                                    <SvgView></SvgView>
-                                                </a>
-                                            </Link>
-                                        </td>
-                                        {
-                                            idKeys.map((e,j)=>(
-                                                <td key={`td${i}-${j}`} id={e}>
-                                                    {printValue({
-                                                        key:e,
-                                                        value:r[e],
-                                                        KeysHead
-                                                    })}
-                                                </td>
-                                            ))
-                                        }
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        )
-    }
+    }, [content])
+    useEffect(() => {
+        loadTable()
+    }, [page,npage,filter])
+    useEffect(() => {
+        if(rows){
+            setContent(<Table 
+                url="visitantes"
+                rows={rows} 
+                countItems={countItems} 
+                keys={KEYS || DEFAULTKEYS} 
+                page={page} 
+                setPage={setPage} 
+                npage={npage} 
+                setNpage={setNpage} 
+                setFilter={(value)=>{setPage(1);setFilter(value)}}
+                selects={selects}
+                />)
+        }
+    }, [rows,selects])
+    useEffect(() => {
+        loadSelects()
+    }, [])
+    return <>{content}</>
 }
-export default TableClientes
+export default TableClients

@@ -1,27 +1,14 @@
-// .page-leads{
-//     .table-h{
-//         margin-right: 20px;
-//         tr{
-//             td{
-//                 min-width: 120px;
-//                 max-width: 250px;
-//                 text-overflow: ellipsis; /* will make [...] at the end */
-//                 width: 370px; /* change to your preferences */
-//                 white-space: nowrap; /* paragraph to one line */
-//                 overflow:hidden; /* older browsers */
-//             }
-//         }
-//     }
-//     .titleP{
-//         font-size: getRemSize(35px);
-//         font-weight: 900;
-//     }
-//     .id{
-//         @extend .font;
-//         font-size: getRemSize(14px);
-//         line-height: 1.42;
-//         letter-spacing: 0.38px;
-//         color: var(--pinkish-grey-three);
-//         margin-bottom: 25px;
-//     }
-// }
+.page-leads{
+    .titleP{
+        font-size: getRemSize(35px);
+        font-weight: 900;
+    }
+    .id{
+        @extend .font;
+        font-size: getRemSize(14px);
+        line-height: 1.42;
+        letter-spacing: 0.38px;
+        color: var(--pinkish-grey-three);
+        margin-bottom: 25px;
+    }
+}

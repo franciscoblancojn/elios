@@ -196,3 +196,21 @@
         letter-spacing: 0.48px;
     }
 }
+.contectCardSite{
+    .card{
+        margin: 0;
+        width: auto;
+        min-height: auto;
+        margin-bottom: 25px;
+        text-align: center;
+        .card-head{
+            justify-content: center;
+        }
+        .card-body{
+            @extend .font;
+            font-size: getRemSize(25px);
+            font-weight: bold;
+            color: var(--brownish-grey-three);
+        }
+    }
+}

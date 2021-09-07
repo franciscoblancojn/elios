@@ -2,9 +2,9 @@ import { useState, useEffect } from "react"
 
 import {getLeads} from "@/app/app"
 import LoaderCircle from "@/components/loader/circle";
-import Table from "@/components/table/table_v2";
+import Table from "@/components/table/table";
 
-const KEYS = [
+const DEFAULTKEYS = [
     {
         id : "_id",
         name : "ID",
@@ -21,60 +21,69 @@ const KEYS = [
         id : "continentName",
         name : "Continente",
         type : "string",
-        filter : 'search'
+        filter : 'select'
     },
     {
         id : "countryCode",
         name : "Pais Code",
         type : "string",
-        filter : 'search'
+        filter : 'select',
+        image:true
     },
     {
         id : "countryName",
         name : "Pais",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "stateProv",
         name : "State",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "city",
         name : "Ciudad",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "os",
         name : "OS",
         type : "string",
-        filter : 'search'
+        filter : 'select',
+        image:true
     },
     {
         id : "platform",
         name : "Platforma",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "system",
         name : "System",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "browser",
         name : "Navegador",
         type : "string",
-        filter : 'search'
+        filter : 'select',
+        image:true
     },
     {
         id : "pageUrl",
         name : "Url",
-        type : "string",
+        type : "a",
+        filter : 'search'
+    },
+    {
+        id : "event",
+        name : "Event",
+        type : "object",
         filter : 'search'
     },
     {
@@ -90,21 +99,22 @@ const KEYS = [
         filter : 'date'
     },
 ]
-const TableLeads = ({query}) => {
+const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
+    const [selects,setSelects] = useState({})
 
-    const loadLeads = async (defaultQuery={event:{$exists: true}}) => {
+    const loadLeads = async () => {
         setContent(<LoaderCircle/>)
         const result = await getLeads({
             query:{
-                ...defaultQuery,
                 ...(query || {}),
-                ...filter
+                ...queryUrl,
+                ...filter,
             },
             sort:{
                 date:-1
@@ -119,6 +129,17 @@ const TableLeads = ({query}) => {
     const loadTable = async () => {
         await loadLeads()
     }
+    const loadSelects = async () => {
+        const result = await getLeads({
+            query:{
+                ...(query || {}),
+                ...queryUrl,
+                ...filter,
+            },
+            distinct:"continentName;countryCode;countryName;stateProv;city;os;platform;system;browser"
+        })
+        setSelects(result);
+    }
     useEffect(() => {
         const tbody = document.querySelector('.tbody')
         if(tbody){
@@ -130,9 +151,24 @@ const TableLeads = ({query}) => {
     }, [page,npage,filter])
     useEffect(() => {
         if(rows){
-            setContent(<Table rows={rows} countItems={countItems} keys={KEYS} page={page} setPage={setPage} npage={npage} setNpage={setNpage} setFilter={(value)=>{setPage(1);setFilter(value)}}/>)
+            setContent(<Table 
+                url="leads"
+                rows={rows} 
+                countItems={countItems} 
+                keys={KEYS || DEFAULTKEYS} 
+                page={page} 
+                setPage={setPage} 
+                npage={npage} 
+                setNpage={setNpage} 
+                setFilter={(value)=>{setPage(1);setFilter(value)}}
+                selects={selects}
+                />)
         }
-    }, [rows])
+    }, [rows,selects])
+    useEffect(() => {
+        loadSelects()
+    }, [])
     return <>{content}</>
 }
+
 export default TableLeads

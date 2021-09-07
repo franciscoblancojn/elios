@@ -70,3 +70,8 @@
 .word-brear-all{
     word-break: break-all;
 }
+.ellipsis{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

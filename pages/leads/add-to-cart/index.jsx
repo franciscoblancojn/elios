@@ -30,28 +30,71 @@ class Index extends React.Component {
                 >
                     <ExistOneSite>
                         <TableLeads 
+                        queryUrl={this.props.queryUrl || {}}
                         query={{
                             "type": "checkouts-update"
                         }}
-                        keys={{
-                            _id      :"ID",
-                            // ip      :"IP",
-                            // user_id         :"User ID",
-
-                            billing_address:"Billing Address",
-                            shipping_address:"Shipping Address",
-                            currency    :"Currency",
-                            customer    :"Customer",
-                            line_items :"Items",
-
-                            // phone  :"Phone",
-                            updated_at:"Date Update",
-                            date:"Fecha",
-                        
-                        }}
-                        noPrint={[
-                            "default_address",
-                            "properties"
+                        KEYS={[
+                            {
+                                id : "_id",
+                                name : "ID",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "user_id",
+                                name : "User ID",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "ip",
+                                name : "IP",
+                                type : "string",
+                                filter : 'search'
+                            },
+                            {
+                                id : "currency",
+                                name : "Currency",
+                                type : "string",
+                                filter : 'select',
+                            },
+                            {
+                                id : "phone",
+                                name : "Phone",
+                                type : "tel",
+                                filter : 'search'
+                            },
+                            {
+                                id : "customer",
+                                name : "Customer",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "shipping_address",
+                                name : "Shipping Address",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "billing_address",
+                                name : "Billing Address",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "line_items",
+                                name : "Line Items",
+                                type : "object",
+                                filter : 'search'
+                            },
+                            {
+                                id : "date",
+                                name : "Date",
+                                type : "date",
+                                filter : 'date'
+                            },
                         ]}
                         ></TableLeads>
                     </ExistOneSite>
@@ -59,5 +102,8 @@ class Index extends React.Component {
             </Islogin>
         )
     }
+}
+export async function getServerSideProps({query}) {
+    return { props: { queryUrl : query } }
 }
 export default Index
