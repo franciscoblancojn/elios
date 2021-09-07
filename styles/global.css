@@ -1933,7 +1933,9 @@ footer {
   align-items: center;
   justify-content: center;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 9999999999999999;
+  background-color: var(--white); }
   .loader.circle::before {
     content: '';
     display: block;
