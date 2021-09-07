@@ -93,7 +93,6 @@ const Site = ({host}) => {
                     </div>
                 </div>
             </div>
-        {JSON.stringify(host)}
     </div>
 }
 

@@ -472,7 +472,7 @@ button-select .card-simple ul,
 .card-simple button-facebook,
 .card-simple .btn-facebook,
 .card-simple button-correo,
-.card-simple .btn-correo, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .maintenance h1, .FilterDateShow .textb, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id, .page-leads .id {
+.card-simple .btn-correo, .contectCardSite .card .card-body, .ToCreateAccount h3, .terminos_condiciones, .header-drop-down .title, .content-points .point .span, footer, .msg-top h1, .msg-top p, .titleIcon h1, .titleIcon h2, .list-number li, .table-h th, .textItem, .maintenance h1, .FilterDateShow .textb, .page-login .LoginRS h1, .page-login .LoginRS h2, .page-questionnaire .contentTitle h1, .page-plan .contentTitle h1, .page-questionnaire .contentTitle h2, .page-plan .contentTitle h2, .page-email-send h1, .page-email-send p, .page404 .text, .page404 .p, .page-visitantes .id, .page-leads .id {
   font-family: "brandon-grotesque"; }
   .font-btn, .font-btn-2, button-2,
   .btn-2,
@@ -1033,7 +1033,14 @@ input[type="email"],
   margin: 0;
   width: auto;
   min-height: auto;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  text-align: center; }
+  .contectCardSite .card .card-head {
+    justify-content: center; }
+  .contectCardSite .card .card-body {
+    font-size: 2.34375rem;
+    font-weight: bold;
+    color: var(--brownish-grey-three); }
 
 .formLogin,
 .CreateAccount {
