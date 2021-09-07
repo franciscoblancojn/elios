@@ -2,23 +2,22 @@ import { useState, useEffect } from "react"
 
 import {getClientsLive} from "@/app/app";
 
-import LoaderCircle from "@/components/loader/circle";
-
 const UserInLive = () => {
-    const [content, setContent] = useState(<LoaderCircle/>)
+    const [userInLive, setUserInLive] = useState(0)
     const loadContent = async () => {
         const usersLive = await getClientsLive()
-        setContent(
-        <div className="user-live">
-            <img src="/icons/en-vivo.png" alt="en-vivo" />
-            <span className="count">{usersLive}</span>
-            <span className="text">Visitantes</span>
-        </div>
-        )
+        setUserInLive(usersLive)
+        setTimeout(()=>{
+            loadContent()
+        },5000)
     }
     useEffect( async () => {
         loadContent()
     }, [])
-    return <>{content}</>
+    return <div className="user-live">
+        <img src="/icons/en-vivo.png" alt="en-vivo" />
+        <span className="count">{userInLive}</span>
+        <span className="text">Visitantes</span>
+    </div>
 }
 export default UserInLive
