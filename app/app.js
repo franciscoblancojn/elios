@@ -18,3 +18,6 @@ export const updateSite = a_updateSite
 
 import a_getClientsLive from '@/app/getClientsLive'
 export const getClientsLive = a_getClientsLive
+
+import a_PutQuestionnaire from '@/app/PutQuestionnaire'
+export const PutQuestionnaire = a_PutQuestionnaire
