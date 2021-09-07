@@ -21,6 +21,8 @@
 @for $i from 1 through 12 {
     .col-#{$i}{
         width: (100% * ($i /12) );
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 

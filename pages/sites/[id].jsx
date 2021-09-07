@@ -14,9 +14,7 @@ const Index = ({id}) => {
             className="cMenu page-leads"
             >
                 <ExistOneSite>
-                    <div className="content-table">
-                        <Site host={id}/>
-                    </div>
+                    <Site host={id}/>
                 </ExistOneSite>
             </Content>
         </Islogin>
