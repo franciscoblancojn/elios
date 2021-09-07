@@ -10,19 +10,18 @@ const FilterDateShow = ({onChange=console.log}) => {
     const changeDate = (value) => {
         setInit(new Date(value.startDate.getTime()))
         setFin(new Date(value.endDate.getTime()))
-        
-        const query = {
-            date:{
-                $gte:init,
-                $lt:fin
-            }
-        }
-        onChange(query)
     }
 
     useEffect(() => {
         const text = init.toDateString() + " - " + fin.toDateString()
         setBtnText(text)
+        const query = {
+            date:{
+                $gte:init.getTime(),
+                $lt:fin.getTime()
+            }
+        }
+        onChange(query)
     }, [init,fin])
     useEffect(() => {
         const today = new Date()
@@ -30,7 +29,7 @@ const FilterDateShow = ({onChange=console.log}) => {
         setInit(today)
     }, [])
     return <div className="FilterDateShow">
-        <span>Filtrar por fecha:</span>
+        <span className="textb">Filtrar por fecha:</span>
         <FilterDate 
             btn={btnText}
             onChange={changeDate}
