@@ -57,7 +57,7 @@ class Index extends React.Component {
                                 id : "currency",
                                 name : "Currency",
                                 type : "string",
-                                filter : 'search'
+                                filter : 'select',
                             },
                             {
                                 id : "phone",

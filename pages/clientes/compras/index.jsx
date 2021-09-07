@@ -75,13 +75,13 @@ class Index extends React.Component {
                                 id : "currency",
                                 name : "Currency",
                                 type : "string",
-                                filter : 'search'
+                                filter : 'select',
                             },
                             {
                                 id : "gateway",
                                 name : "Gateway",
                                 type : "string",
-                                filter : 'search'
+                                filter : 'select',
                             },
                             {
                                 id : "subtotal_price",
