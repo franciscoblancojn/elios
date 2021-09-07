@@ -61,8 +61,6 @@ class Questionnaire extends React.Component {
         e.preventDefault()
         if(!this.validatePreSend())return;
         PutQuestionnaire({
-            uid:this.props.currentUser.uid,
-            email:this.props.currentUser.email,
             questionnaire:{
                 I_am : this.state.I_am,
                 n_employees : this.state.n_employees,

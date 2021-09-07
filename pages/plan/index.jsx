@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Content from "@/components/content";
+import Islogin from "@/components/checkLogin/isLogin";
 import MenuSingle from "@/components/header/single";
 import Points from '@/components/points';
 import TitlePlan from '@/components/title/titlePlan';
@@ -95,18 +96,20 @@ const ArrayPlanes = [
 class PlanesPage extends React.Component {
     render() {
         return (
-            <Content 
-            title="Planes"
-            className="page-plan cMenu"
-            >
-                <br />
-                <Points
-                    n={2}
-                    s={1}
-                ></Points>
-                <TitlePlan></TitlePlan>
-                <Planes planes={ArrayPlanes}></Planes>
-            </Content>
+            <Islogin>
+                <Content 
+                title="Planes"
+                className="page-plan cMenu"
+                >
+                    <br />
+                    <Points
+                        n={2}
+                        s={1}
+                    ></Points>
+                    <TitlePlan></TitlePlan>
+                    <Planes planes={ArrayPlanes}></Planes>
+                </Content>
+            </Islogin>
         )
     }
 }
