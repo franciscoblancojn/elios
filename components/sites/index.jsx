@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import {getLeads} from "@/app/app"
 
+import {trunkNumber} from '@/functions/index'
+
 import Card from "@/components/card/card";
 import UserInLive from "@/components/msg/userInLive";
 import FilterDateShow from "@/components/filters/dateShow"
@@ -42,17 +44,17 @@ const Site = ({host}) => {
             }
         })).countLeads
         const info = {
-            sesiones,
-            eventos : result._id.length,
-            visitantes : result.ipAddress.length,
-            compras
+            sesiones : trunkNumber(sesiones),
+            eventos : trunkNumber(result._id.length),
+            visitantes : trunkNumber(result.ipAddress.length),
+            compras : trunkNumber(compras)
         }
         setInfoSite(info);
     }
     useEffect(() => {
         loadInfoHost()
     }, [query])
-    return <div className="container" style={{maxWidth:"1000px"}}>
+    return <div className="container" style={{maxWidth:"1000px",marginTop:"25px"}}>
             <div className="row">
                 <div className="col-12">
                     <div className="flex flex-between flex-align-center">
@@ -64,7 +66,7 @@ const Site = ({host}) => {
                         </Link>
                         <UserInLive/>
                     </div>
-                    <h1 className="title-1">
+                    <h1 className="title-1 ellipsis">
                         Hola {host}
                     </h1>
                 </div>

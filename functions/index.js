@@ -24,3 +24,6 @@ export const redirect = f_redirect
 
 import f_reloadUser from '@/functions/reloadUser'
 export const reloadUser = f_reloadUser
+
+import f_trunkNumber from '@/functions/trunkNumber'
+export const trunkNumber = f_trunkNumber

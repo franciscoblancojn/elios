@@ -1726,6 +1726,11 @@ footer {
 .word-brear-all {
   word-break: break-all; }
 
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
 .filters.filters {
   background: linear-gradient(to bottom, var(--baby-blue-two), var(--pastel-blue)); }
   .filters.filters .filtro {
