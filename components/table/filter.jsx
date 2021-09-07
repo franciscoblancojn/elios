@@ -30,7 +30,7 @@ const Filter = ({filter,setFilter,selects=[]}) => {
                 setFilter(query)
             }
         }/>,
-        select : <FilterSelect id={filter.id} list={selects}/>
+        select : <FilterSelect id={filter.id} list={selects} selected={(select,id)=>{setFilter({[id]:select})}}/>
     }
     if(swFilterType[filter.filter]){
         return swFilterType[filter.filter]
