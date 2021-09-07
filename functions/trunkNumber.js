@@ -1,4 +1,7 @@
 const trunkNumber = (number) => {
+    if(!number){
+        return 0
+    }
     if(number >= 1000000000 ){
         return `${(number/1000000000).toFixed(2)}B`
     }

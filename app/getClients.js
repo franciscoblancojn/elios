@@ -3,7 +3,7 @@ import {getSiteSelected} from "@/functions/index";
 
 const getClients = async ({npage=10,page=1,query={},sort={},distinct}) => {
     const arg = {
-        host : getSiteSelected().host,
+        host : getSiteSelected()?.host || "",
         npage,
         page,
         query : JSON.stringify(query),

@@ -5,7 +5,11 @@ import {getClientsLive} from "@/app/app";
 const UserInLive = () => {
     const [userInLive, setUserInLive] = useState(0)
     const loadContent = async () => {
-        const usersLive = await getClientsLive()
+        const result = await getClientsLive()
+        if(result.error){
+            return;
+        }
+        const usersLive = result.count
         setUserInLive(usersLive)
         setTimeout(()=>{
             loadContent()

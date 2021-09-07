@@ -8,6 +8,9 @@ const getClientsLive = async (min = 5) => {
         },
     }
     const result = await getLeads({distinct,query})
-    return result.ipAddress.length
+    return {
+        ...result,
+        count : result?.ipAddress?.length || 0
+    }
 }
 export default getClientsLive

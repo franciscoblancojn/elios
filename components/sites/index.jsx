@@ -46,8 +46,8 @@ const Site = ({host}) => {
         })).countLeads
         const info = {
             sesiones : trunkNumber(sesiones),
-            eventos : trunkNumber(result._id.length),
-            visitantes : trunkNumber(result.ipAddress.length),
+            eventos : trunkNumber(result?._id?.length),
+            visitantes : trunkNumber(result?.ipAddress?.length),
             compras : trunkNumber(compras)
         }
         setInfoSite(info);
