@@ -21,57 +21,57 @@ const DEFAULTKEYS = [
         id : "continentName",
         name : "Continente",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "countryCode",
         name : "Pais Code",
         type : "string",
-        filter : 'search',
+        filter : 'select',
         image:true
     },
     {
         id : "countryName",
         name : "Pais",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "stateProv",
         name : "State",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "city",
         name : "Ciudad",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "os",
         name : "OS",
         type : "string",
-        filter : 'search',
+        filter : 'select',
         image:true
     },
     {
         id : "platform",
         name : "Platforma",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "system",
         name : "System",
         type : "string",
-        filter : 'search'
+        filter : 'select',
     },
     {
         id : "browser",
         name : "Navegador",
         type : "string",
-        filter : 'search',
+        filter : 'select',
         image:true
     },
     {
@@ -106,6 +106,7 @@ const TableClients = ({query,KEYS=null,queryUrl={}}) => {
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
+    const [selects,setSelects] = useState({})
 
     const loadClients = async (defaultQuery={}) => {
         setContent(<LoaderCircle/>)
@@ -129,6 +130,17 @@ const TableClients = ({query,KEYS=null,queryUrl={}}) => {
     const loadTable = async () => {
         await loadClients()
     }
+    const loadSelects = async () => {
+        const result = await getClients({
+            query:{
+                ...(query || {}),
+                ...queryUrl,
+                ...filter,
+            },
+            distinct:"continentName;countryCode;countryName;stateProv;city;os;platform;system;browser"
+        })
+        setSelects(result);
+    }
     useEffect(() => {
         const tbody = document.querySelector('.tbody')
         if(tbody){
@@ -150,9 +162,13 @@ const TableClients = ({query,KEYS=null,queryUrl={}}) => {
                 npage={npage} 
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
+                selects={selects}
                 />)
         }
-    }, [rows])
+    }, [rows,selects])
+    useEffect(() => {
+        loadSelects()
+    }, [])
     return <>{content}</>
 }
 export default TableClients
