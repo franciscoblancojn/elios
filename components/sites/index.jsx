@@ -8,6 +8,7 @@ import {trunkNumber} from '@/functions/index'
 import Card from "@/components/card/card";
 import UserInLive from "@/components/msg/userInLive";
 import FilterDateShow from "@/components/filters/dateShow"
+import BtnDeleteSite from "@/components/btn/btnDeleteSite"
 
 import ArrowRight from "@/components/svg/right-arrow"
 
@@ -54,7 +55,7 @@ const Site = ({host}) => {
     useEffect(() => {
         loadInfoHost()
     }, [query])
-    return <div className="container" style={{maxWidth:"1000px",marginTop:"25px"}}>
+    return <div className="container" style={{width:"1000px",marginTop:"25px"}}>
             <div className="row">
                 <div className="col-12">
                     <div className="flex flex-between flex-align-center">
@@ -92,6 +93,9 @@ const Site = ({host}) => {
                         <div className="col-6">
                             <Card title="Compras">{infoSite.compras}</Card>
                         </div>
+                    </div>
+                    <div style={{textAlign:"right"}}>
+                        <BtnDeleteSite site={host}/>
                     </div>
                 </div>
             </div>

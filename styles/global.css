@@ -783,6 +783,33 @@ button-correo,
     width: 34.5px;
     margin-right: 12px; }
 
+.btn-delete-site .btnModal {
+  font-size: 0.9375rem;
+  color: var(--peachy-pink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: right;
+  cursor: pointer;
+  font-weight: 400;
+  text-transform: initial; }
+  .btn-delete-site .btnModal img {
+    width: 14px;
+    margin-right: 10px; }
+.btn-delete-site .verifit-delete {
+  padding: 20px;
+  width: 600px;
+  max-width: 100%;
+  text-align: center; }
+  .btn-delete-site .verifit-delete .content-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .btn-delete-site .verifit-delete .content-button button {
+      max-width: 40%;
+      min-height: 40px; }
+      .btn-delete-site .verifit-delete .content-button button.delete {
+        background: var(--peachy-pink); }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
