@@ -9,18 +9,13 @@ import Card from "@/components/card/card";
 import UserInLive from "@/components/msg/userInLive";
 import FilterDateShow from "@/components/filters/dateShow"
 import BtnDeleteSite from "@/components/btn/btnDeleteSite"
+import LoaderCircle from "@/components/loader/circle";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
 const Site = ({host}) => {
-    const today = new Date()
-    today.setMonth(today.getMonth() - 1)
-    const [query, setQuery] = useState({
-        date:{
-            $gte:(today).getTime(),
-            $lt:(new Date()).getTime()
-        }
-    })
+    const [loader, setLoader] = useState(true)
+    const [query, setQuery] = useState(null)
     const [infoSite, setInfoSite] = useState({
         sesiones : 0,
         eventos : 0,
@@ -51,11 +46,27 @@ const Site = ({host}) => {
             compras : trunkNumber(compras)
         }
         setInfoSite(info);
+        setLoader(false)
     }
     useEffect(() => {
-        loadInfoHost()
+        // setLoader(true)
+        console.log(query);
+        if(query){
+            loadInfoHost()
+        }
     }, [query])
-    return <div className="container" style={{width:"1000px",marginTop:"25px"}}>
+    useEffect(() => {
+        const today = new Date()
+        today.setMonth(today.getMonth() - 1)
+        setQuery({
+            date:{
+                $gte:(today).getTime(),
+                $lt:(new Date()).getTime()
+            }
+        })
+    }, [])
+    return <>{loader ? <LoaderCircle/> :
+        <div className="container" style={{width:"1000px",marginTop:"25px"}}>
             <div className="row">
                 <div className="col-12">
                     <div className="flex flex-between flex-align-center">
@@ -99,7 +110,8 @@ const Site = ({host}) => {
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+    }</>
 }
 
 export default Site
