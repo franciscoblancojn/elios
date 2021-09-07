@@ -2,7 +2,7 @@ import Modal from "@/components/modal/modal"
 import { DateRangePicker } from 'react-date-range';
 import { useState,useEffect } from "react"
 
-const FilterDate = ({onChange=()=>{}}) => {
+const FilterDate = ({onChange=()=>{},btn="Filter by Date"}) => {
     const [countChange, setCountChange] = useState(0)
     const [open, setOpen] = useState(false)
     const [dateRange, setDateRange] = useState({
@@ -29,7 +29,7 @@ const FilterDate = ({onChange=()=>{}}) => {
     }, [countChange]);
     return (
         <Modal
-            btn="Filter by Date"
+            btn={btn}
             open={open}
             toggelModal={toggelModal}
             closeModal={closeModal}

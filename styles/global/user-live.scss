@@ -1,5 +1,5 @@
 .user-live{
-    font-size: 54px;
+    font-size: getRemSize(30px);
     color: var(--greyish-three);
     display: flex;
     align-items: center;

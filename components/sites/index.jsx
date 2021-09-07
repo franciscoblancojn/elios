@@ -5,6 +5,7 @@ import {getUser} from "@/functions/index";
 
 import LoaderCircle from "@/components/loader/circle";
 import UserInLive from "@/components/msg/userInLive";
+import FilterDateShow from "@/components/filters/dateShow"
 
 import ArrowRight from "@/components/svg/right-arrow"
 
@@ -24,6 +25,19 @@ const Site = ({host}) => {
                         </a>
                     </Link>
                     <UserInLive/>
+                </div>
+                <h1 className="title-1">
+                    Hola {site.host}
+                </h1>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-6">
+
+                        </div>
+                        <div className="col-6">
+                            <FilterDateShow/>
+                        </div>
+                    </div>
                 </div>
                 {JSON.stringify(site)}
             </div>
