@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import {getLeads} from "@/app/app"
+
 import LoaderCircle from "@/components/loader/circle";
 import Table from "@/components/table/table";
 

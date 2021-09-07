@@ -49,7 +49,7 @@ const BtnSites = ({className}) => {
         {
             (sites.length == 0)?
             (
-                <Link href="/">
+                <Link href="/add-site">
                     <a 
                     className={`btn-2 ${className || ""}`}
                     >
@@ -79,7 +79,7 @@ const BtnSites = ({className}) => {
                             </div>
                         </li>
                         <li>
-                            <Link href="/">
+                            <Link href="/add-site">
                                 <a 
                                 className={`btn ${className|| ""}`}
                                 >

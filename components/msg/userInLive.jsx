@@ -4,9 +4,10 @@ import {getClientsLive} from "@/app/app";
 
 const UserInLive = () => {
     const [userInLive, setUserInLive] = useState(0)
+    const [ifRequest, setIfRequest] = useState(true)
     const loadContent = async () => {
         const result = await getClientsLive()
-        if(result.error){
+        if(result.error && ifRequest){
             return;
         }
         const usersLive = result.count
@@ -17,6 +18,9 @@ const UserInLive = () => {
     }
     useEffect( async () => {
         loadContent()
+        return () => {
+            setIfRequest(false)
+        }
     }, [])
     return <div className="user-live">
         <img src="/icons/en-vivo.png" alt="en-vivo" />
