@@ -1,4 +1,5 @@
 import {saveCookie} from '@/functions/index'
+import {getUser} from "@/functions/index";
 
 import {CreateAccount} from '@/app/app'
 

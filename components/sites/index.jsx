@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import Link from 'next/link'
 
-import {getUser,reloadUser} from "@/functions/index";
+import {getUser} from "@/functions/index";
+import {getClientsLive} from "@/app/app";
 
 import LoaderCircle from "@/components/loader/circle";
 
@@ -10,6 +11,8 @@ import ArrowRight from "@/components/svg/right-arrow"
 const Site = ({host}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const loadContent = async () => {
+        const result = await getClientsLive()
+        console.log(result);
         const user = getUser()
         const sites = user.sites || []
         const site = sites.find((element)=>element.host=host)

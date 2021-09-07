@@ -15,3 +15,6 @@ export const deleteSite = a_deleteSite
 
 import a_updateSite from '@/app/updateSite'
 export const updateSite = a_updateSite
+
+import a_getClientsLive from '@/app/getClientsLive'
+export const getClientsLive = a_getClientsLive
