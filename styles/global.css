@@ -1899,6 +1899,16 @@ footer {
 @keyframes girar {
   to {
     transform: rotateZ(360deg); } }
+.user-live {
+  font-size: 54px;
+  color: var(--greyish-three);
+  display: flex;
+  align-items: center; }
+  .user-live img {
+    margin-right: 20px; }
+  .user-live .count {
+    margin-right: 5px; }
+
 .page-login .LoginForm,
 .page-login .LoginRS {
   min-height: 50vh;

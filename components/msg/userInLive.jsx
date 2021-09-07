@@ -9,7 +9,7 @@ const UserInLive = () => {
     const loadContent = async () => {
         const usersLive = await getClientsLive()
         setContent(
-        <div className="en-vivo">
+        <div className="user-live">
             <img src="/icons/en-vivo.png" alt="en-vivo" />
             <span className="count">{usersLive}</span>
             <span className="text">Visitantes</span>
