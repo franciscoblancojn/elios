@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import Islogin from "@/components/checkLogin/isLogin";
 import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
-import SingleLeads from "@/components/table/single/leads";
+import Site from "@/components/sites";
 
 
 const Index = ({id}) => {
@@ -14,7 +14,9 @@ const Index = ({id}) => {
             className="cMenu page-leads"
             >
                 <ExistOneSite>
-                    {id}
+                    <div className="content-table">
+                        <Site host={id}/>
+                    </div>
                 </ExistOneSite>
             </Content>
         </Islogin>
