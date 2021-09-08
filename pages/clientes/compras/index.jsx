@@ -12,7 +12,7 @@ class Index extends React.Component {
             <Islogin>
                 <Lang>
                     <Content 
-                    title="clients"
+                    title="compras"
                     className="cMenu page-leads"
                     >
                         <ExistOneSite>

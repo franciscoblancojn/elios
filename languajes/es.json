@@ -2,6 +2,18 @@
     "title":{
 
     },
+    "titlePage":{
+        "visitantes":"Visitantes",
+        "leads":"Leads",
+        "add-to-card":"Agregados al carrito",
+        "whatsapp":"Whatsapp",
+        "formularios":"Formularios",
+        "clients":"Clientes",
+        "compras":"Compras",
+        "fieles":"Fieles",
+        "posible-recurrencia":"Posible Recurrenia",
+        "cliente-potencial":"Cliente Potencial"
+    },
     "before":{
         "inicio":"Volver al Inicio"
     },

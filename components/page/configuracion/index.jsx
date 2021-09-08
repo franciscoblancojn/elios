@@ -8,6 +8,7 @@ import SvgInfo from "@/components/svg/info";
 const Configuracion = ({lang}) => {
     return (
         <Content 
+        lang={lang}
         title={lang.configuraciones.title}
         className="cMenu page-configuracion"
         >

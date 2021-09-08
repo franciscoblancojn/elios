@@ -12,7 +12,7 @@ class Index extends React.Component {
             <Islogin>
                 <Lang>
                     <Content 
-                    title="Whatsapp"
+                    title="whatsapp"
                     className="cMenu page-leads"
                     >
                         <ExistOneSite>
