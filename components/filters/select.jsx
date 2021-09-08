@@ -9,7 +9,7 @@ const FilterSelect = ({id,list,selected=console.log}) => {
             <option disabled value="">Select</option>
             {list.map((e,i)=>{
                 if(!e)return;
-                return <option id={`s-${id}-${i}`}>{e}</option>
+                return <option id={`s-${id}-${i}`} key={`s-${id}-${i}`}>{e}</option>
             })}
         </select>
         <button className="btn" onClick={()=>{selected(select,id)}}><SvgSearch></SvgSearch></button>

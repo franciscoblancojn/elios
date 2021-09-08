@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import {getClients} from "@/app/app"
+
 import LoaderCircle from "@/components/loader/circle";
 import Table from "@/components/table/table";
 
@@ -99,7 +100,7 @@ const DEFAULTKEYS = [
         filter : 'search',
     },
 ]
-const TableClients = ({query,KEYS=null,queryUrl={}}) => {
+const TableClients = ({query,KEYS=null,queryUrl={},lang}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -163,6 +164,7 @@ const TableClients = ({query,KEYS=null,queryUrl={}}) => {
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
                 selects={selects}
+                lang={lang}
                 />)
         }
     }, [rows,selects])

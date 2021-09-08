@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import {getLeads} from "@/app/app"
+
 import LoaderCircle from "@/components/loader/circle";
 import Table from "@/components/table/table";
 
@@ -99,7 +100,7 @@ const DEFAULTKEYS = [
         filter : 'date'
     },
 ]
-const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
+const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -162,6 +163,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={}}) => {
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
                 selects={selects}
+                lang={lang}
                 />)
         }
     }, [rows,selects])

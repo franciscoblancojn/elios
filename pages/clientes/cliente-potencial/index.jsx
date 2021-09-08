@@ -3,43 +3,31 @@ import React, { Component } from "react"
 import Islogin from "@/components/checkLogin/isLogin";
 import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
+import Lang from "@/components/lang/lang";
 import TableClientes from "@/components/table/tableClientes";
 
-import languajes from "@/languajes/languaje";
-
 class Index extends React.Component {
-    state = {
-        title : "Cliente Potencial",
-    }
-    loadLanguajes = async () => {
-        const lang = await languajes()
-        this.setState({
-            ...this.state,
-            title:lang.menu.potencial
-        })
-    }
-    componentDidMount(){
-        this.loadLanguajes()
-    }
     render() {
         return (
             <Islogin>
-                <Content 
-                title={this.state.title}
-                className="cMenu clientes"
-                >
-                    <ExistOneSite>
-                        <TableClientes
-                            queryUrl={this.props.queryUrl || {}}
-                            query={{
-                                compras:0,
-                                leads:{
-                                    $gte:10,
-                                }
-                            }}
-                        ></TableClientes>
-                    </ExistOneSite>
-                </Content>
+                <Lang>
+                    <Content 
+                    title="cliente-potencial"
+                    className="cMenu clientes"
+                    >
+                        <ExistOneSite>
+                            <TableClientes
+                                queryUrl={this.props.queryUrl || {}}
+                                query={{
+                                    compras:0,
+                                    leads:{
+                                        $gte:10,
+                                    }
+                                }}
+                            ></TableClientes>
+                        </ExistOneSite>
+                    </Content>
+                </Lang>
             </Islogin>
         )
     }
