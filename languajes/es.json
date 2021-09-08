@@ -107,7 +107,22 @@
         "pageUrl":"Url",
         "event":"Event",
         "get":"GET",
-        "date":"Fecha"
+        "date":"Fecha",
+        "email":"Correo",
+        "phone":"Telefono",
+        "browser_ip":"IP",
+        "order_number":"Order Id",
+        "order_status_url":"Order Url",
+        "currency":"Moneda",
+        "gateway":"Metodo de Pago",
+        "subtotal_price":"Precio",
+        "total_weight":"Peso",
+        "customer":"Cliente",
+        "billing_address":"Direccion",
+        "shipping_address":"Direccion de Envio",
+        "line_items":"Productos",
+        "discount_codes":"Descuentos",
+        "note":"Notas"
     },
     "login":{
         "title":"Ingresar",
