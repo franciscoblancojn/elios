@@ -8,7 +8,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={}}) => {
+const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -26,7 +26,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
     return  (
         <div className="content-table">
             <div className="top-table">
-                <Pagination page={page} setPage={setPage} npage={npage} setNpage={setNpage} countItems={countItems}/>
+                <Pagination page={page} setPage={setPage} npage={npage} setNpage={setNpage} countItems={countItems} lang={lang}/>
             </div>
             <div className="overflow" >
                 <table className="table-h">
@@ -40,7 +40,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
                             {
                                 keys.map((key,i)=>(
                                     <th key={i} id={key.id} order="none">
-                                        <Filter filter={key} setFilter={setFilter} selects={selects[key.id]}/>
+                                        <Filter filter={key} setFilter={setFilter} selects={selects[key.id]} lang={lang}/>
                                     </th>
                                 ))
                             }
@@ -52,7 +52,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
                             {
                                 keys.map((key,i)=>(
                                     <th key={i} id={key.id} order="none">
-                                        {key.name}
+                                        {lang.table[key.id]}
                                     </th>
                                 ))
                             }
@@ -73,7 +73,7 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
                                         keys.map((key,j)=>{
                                             return (
                                                 <td key={`${i}-${j}`}>
-                                                    <Item item={element[key.id]} type={key.type} image={key.image}/>
+                                                    <Item item={element[key.id]} type={key.type} image={key.image} lang={lang}/>
                                                 </td>
                                             )
                                         })

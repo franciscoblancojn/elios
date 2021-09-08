@@ -74,5 +74,27 @@
                 ]
             }
         }
+    },
+    "table":{
+        "_id":"ID",
+        "ip":"IP",
+        "ipAddress":"IP",
+        "continentName":"Continente",
+        "countryCode":"Pais Code",
+        "countryName":"Pais",
+        "stateProv":"State",
+        "city":"Ciudad",
+        "os":"OS",
+        "platform":"Platforma",
+        "system":"Navegador",
+        "browser":"State",
+        "leads":"Leads",
+        "form":"Formularios",
+        "whatsapp":"Whatsapps",
+        "compras":"Compras",
+        "pageUrl":"Url",
+        "event":"Event",
+        "get":"GET",
+        "date":"Fecha"
     }
 }
