@@ -12,7 +12,6 @@ class Index extends React.Component {
         return (
             <Islogin>
                 <Lang>
-                    <div></div>
                     <Content 
                     title="Elios"
                     className="cMenu home"

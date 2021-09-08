@@ -31,7 +31,6 @@ const Lang = ({children}) => {
     const loadContent = async () => {
         const lang = await languaje()
         const contentWithLang = addLang(children,lang);
-        console.log(contentWithLang);
         setContent(contentWithLang)
     }
     useEffect(() => {
