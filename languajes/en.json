@@ -2,18 +2,6 @@
     "title":{
 
     },
-    "titlePage":{
-        "visitantes":"Visitantes",
-        "leads":"Leads",
-        "add-to-card":"Agregados al carrito",
-        "whatsapp":"Whatsapp",
-        "formularios":"Formularios",
-        "clients":"Clientes",
-        "compras":"Compras",
-        "fieles":"Fieles",
-        "posible-recurrencia":"Posible Recurrenia",
-        "cliente-potencial":"Cliente Potencial"
-    },
     "before":{
         "inicio":"Volver al Inicio"
     },
@@ -86,73 +74,5 @@
                 ]
             }
         }
-    },
-    "table":{
-        "_id":"ID",
-        "ip":"IP",
-        "ipAddress":"IP",
-        "continentName":"Continente",
-        "countryCode":"Pais Code",
-        "countryName":"Pais",
-        "stateProv":"State",
-        "city":"Ciudad",
-        "os":"OS",
-        "platform":"Platforma",
-        "system":"Navegador",
-        "browser":"State",
-        "leads":"Leads",
-        "form":"Formularios",
-        "whatsapp":"Whatsapps",
-        "compras":"Compras",
-        "pageUrl":"Url",
-        "event":"Event",
-        "get":"GET",
-        "date":"Fecha",
-        "email":"Correo",
-        "phone":"Telefono",
-        "browser_ip":"IP",
-        "order_number":"Order Id",
-        "order_status_url":"Order Url",
-        "currency":"Moneda",
-        "gateway":"Metodo de Pago",
-        "subtotal_price":"Precio",
-        "total_weight":"Peso",
-        "customer":"Cliente",
-        "billing_address":"Direccion",
-        "shipping_address":"Direccion de Envio",
-        "line_items":"Productos",
-        "discount_codes":"Descuentos",
-        "note":"Notas",
-        "user_id":"Cliente ID"
-    },
-    "login":{
-        "title":"Ingresar",
-        "google":"INGRESAR con Google",
-        "facebook":"INGRESAR con Facebook",
-        "recuperar_contrasena": "¿Olvidaste tu contraseña?"
-    },
-    "form":{
-        "login":{
-            "email":{
-                "placeholder":"Email",
-                "label":"Correo *"
-            },
-            "password":{
-                "placeholder":"**************",
-                "label":"Contraseña *"
-            },
-            "btn":"INGRESAR"
-        },
-        "ToCreateAccount":{
-            "title":"No tienes una cuenta?",
-            "btn":"CREAR CUENTA",
-            "tmc":"Ver Terminos y Condiciones"
-        },
-        "respond":{
-            
-        }
-    },
-    "filter":{
-        "search":"Buscar por"
     }
 }

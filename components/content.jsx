@@ -4,11 +4,11 @@ import Footer from '@/components/footer'
 import MenuLeft from "@/components/header/left";
 import MenuDropDown from "@/components/header/dropDown";
 
-const Content = ({className,children,footer,title}) => {
+const Content = ({className,children,footer,title,lang}) => {
     return (
         <div className="content">
             <Head>
-                <title>{title}</title>
+                <title>{lang.titlePage[title] || title}</title>
                 <link rel="stylesheet" href="https://use.typekit.net/kqm1fcv.css"></link>
             </Head>
             <div id="page" className={`page ${className || ""}`}>
@@ -16,7 +16,7 @@ const Content = ({className,children,footer,title}) => {
                     className.indexOf('cMenu') > -1 &&
                     <>
                         <MenuLeft/>
-                        <MenuDropDown title={title}></MenuDropDown>
+                        <MenuDropDown title={lang.titlePage[title] || title} lang={lang} />
                     </>
                 }
                 {

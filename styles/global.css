@@ -1934,8 +1934,7 @@ footer {
   justify-content: center;
   top: 0;
   left: 0;
-  z-index: 9999999999999999;
-  background-color: var(--white); }
+  z-index: 9999999999999999; }
   .loader.circle::before {
     content: '';
     display: block;
