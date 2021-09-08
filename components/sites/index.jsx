@@ -13,7 +13,8 @@ import LoaderCircle from "@/components/loader/circle";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
-const Site = ({host}) => {
+const Site = ({host,lang}) => {
+    console.log(lang);
     const [loader, setLoader] = useState(true)
     const [query, setQuery] = useState(null)
     const [infoSite, setInfoSite] = useState({
@@ -72,13 +73,13 @@ const Site = ({host}) => {
                         <Link href={`/`}>
                             <a className="before mb-0">
                                 <ArrowRight/>
-                                Volver al Inicio
+                                {lang.before.inicio}
                             </a>
                         </Link>
                         <UserInLive/>
                     </div>
                     <h1 className="title-1 ellipsis">
-                        Hola {host}
+                        {lang.sites.hi} {host}
                     </h1>
                 </div>
             </div>

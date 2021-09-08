@@ -2,6 +2,12 @@
     "title":{
 
     },
+    "before":{
+        "inicio":"Volver al Inicio"
+    },
+    "sites":{
+        "hi" :"Hola"
+    },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",
         "noFound": "No hay resultados"
