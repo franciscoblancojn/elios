@@ -24,6 +24,7 @@
     },
     "inicion":{
         "title":"Bienvenido a elios!",
+        "titleSite":"Sitios Conectados",
         "text1":"Por favor comienza conectando",
         "text2":"tu tienda virtual o sitio web.",
         "titleList":"Selecciona la integración:",

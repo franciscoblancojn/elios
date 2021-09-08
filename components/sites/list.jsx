@@ -14,7 +14,7 @@ const ListSites = () => {
         setContent(
             <div className="list-integracion list-sites">
                 <h3>
-                    Sitios Conectados
+                    {JSON.parse(localStorage.getItem('languaje')).inicion.titleSite}
                 </h3>
                 <ul>
                     {sites.map((site,i)=>{
