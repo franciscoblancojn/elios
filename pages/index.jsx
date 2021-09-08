@@ -12,13 +12,14 @@ class Index extends React.Component {
         return (
             <Islogin>
                 <Lang>
+                    <div></div>
                     <Content 
                     title="Elios"
                     className="cMenu home"
                     >
                         <ExistOneSite>
                             <TitelIcon
-                            title={JSON.parse(localStorage.getItem('languaje')).inicion.title}
+                            title="Bienvenido a elios!"
                             icon={(<img src="/img/elios.png" alt="Elios" />)}
                             />
                             <SitesList/>

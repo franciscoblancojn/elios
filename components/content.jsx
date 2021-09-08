@@ -4,7 +4,7 @@ import Footer from '@/components/footer'
 import MenuLeft from "@/components/header/left";
 import MenuDropDown from "@/components/header/dropDown";
 
-const Content = ({className,children,footer,title}) => {
+const Content = ({className,children,footer,title,lang}) => {
     return (
         <div className="content">
             <Head>

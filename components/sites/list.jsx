@@ -5,7 +5,7 @@ import {getUser,reloadUser} from "@/functions/index";
 
 import LoaderCircle from "@/components/loader/circle";
 
-const ListSites = () => {
+const ListSites = ({lang}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const loadContent = async () => {
         await reloadUser()
@@ -14,7 +14,7 @@ const ListSites = () => {
         setContent(
             <div className="list-integracion list-sites">
                 <h3>
-                    {JSON.parse(localStorage.getItem('languaje')).inicion.titleSite}
+                    {lang.inicion.titleSite}
                 </h3>
                 <ul>
                     {sites.map((site,i)=>{
