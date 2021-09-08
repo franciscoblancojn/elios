@@ -127,6 +127,11 @@
             },
             "btn":"INGRESAR"
         },
+        "ToCreateAccount":{
+            "title":"No tienes una cuenta?",
+            "btn":"CREAR CUENTA",
+            "tmc":"Ver Terminos y Condiciones"
+        },
         "respond":{
             
         }
