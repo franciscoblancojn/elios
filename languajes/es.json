@@ -122,7 +122,8 @@
         "shipping_address":"Direccion de Envio",
         "line_items":"Productos",
         "discount_codes":"Descuentos",
-        "note":"Notas"
+        "note":"Notas",
+        "user_id":"Cliente ID"
     },
     "login":{
         "title":"Ingresar",
