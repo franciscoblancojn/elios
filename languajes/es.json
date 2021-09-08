@@ -108,5 +108,11 @@
         "event":"Event",
         "get":"GET",
         "date":"Fecha"
+    },
+    "login":{
+        "title":"Ingresar",
+        "google":"INGRESAR con Google",
+        "facebook":"INGRESAR con Facebook",
+        "recuperar_contrasena": "¿Olvidaste tu contraseña?"
     }
 }
