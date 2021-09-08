@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 
 import Islogin from "@/components/checkLogin/isLogin";
+import Lang from "@/components/lang/lang";
 import ExistOneSite from "@/components/checkSite/existOneSite";
 import Content from "@/components/content";
-import SitesList from "@/components/sites/list";
-import TitelIcon from "@/components/title/titleIcon";
-import Lang from "@/components/lang/lang";
+
+import Page from "@/components/page"
 
 class Index extends React.Component {
     render() {
@@ -17,11 +17,7 @@ class Index extends React.Component {
                     className="cMenu home"
                     >
                         <ExistOneSite>
-                            <TitelIcon
-                            title="Bienvenido a elios!"
-                            icon={(<img src="/img/elios.png" alt="Elios" />)}
-                            />
-                            <SitesList/>
+                            <Page/>
                         </ExistOneSite>
                     </Content>
                 </Lang>
