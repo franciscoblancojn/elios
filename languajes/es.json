@@ -154,5 +154,9 @@
     },
     "filter":{
         "search":"Buscar por"
+    },
+    "policy":{
+        "title":"Políticas de Privacidad",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore sunt blanditiis corporis ex excepturi, amet cumque necessitatibus molestiae iure provident eveniet odio impedit explicabo debitis nisi, veritatis dolores laudantium."
     }
 }
