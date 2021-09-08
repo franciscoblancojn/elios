@@ -17,7 +17,7 @@ const Search = ({name,id,search,lang}) => {
 
 const Filter = ({filter,setFilter,selects=[],lang}) => {
     const swFilterType = {
-        search : <Search id={filter.id} name={filter.name} search={(value)=>()=>setFilter({[filter.id]:value})} lang={lang}/>,
+        search : <Search id={filter.id} name={filter.name} search={(value)=>()=>setFilter({[filter.id]:{$regex:value}})} lang={lang}/>,
         date : <FilterDate lang={lang} onChange={(value)=>{
                 const init = value.startDate.getTime()
                 const fin = value.endDate.getTime()
