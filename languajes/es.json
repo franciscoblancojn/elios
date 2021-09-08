@@ -114,5 +114,21 @@
         "google":"INGRESAR con Google",
         "facebook":"INGRESAR con Facebook",
         "recuperar_contrasena": "¿Olvidaste tu contraseña?"
+    },
+    "form":{
+        "login":{
+            "email":{
+                "placeholder":"Email",
+                "label":"Correo *"
+            },
+            "password":{
+                "placeholder":"**************",
+                "label":"Contraseña *"
+            },
+            "btn":"INGRESAR"
+        },
+        "respond":{
+            
+        }
     }
 }

@@ -33,7 +33,7 @@ const Login = ({lang}) => {
                         <Link href="/recover_password">
                             <a className="recover_password">{lang.login.recuperar_contrasena}</a>
                         </Link>
-                        <ToCreateAccount></ToCreateAccount>
+                        <ToCreateAccount lang={lang}></ToCreateAccount>
                     </div>
                 </div>
             </div>
