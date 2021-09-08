@@ -14,7 +14,6 @@ import LoaderCircle from "@/components/loader/circle";
 import ArrowRight from "@/components/svg/right-arrow"
 
 const Site = ({host,lang}) => {
-    console.log(lang);
     const [loader, setLoader] = useState(true)
     const [query, setQuery] = useState(null)
     const [infoSite, setInfoSite] = useState({
