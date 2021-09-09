@@ -66,7 +66,12 @@ const BtnSites = ({className}) => {
                     onClick={toggleShowList}
                     >
                         <span className="select">
-                            <img src={`/icons/${site.iconSite || site.cms}x2.png`} alt={site.host} className="iconHost"/>
+                            {
+                                site.iconSite ?
+                                <img src={`https://pixeltracking.startscoinc.com/upload/img/sites/${site.iconSite}`} alt={site.host} className="iconHost"/>
+                                :
+                                <img src={`/icons/${site.cms}x2.png`} alt={site.host} className="iconHost"/>
+                            }
                                 <span className="text">{site.host}</span>
                             <SvgArrow/>
                         </span>
@@ -98,7 +103,12 @@ const BtnSites = ({className}) => {
                                     }
                                 }
                                 >
-                                    <img src={`/icons/${e.iconSite || e.cms}x2.png`} alt={e.host} className="iconHost"/>
+                                    {
+                                        e.iconSite ?
+                                        <img src={`https://pixeltracking.startscoinc.com/upload/img/sites/${e.iconSite}`} alt={e.host} className="iconHost"/>
+                                        :
+                                        <img src={`/icons/${e.cms}x2.png`} alt={e.host} className="iconHost"/>
+                                    }
                                     <span className="text">{e.host}</span>
                                 </li>
                             ))
