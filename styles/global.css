@@ -2544,6 +2544,17 @@ footer {
       background: var(--green);
       margin: 0 10px; }
 
+.addImg img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 100%;
+  border: 1px solid var(--pinkish-grey-two);
+  cursor: pointer; }
+.addImg input {
+  display: none; }
+
 .page-login .LoginForm,
 .page-login .LoginRS {
   min-height: 50vh;

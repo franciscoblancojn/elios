@@ -89,7 +89,7 @@ const Site = ({host,lang}) => {
             <div className="row">
                 <div className="col-6">
                     <div className="flex flex-between">
-                        <UploadImg/>
+                        <UploadImg img={site.iconSite}/>
                         <div className="connect">
                             <span className="text">{lang.sites.connect}</span>
                             <img src={`/icons/${site.cms}x2.png`} alt={site.cms}/>
