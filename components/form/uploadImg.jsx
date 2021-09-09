@@ -3,7 +3,13 @@ import {getCookie} from "@/functions/index";
 const UploadImg = ({img,site}) => {
     const changeImg = (e) => {
         const btn = document.getElementById('submitAddImg')
-        btn.click()
+        const img = document.getElementById('addImg')
+        const src = img.value
+        if(src.endsWith("png") || src.endsWith("jpeg") || src.endsWith("jpg")){
+            btn.click()
+        }else{
+            alert("Archivo Invalido")
+        }
     }
     return (
         <div className="addImg">
