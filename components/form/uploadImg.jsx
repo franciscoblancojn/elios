@@ -13,14 +13,14 @@ const UploadImg = ({img,site}) => {
     }
     return (
         <div className="addImg">
-            <form action={`http://localhost:3001/api/v2/upload`} method="post" encType="multipart/form-data">
+            <form action={`https://pixeltracking.startscoinc.com/api/v2/upload`} method="post" encType="multipart/form-data">
                 <input type="text" name="jwt" id="jwt" value={JSON.parse(getCookie()).token} />
                 <input type="text" name="site" id="site" value={site} />
                 <input type="text" name="return" id="return" value={window.location.href} />
                 <label htmlFor="addImg">
                     {
                         img ?
-                        <img src={img}/>
+                        <img src={`https://pixeltracking.startscoinc.com/upload/img/sites/${img}`} alt={site} />
                         :
                         <img src="/icons/addImgSite.svg"/>
                     }
