@@ -1,0 +1,14 @@
+.addImg{
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 100%;
+        border: 1px solid var(--pinkish-grey-two);
+        cursor: pointer;
+    }
+    input{
+        display: none;
+    }
+}

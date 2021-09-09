@@ -20,7 +20,9 @@
         "inicio":"Volver al Inicio"
     },
     "sites":{
-        "hi" :"Hola"
+        "hi" :"Hola",
+        "connect":"Conectado",
+        "invalidField":"Archivo Invalido"
     },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",
