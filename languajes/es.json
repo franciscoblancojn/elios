@@ -13,7 +13,8 @@
         "fieles":"Fieles",
         "posible-recurrencia":"Posible Recurrenia",
         "cliente-potencial":"Cliente Potencial",
-        "AddSite":"Agregar Sitios"
+        "AddSite":"Agregar Sitios",
+        "connectWordpress":"Conectar Wordpress"
     },
     "before":{
         "inicio":"Volver al Inicio"
@@ -169,6 +170,21 @@
         "btn":{
             "conectar":"CONECTAR",
             "proximamente":"PROXIMAMENTE"
+        }
+    },
+    "connect":{
+        "wordpress":{
+            "list":["Descargar el Plugin","Instalar el Plugin","Activar el Plugin","Agregar Key","Confirmación"],
+            "index":{
+                "title1":"Conecte su cuenta de",
+                "title2":"Wordpress a Elios",
+                "subtitle":"Descarga la extensión de píxeles de Elios",
+                "text1":"Haga clic en Descargar para obtener un archivo .zip que cargará",
+                "text2":"en su cuenta de Wordpress.",
+                "msj":"Esta integración es compatible con las versiones 3.0 y superiores de WooCommerce y las versiones 4.4 y superiores de WordPress.",
+                "btn1":"DESCARGAR",
+                "btn2":"Continuar"
+            }
         }
     }
 }
