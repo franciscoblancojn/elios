@@ -184,6 +184,17 @@
                 "msj":"Esta integración es compatible con las versiones 3.0 y superiores de WooCommerce y las versiones 4.4 y superiores de WordPress.",
                 "btn1":"DESCARGAR",
                 "btn2":"Continuar"
+            },
+            "install":{
+                "title1":"Conecte su cuenta de",
+                "title2":"Wordpress a Elios",
+                "list": [
+                    "Seleccione Complementos y elija Agregar nuevo en el menú desplegable.",
+                    "Seleccione Cargar complemento.",
+                    "Haga clic en Elegir archivo y seleccione el archivo facebook-for-woocommerce.zip que descargó.",
+                    "Seleccione Instalar ahora."
+                ],
+                "btn":"Siguiente"
             }
         }
     }
