@@ -174,10 +174,11 @@
     },
     "connect":{
         "wordpress":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Wordpress a Elios",
             "list":["Descargar el Plugin","Instalar el Plugin","Activar el Plugin","Agregar Key","Confirmación"],
+            "btn":"Siguiente",
             "index":{
-                "title1":"Conecte su cuenta de",
-                "title2":"Wordpress a Elios",
                 "subtitle":"Descarga la extensión de píxeles de Elios",
                 "text1":"Haga clic en Descargar para obtener un archivo .zip que cargará",
                 "text2":"en su cuenta de Wordpress.",
@@ -193,8 +194,12 @@
                     "Seleccione Cargar complemento.",
                     "Haga clic en Elegir archivo y seleccione el archivo facebook-for-woocommerce.zip que descargó.",
                     "Seleccione Instalar ahora."
-                ],
-                "btn":"Siguiente"
+                ]
+            },
+            "active":{
+                "list":[
+                    "Haga clic en Activar complemento."
+                ]
             }
         }
     }

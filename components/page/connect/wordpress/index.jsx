@@ -15,9 +15,9 @@ const Index = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.index.title1}
+                    {lang.connect.wordpress.title1}
                     <br/>
-                    {lang.connect.wordpress.index.title2}
+                    {lang.connect.wordpress.title2}
                 </h2>
                 <Points
                 s={0}
