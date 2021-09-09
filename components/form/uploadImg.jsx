@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 
-const UploadImg = ({img}) => {
+const UploadImg = ({img,site}) => {
     const changeImg = (e) => {
         const btn = document.getElementById('submitAddImg')
         btn.click()
     }
     return (
         <div className="addImg">
-            <form action={`https://pixeltracking.startscoinc.com/site/upload?return=${window.location.href}`} method="post" encType="multipart/form-data">
+            <form action={`https://pixeltracking.startscoinc.com/${site}/upload?return=${window.location.href}`} method="post" encType="multipart/form-data">
                 <label htmlFor="addImg">
                     {
                         img ?
