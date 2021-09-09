@@ -100,7 +100,7 @@ const DEFAULTKEYS = [
         filter : 'search',
     },
 ]
-const TableClients = ({query,KEYS=null,queryUrl={},lang}) => {
+const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -154,7 +154,7 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang}) => {
     useEffect(() => {
         if(rows){
             setContent(<Table 
-                url="visitantes"
+                url={url}
                 rows={rows} 
                 countItems={countItems} 
                 keys={KEYS || DEFAULTKEYS} 

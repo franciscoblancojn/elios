@@ -100,7 +100,7 @@ const DEFAULTKEYS = [
         filter : 'date'
     },
 ]
-const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang}) => {
+const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,url="leads"}) => {
     const [content, setContent] = useState(<LoaderCircle/>)
     const [rows, setRows] = useState()
     const [countItems, setCountItems] = useState()
@@ -153,7 +153,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang}) 
     useEffect(() => {
         if(rows){
             setContent(<Table 
-                url="leads"
+                url={url}
                 rows={rows} 
                 countItems={countItems} 
                 keys={KEYS || DEFAULTKEYS} 
