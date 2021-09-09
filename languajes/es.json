@@ -22,7 +22,8 @@
     "sites":{
         "hi" :"Hola",
         "connect":"Conectado",
-        "invalidField":"Archivo Invalido"
+        "invalidField":"Archivo Invalido",
+        "nameHost":"Nombre de la cuenta"
     },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",

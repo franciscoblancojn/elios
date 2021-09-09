@@ -95,6 +95,12 @@ const Site = ({host,lang}) => {
                             <img src={`/icons/${site.cms}x2.png`} alt={site.cms}/>
                         </div>
                     </div>
+                    <div className="textNameHost">
+                        <div className="name">
+                            {lang.sites.nameHost} : {host}
+                        </div>
+                        <a href={`https://${host}`} target="_blank">{host}</a>
+                    </div>
                 </div>
                 <div className="col-6 contectCardSite">
                     <FilterDateShow onChange={setQuery}/>
