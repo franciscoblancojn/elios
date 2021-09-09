@@ -20,7 +20,12 @@ const ListSites = ({lang}) => {
                     {sites.map((site,i)=>{
                         return(
                             <li key={i}>
-                                <img src={`/icons/${site.cms}x2.png`} alt={site.cms}/>
+                                {
+                                    site.iconSite ?
+                                    <img src={`https://pixeltracking.startscoinc.com/upload/img/sites/${site.iconSite}`} alt={site.host} className="iconHost"/>
+                                    :
+                                    <img src={`/icons/${site.cms}x2.png`} alt={site.host} className="iconHost"/>
+                                }
                                 <Link href={`/sites/${site.host}`}>
                                     <a>{site.host}</a>
                                 </Link>
