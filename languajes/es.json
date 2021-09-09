@@ -207,6 +207,10 @@
                     "Agregar key"
                 ],
                 "key":"Copiar Key"
+            },
+            "confirmacion":{
+                "title":"Sitios conectados",
+                "btn":"Inicio"
             }
         }
     }
