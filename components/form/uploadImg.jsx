@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import {getCookie} from "@/functions/index";
 
 const UploadImg = ({img,site}) => {
     const changeImg = (e) => {
@@ -7,7 +7,10 @@ const UploadImg = ({img,site}) => {
     }
     return (
         <div className="addImg">
-            <form action={`https://pixeltracking.startscoinc.com/${site}/upload?return=${window.location.href}`} method="post" encType="multipart/form-data">
+            <form action="http://localhost:3001/api/v2/upload" method="post" encType="multipart/form-data">
+                <input type="hidden" name="jwt" id="jwt" value={JSON.parse(getCookie()).token} />
+                <input type="hidden" name="site" id="site" value={site} />
+                <input type="hidden" name="return" id="return" value={window.location.href} />
                 <label htmlFor="addImg">
                     {
                         img ?
