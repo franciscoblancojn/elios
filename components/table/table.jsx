@@ -8,7 +8,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang}) => {
+const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -24,6 +24,13 @@ const Table = ({rows,countItems,keys,page,setNpage,npage,setPage,setFilter,url="
         setStyleOverflow({maxHeight})
     }, [])
     return  (
+        rows.length == 0 ?
+        <div className="content-table">
+            <h1>
+                {lang.table.no_items}
+            </h1>
+        </div>
+        :
         <div className="content-table">
             <div className="top-table">
                 <Pagination page={page} setPage={setPage} npage={npage} setNpage={setNpage} countItems={countItems} lang={lang}/>
