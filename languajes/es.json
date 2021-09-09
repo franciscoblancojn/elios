@@ -200,6 +200,12 @@
                 "list":[
                     "Haga clic en Activar complemento."
                 ]
+            },
+            "addkey":{
+                "list": [
+                    "Habrir panel de Elios",
+                    "Agregar key"
+                ]
             }
         }
     }
