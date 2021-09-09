@@ -2510,6 +2510,24 @@ footer {
   .no-item h1 {
     font-size: 3rem; }
 
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .sort .arrows {
+    margin-left: 5px; }
+    .sort .arrows .arrow {
+      color: var(--pastel-blue);
+      border: 8px solid transparent;
+      border-top-color: currentColor;
+      display: block;
+      cursor: pointer;
+      margin: 2px; }
+      .sort .arrows .arrow.up {
+        transform: rotateZ(180deg); }
+      .sort .arrows .arrow.active {
+        color: var(--black-two); }
+
 .page-login .LoginForm,
 .page-login .LoginRS {
   min-height: 50vh;

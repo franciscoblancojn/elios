@@ -5,11 +5,12 @@ import Pagination from "@/components/table/pagination"
 import NoItem from "@/components/table/noItems"
 import Filter from "@/components/table/filter"
 import Item from "@/components/table/item"
+import Sort from "@/components/table/sort"
 
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang,rowsLengthNoFilters}) => {
+const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,setSort,sort,url="",selects={},lang,rowsLengthNoFilters}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -56,7 +57,7 @@ const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,ur
                             {
                                 keys.map((key,i)=>(
                                     <th key={i} id={key.id} order="none">
-                                        {lang.table[key.id]}
+                                        <Sort item={key} lang={lang} setSort={setSort} sort={sort}/>
                                     </th>
                                 ))
                             }

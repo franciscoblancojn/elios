@@ -108,6 +108,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
     const [selects,setSelects] = useState({})
+    const [sort, setSort] = useState({date:-1})
     const [rowsLengthNoFilters, setRowsLengthNoFilters] = useState(null)
 
     const loadLeads = async () => {
@@ -118,9 +119,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
                 ...queryUrl,
                 ...filter,
             },
-            sort:{
-                date:-1
-            },
+            sort,
             page,
             npage,
         })
@@ -153,7 +152,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
     }, [content])
     useEffect(() => {
         loadTable()
-    }, [page,npage,filter])
+    }, [page,npage,filter,sort])
     useEffect(() => {
         if(rows){
             setContent(<Table 
@@ -166,6 +165,8 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
                 npage={npage} 
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
+                setSort={setSort}
+                sort={sort}
                 selects={selects}
                 lang={lang}
                 rowsLengthNoFilters={rowsLengthNoFilters}

@@ -107,6 +107,7 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
     const [page, setPage] = useState(1)
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
+    const [sort, setSort] = useState({date:-1})
     const [selects,setSelects] = useState({})
 
     const loadClients = async (defaultQuery={}) => {
@@ -118,9 +119,7 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
                 ...queryUrl,
                 ...filter
             },
-            sort:{
-                date:-1
-            },
+            sort,
             page,
             npage,
         })
@@ -163,6 +162,8 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
                 npage={npage} 
                 setNpage={setNpage} 
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
+                setSort={setSort}
+                sort={sort}
                 selects={selects}
                 lang={lang}
                 />)
