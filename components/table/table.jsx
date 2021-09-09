@@ -9,7 +9,7 @@ import Item from "@/components/table/item"
 import SvgView from "../svg/view"
 import SvgReload from "../svg/reload"
 
-const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang}) => {
+const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,url="",selects={},lang,rowsLengthNoFilters}) => {
     const [styleOverflow, setStyleOverflow] = useState({})
     const getOffsetTop = ( elem ) => {
         var offsetTop = 0;
@@ -25,7 +25,7 @@ const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,ur
         setStyleOverflow({maxHeight})
     }, [])
     return  (
-        rows.length == 0 ?
+        rowsLengthNoFilters == 0 ?
         <NoItem lang={lang}/>
         :
         <div className="content-table">

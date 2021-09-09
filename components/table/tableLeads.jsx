@@ -108,6 +108,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
     const [npage, setNpage] = useState(20)
     const [filter, setFilter] = useState({})
     const [selects,setSelects] = useState({})
+    const [rowsLengthNoFilters, setRowsLengthNoFilters] = useState(null)
 
     const loadLeads = async () => {
         setContent(<LoaderCircle/>)
@@ -124,6 +125,9 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
             npage,
         })
         console.log(result);
+        if(rowsLengthNoFilters === null){
+            setRowsLengthNoFilters(result.countLeads)
+        }
         setCountItems(result.countLeads)
         setRows(result.leads)
     }
@@ -164,6 +168,7 @@ const TableLeads = ({query={event:{$exists: true}},KEYS=null,queryUrl={},lang,ur
                 setFilter={(value)=>{setPage(1);setFilter(value)}}
                 selects={selects}
                 lang={lang}
+                rowsLengthNoFilters={rowsLengthNoFilters}
                 />)
         }
     }, [rows,selects])
