@@ -28,12 +28,12 @@ const AddKey = ({lang}) => {
                 l={true}
                 r={true}
                 />
-                <Key></Key>
+                <Key text={lang.connect.wordpress.addkey.key}></Key>
                 <br/>
                 <img src="/img/add-key.png" alt="add-key" className="radius"/>
                 <ListNumber list={lang.connect.wordpress.addkey.list}></ListNumber>
                 <div className="text-center">
-                    <Link href="/connect/wordpress/active">
+                    <Link href="/connect/wordpress/confirmacion">
                         <a className="btn">{lang.connect.wordpress.btn}</a>
                     </Link>
                 </div>

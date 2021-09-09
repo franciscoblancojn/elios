@@ -205,7 +205,8 @@
                 "list": [
                     "Habrir panel de Elios",
                     "Agregar key"
-                ]
+                ],
+                "key":"Copiar Key"
             }
         }
     }
