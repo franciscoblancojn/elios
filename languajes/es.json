@@ -21,7 +21,8 @@
     },
     "sites":{
         "hi" :"Hola",
-        "connect":"Conectado"
+        "connect":"Conectado",
+        "invalidField":"Archivo Invalido"
     },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",

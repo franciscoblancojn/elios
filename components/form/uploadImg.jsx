@@ -1,6 +1,6 @@
 import {getCookie} from "@/functions/index";
 
-const UploadImg = ({img,site}) => {
+const UploadImg = ({img,site,lang}) => {
     const changeImg = (e) => {
         const btn = document.getElementById('submitAddImg')
         const img = document.getElementById('addImg')
@@ -8,7 +8,7 @@ const UploadImg = ({img,site}) => {
         if(src.endsWith("png") || src.endsWith("jpeg") || src.endsWith("jpg")){
             btn.click()
         }else{
-            alert("Archivo Invalido")
+            alert(lang.sites.invalidField)
         }
     }
     return (
