@@ -123,7 +123,8 @@
         "line_items":"Productos",
         "discount_codes":"Descuentos",
         "note":"Notas",
-        "user_id":"Cliente ID"
+        "user_id":"Cliente ID",
+        "no_items":"No hay Items"
     },
     "login":{
         "title":"Ingresar",

@@ -2,26 +2,22 @@ import React, { Component } from "react"
 
 import Islogin from "@/components/checkLogin/isLogin";
 import ExistOneSite from "@/components/checkSite/existOneSite";
-import Content from "@/components/content";
 import Lang from "@/components/lang/lang";
-import TableLeads from "@/components/table/tableLeads";
+import Content from "@/components/content";
+import SingleLeads from "@/components/table/single/leads";
 
-class Index extends React.Component {
-    render() {
-        return (
-            <Islogin>
-                <Lang>
-                    <Content 
-                    title="add-to-card"
-                    className="cMenu page-leads"
-                    >
-                        <ExistOneSite>
-                            <TableLeads 
-                            url="leads/add-to-cart"
-                            queryUrl={this.props.queryUrl || {}}
-                            query={{
-                                "type": "checkouts-update"
-                            }}
+
+const Index = ({id}) => {
+    return (
+        <Islogin>
+            <Lang>
+                <Content 
+                title="add-to-card"
+                className="cMenu page-leads"
+                >
+                    <ExistOneSite>
+                        <SingleLeads 
+                            id={id}
                             KEYS={[
                                 {
                                     id : "_id",
@@ -84,15 +80,15 @@ class Index extends React.Component {
                                     filter : 'date'
                                 },
                             ]}
-                            ></TableLeads>
-                        </ExistOneSite>
-                    </Content>
-                </Lang>
-            </Islogin>
-        )
-    }
+                        />
+                    </ExistOneSite>
+                </Content>
+            </Lang>
+        </Islogin>
+    )
 }
-export async function getServerSideProps({query}) {
-    return { props: { queryUrl : query } }
+
+export async function getServerSideProps({ params }) {
+    return { props: { id : params.id } }
 }
 export default Index
