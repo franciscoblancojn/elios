@@ -10,7 +10,7 @@ const Key = (props) => {
     return (
         <div className="msg-key"> 
             <input value={user.key} id="key" style={{position:"fixed",left:"100%",top:"100%"}}/>
-            <button onClick={copyKey}>Copy Key</button>
+            <button onClick={copyKey}>{props.text}</button>
         </div>
     )
 }

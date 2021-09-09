@@ -12,7 +12,9 @@
         "compras":"Compras",
         "fieles":"Fieles",
         "posible-recurrencia":"Posible Recurrenia",
-        "cliente-potencial":"Cliente Potencial"
+        "cliente-potencial":"Cliente Potencial",
+        "AddSite":"Agregar Sitios",
+        "connectWordpress":"Conectar Wordpress"
     },
     "before":{
         "inicio":"Volver al Inicio"
@@ -159,5 +161,65 @@
     "policy":{
         "title":"Políticas de Privacidad",
         "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore sunt blanditiis corporis ex excepturi, amet cumque necessitatibus molestiae iure provident eveniet odio impedit explicabo debitis nisi, veritatis dolores laudantium."
+    },
+    "addSite":{
+        "title":"Bienvenido a elios!",
+        "text1" : "Por favor comienza conectando",
+        "text2" : "tu tienda virtual o sitio web.",
+        "titleList" :"Selecciona la integración:",
+        "btn":{
+            "conectar":"CONECTAR",
+            "proximamente":"PROXIMAMENTE"
+        }
+    },
+    "connect":{
+        "wordpress":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Wordpress a Elios",
+            "list":["Descargar el Plugin","Instalar el Plugin","Activar el Plugin","Agregar Key","Confirmación"],
+            "btn":"Siguiente",
+            "index":{
+                "subtitle":"Descarga la extensión de píxeles de Elios",
+                "text1":"Haga clic en Descargar para obtener un archivo .zip que cargará",
+                "text2":"en su cuenta de Wordpress.",
+                "msj":"Esta integración es compatible con las versiones 3.0 y superiores de WooCommerce y las versiones 4.4 y superiores de WordPress.",
+                "btn1":"DESCARGAR",
+                "btn2":"Continuar"
+            },
+            "install":{
+                "title1":"Conecte su cuenta de",
+                "title2":"Wordpress a Elios",
+                "list": [
+                    "Seleccione Complementos y elija Agregar nuevo en el menú desplegable.",
+                    "Seleccione Cargar complemento.",
+                    "Haga clic en Elegir archivo y seleccione el archivo facebook-for-woocommerce.zip que descargó.",
+                    "Seleccione Instalar ahora."
+                ]
+            },
+            "active":{
+                "list":[
+                    "Haga clic en Activar complemento."
+                ]
+            },
+            "addkey":{
+                "list": [
+                    "Habrir panel de Elios",
+                    "Agregar key"
+                ],
+                "key":"Copiar Key"
+            },
+            "confirmacion":{
+                "title":"Sitios conectados",
+                "btn":"Inicio"
+            }
+        },
+        "woocommerce":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Woocommerce a Elios"
+        }
+    },
+    "404":{
+        "text":"Lo sentimos la pagina que buscabas no pued3 ser encontrada",
+        "btn":"VOLVER AL INICIO"
     }
 }

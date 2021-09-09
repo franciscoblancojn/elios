@@ -21,11 +21,11 @@ const ListIntegracion = ({title,btn}) => {
                         <a className="btn">{btn.conectar}</a>
                     </Link>
                 </li>
-                <li>
+                <li disabled>
                     <img src="/icons/shopifyx2.png" alt="Shopify"/>
                     Shopify
                     <Link href="/connect/shopify">
-                        <a className="btn">{btn.conectar}</a>
+                        <a className="btn">{btn.proximamente}</a>
                     </Link>
                 </li>
                 <li disabled>
