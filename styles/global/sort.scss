@@ -1,0 +1,22 @@
+.sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .arrows{
+        margin-left: 5px;
+        .arrow{
+            color: var(--pastel-blue);
+            border: 8px solid transparent;
+            border-top-color: currentColor;
+            display: block;
+            cursor: pointer;
+            margin:2px;
+            &.up{
+                transform: rotateZ(180deg);
+            }
+            &.active{
+                color: var(--black-two);
+            }
+        }
+    }
+}

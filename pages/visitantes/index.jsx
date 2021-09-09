@@ -35,57 +35,57 @@ class Index extends React.Component {
                                             id : "continentName",
                                             name : "Continente",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "countryCode",
                                             name : "Pais Code",
                                             type : "string",
-                                            filter : 'search',
+                                            filter : 'select',
                                             image:true
                                         },
                                         {
                                             id : "countryName",
                                             name : "Pais",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "stateProv",
                                             name : "State",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "city",
                                             name : "Ciudad",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "os",
                                             name : "OS",
                                             type : "string",
-                                            filter : 'search',
+                                            filter : 'select',
                                             image:true
                                         },
                                         {
                                             id : "platform",
                                             name : "Platforma",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "system",
                                             name : "System",
                                             type : "string",
-                                            filter : 'search'
+                                            filter : 'select',
                                         },
                                         {
                                             id : "browser",
                                             name : "Navegador",
                                             type : "string",
-                                            filter : 'search',
+                                            filter : 'select',
                                             image:true
                                         },
                                         {
