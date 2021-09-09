@@ -12,7 +12,8 @@
         "compras":"Compras",
         "fieles":"Fieles",
         "posible-recurrencia":"Posible Recurrenia",
-        "cliente-potencial":"Cliente Potencial"
+        "cliente-potencial":"Cliente Potencial",
+        "AddSite":"Agregar Sitios"
     },
     "before":{
         "inicio":"Volver al Inicio"
@@ -159,5 +160,15 @@
     "policy":{
         "title":"Políticas de Privacidad",
         "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore sunt blanditiis corporis ex excepturi, amet cumque necessitatibus molestiae iure provident eveniet odio impedit explicabo debitis nisi, veritatis dolores laudantium."
+    },
+    "addSite":{
+        "title":"Bienvenido a elios!",
+        "text1" : "Por favor comienza conectando",
+        "text2" : "tu tienda virtual o sitio web.",
+        "titleList" :"Selecciona la integración:",
+        "btn":{
+            "conectar":"CONECTAR",
+            "proximamente":"PROXIMAMENTE"
+        }
     }
 }
