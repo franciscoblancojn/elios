@@ -6,7 +6,7 @@ import Points from "@/components/points";
 
 import ListNumber from "@/components/list/listNumber";
 
-const Active = ({lang}) => {
+const Active = ({lang,type="wordpress"}) => {
     return (
         <Content 
         lang={lang}
@@ -15,9 +15,9 @@ const Active = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.title1}
+                    {lang.connect[type].title1}
                     <br/>
-                    {lang.connect.wordpress.title2}
+                    {lang.connect[type].title2}
                 </h2>
                 <Points
                 s={2}
@@ -30,7 +30,7 @@ const Active = ({lang}) => {
                 <img src="/img/active.png" alt="active" className="radius"/>
                 <ListNumber list={lang.connect.wordpress.active.list}></ListNumber>
                 <div className="text-center">
-                    <Link href="/connect/wordpress/add-key">
+                    <Link href={`/connect/${type}/add-key`}>
                         <a className="btn">{lang.connect.wordpress.btn}</a>
                     </Link>
                 </div>

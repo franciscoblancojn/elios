@@ -7,7 +7,7 @@ import Points from "@/components/points";
 import ListNumber from "@/components/list/listNumber";
 import Key from "@/components/msg/key";
 
-const AddKey = ({lang}) => {
+const AddKey = ({lang,type="wordpress"}) => {
     return (
         <Content 
         lang={lang}
@@ -16,9 +16,9 @@ const AddKey = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.title1}
+                    {lang.connect[type].title1}
                     <br/>
-                    {lang.connect.wordpress.title2}
+                    {lang.connect[type].title2}
                 </h2>
                 <Points
                 s={3}
@@ -33,7 +33,7 @@ const AddKey = ({lang}) => {
                 <img src="/img/add-key.png" alt="add-key" className="radius"/>
                 <ListNumber list={lang.connect.wordpress.addkey.list}></ListNumber>
                 <div className="text-center">
-                    <Link href="/connect/wordpress/confirmacion">
+                    <Link href={`/connect/${type}/confirmacion`}>
                         <a className="btn">{lang.connect.wordpress.btn}</a>
                     </Link>
                 </div>

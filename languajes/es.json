@@ -212,6 +212,10 @@
                 "title":"Sitios conectados",
                 "btn":"Inicio"
             }
+        },
+        "woocommerce":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Woocommerce a Elios"
         }
     }
 }

@@ -6,7 +6,7 @@ import Points from "@/components/points";
 
 import ListNumber from "@/components/list/listNumber";
 
-const Install = ({lang}) => {
+const Install = ({lang,type="wordpress"}) => {
     return (
         <Content 
         lang={lang}
@@ -15,9 +15,9 @@ const Install = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.title1}
+                    {lang.connect[type].title1}
                     <br/>
-                    {lang.connect.wordpress.title2}
+                    {lang.connect[type].title2}
                 </h2>
                 <Points
                 s={1}
@@ -30,7 +30,7 @@ const Install = ({lang}) => {
                 <img src="/img/install1.png" alt="install" className="radius"/>
                 <ListNumber list={lang.connect.wordpress.install.list}></ListNumber>
                 <div className="text-center">
-                    <Link href="/connect/wordpress/active">
+                    <Link href={`/connect/${type}/active`}>
                         <a className="btn">{lang.connect.wordpress.btn}</a>
                     </Link>
                 </div>

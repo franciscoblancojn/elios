@@ -6,7 +6,7 @@ import Points from "@/components/points";
 
 import SvgInfo from "@/components/svg/info";
 
-const Index = ({lang}) => {
+const Index = ({lang,type="wordpress"}) => {
     return (
         <Content 
         lang={lang}
@@ -15,9 +15,9 @@ const Index = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.title1}
+                    {lang.connect[type].title1}
                     <br/>
-                    {lang.connect.wordpress.title2}
+                    {lang.connect[type].title2}
                 </h2>
                 <Points
                 s={0}
@@ -46,7 +46,7 @@ const Index = ({lang}) => {
                 </div>
                 <br/>
                 <div className="text-center">
-                    <Link href="/connect/wordpress/install">
+                    <Link href={`/connect/${type}/install`}>
                         <a className="btn">{lang.connect.wordpress.index.btn2}</a>
                     </Link>
                 </div>

@@ -6,7 +6,7 @@ import Points from "@/components/points";
 
 import Host from "@/components/msg/host";
 
-const Confirmacion = ({lang}) => {
+const Confirmacion = ({lang,type="wordpress"}) => {
     return (
         <Content 
         lang={lang}
@@ -15,9 +15,9 @@ const Confirmacion = ({lang}) => {
         >
             <CardSimple>
                 <h2>
-                    {lang.connect.wordpress.title1}
+                    {lang.connect[type].title1}
                     <br/>
-                    {lang.connect.wordpress.title2}
+                    {lang.connect[type].title2}
                 </h2>
                 <Points
                 s={4}
