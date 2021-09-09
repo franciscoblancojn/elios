@@ -402,7 +402,8 @@ template {
   --very-light-blue:#eff2ff;
   --greyish-brown:#4e4e4e;
   --pinkish-grey-three:#bbbbbb;
-  --peachy-pink:#fe8989; }
+  --peachy-pink:#fe8989;
+  --green:#00FF6E; }
 
 * {
   box-sizing: border-box; }
@@ -2527,6 +2528,21 @@ footer {
         transform: rotateZ(180deg); }
       .sort .arrows .arrow.active {
         color: var(--black-two); }
+
+.connect {
+  display: flex;
+  align-items: center; }
+  .connect .text {
+    color: var(--greyish);
+    font-size: 1.5rem; }
+    .connect .text:after {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      background: var(--green);
+      margin: 0 10px; }
 
 .page-login .LoginForm,
 .page-login .LoginRS {

@@ -3,19 +3,21 @@ import Link from 'next/link'
 
 import {getLeads} from "@/app/app"
 
-import {trunkNumber} from '@/functions/index'
+import {trunkNumber,getUser} from '@/functions/index'
 
 import Card from "@/components/card/card";
 import UserInLive from "@/components/msg/userInLive";
 import FilterDateShow from "@/components/filters/dateShow"
 import BtnDeleteSite from "@/components/btn/btnDeleteSite"
 import LoaderCircle from "@/components/loader/circle";
+import UploadImg from "@/components/form/uploadImg";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
 const Site = ({host,lang}) => {
     const [loader, setLoader] = useState(true)
     const [query, setQuery] = useState(null)
+    const [site, setSite] = useState({})
     const [infoSite, setInfoSite] = useState({
         sesiones : 0,
         eventos : 0,
@@ -45,6 +47,8 @@ const Site = ({host,lang}) => {
             visitantes : trunkNumber(result?.ipAddress?.length),
             compras : trunkNumber(compras)
         }
+        const user = getUser();
+        setSite(user.sites.find(e=>e.host==host))
         setInfoSite(info);
         setLoader(false)
     }
@@ -84,7 +88,13 @@ const Site = ({host,lang}) => {
             </div>
             <div className="row">
                 <div className="col-6">
-
+                    <div className="flex flex-between">
+                        <UploadImg/>
+                        <div className="connect">
+                            <span className="text">{lang.sites.connect}</span>
+                            <img src={`/icons/${site.cms}x2.png`} alt={site.cms}/>
+                        </div>
+                    </div>
                 </div>
                 <div className="col-6 contectCardSite">
                     <FilterDateShow onChange={setQuery}/>
