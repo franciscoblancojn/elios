@@ -217,5 +217,9 @@
             "title1":"Conecte su cuenta de",
             "title2":"Woocommerce a Elios"
         }
+    },
+    "404":{
+        "text":"Lo sentimos la pagina que buscabas no pued3 ser encontrada",
+        "btn":"VOLVER AL INICIO"
     }
 }

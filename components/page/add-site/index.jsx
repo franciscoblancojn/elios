@@ -3,7 +3,6 @@ import TitelIcon from "@/components/title/titleIcon";
 import ListIntegracion from "@/components/list/integracion";
 
 const AddSite = ({lang}) => {
-    console.log(lang);
     return (
         <Content 
         lang={lang}
