@@ -66,7 +66,7 @@ const BtnSites = ({className}) => {
                     onClick={toggleShowList}
                     >
                         <span className="select">
-                            <img src={`/icons/icon-${site.icon || site.cms}.png`} alt={site.host} className="iconHost"/>
+                            <img src={`/icons/${site.iconSite || site.cms}x2.png`} alt={site.host} className="iconHost"/>
                                 <span className="text">{site.host}</span>
                             <SvgArrow/>
                         </span>
@@ -98,7 +98,7 @@ const BtnSites = ({className}) => {
                                     }
                                 }
                                 >
-                                    <img src={`/icons/icon-${e.icon || e.cms}.png`} alt={e.host} className="iconHost"/>
+                                    <img src={`/icons/${e.iconSite || e.cms}x2.png`} alt={e.host} className="iconHost"/>
                                     <span className="text">{e.host}</span>
                                 </li>
                             ))
