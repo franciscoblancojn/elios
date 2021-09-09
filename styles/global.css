@@ -2502,6 +2502,14 @@ footer {
       border: 5px solid transparent;
       border-top-color: var(--periwinkle); }
 
+.no-item {
+  padding: 25px 15px;
+  text-align: center; }
+  .no-item img {
+    margin-bottom: 20px; }
+  .no-item h1 {
+    font-size: 3rem; }
+
 .page-login .LoginForm,
 .page-login .LoginRS {
   min-height: 50vh;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Link from 'next/link'
 
 import Pagination from "@/components/table/pagination"
+import NoItem from "@/components/table/noItems"
 import Filter from "@/components/table/filter"
 import Item from "@/components/table/item"
 
@@ -25,11 +26,7 @@ const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,ur
     }, [])
     return  (
         rows.length == 0 ?
-        <div className="content-table">
-            <h1>
-                {lang.table.no_items}
-            </h1>
-        </div>
+        <NoItem lang={lang}/>
         :
         <div className="content-table">
             <div className="top-table">
