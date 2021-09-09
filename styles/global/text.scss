@@ -75,3 +75,17 @@
     white-space: nowrap;
     overflow: hidden;
 }
+.textNameHost{
+    margin: 25px 0;
+    .name{
+        color: var(--greyish-brown);
+        font-size: 1.5rem;
+    }
+    a{
+        color: var(--periwinkle);
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+    }
+}
