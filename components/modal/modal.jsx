@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import Logout from '@/components/svg/logout'
+
 const Modal = ({children, btn = "", open = false,toggelModal = ()=>{},closeModal=()=>{}}) => {
     useEffect(() => {
         document.addEventListener("keydown", closeModal, false);
@@ -15,7 +17,10 @@ const Modal = ({children, btn = "", open = false,toggelModal = ()=>{},closeModal
             <div className={`modal ${open?"open":""}`}>
                 <div className="bgModal" onClick={closeModal}></div>
                 <div className="modal-body">
-                    {children}
+                    <div className="modal-close" onClick={closeModal}><Logout/></div>
+                    <div>
+                        {children}
+                    </div>
                 </div>
             </div>
         </>

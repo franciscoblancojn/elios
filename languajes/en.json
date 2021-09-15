@@ -1,0 +1,227 @@
+{
+    "title":{
+
+    },
+    "titlePage":{
+        "visitantes":"Visitantes",
+        "leads":"Leads",
+        "add-to-card":"Agregados al carrito",
+        "whatsapp":"Whatsapp",
+        "formularios":"Formularios",
+        "clients":"Clientes",
+        "compras":"Compras",
+        "fieles":"Fieles",
+        "posible-recurrencia":"Posible Recurrenia",
+        "cliente-potencial":"Cliente Potencial",
+        "AddSite":"Agregar Sitios",
+        "connectWordpress":"Conectar Wordpress"
+    },
+    "before":{
+        "inicio":"Volver al Inicio"
+    },
+    "sites":{
+        "hi" :"Hola",
+        "connect":"Conectado",
+        "invalidField":"Archivo Invalido"
+    },
+    "btnSites":{
+        "addNewSite":"AGREGAR SITIO NUEVO",
+        "noFound": "No hay resultados"
+    },
+    "menu":{
+        "inicio":"Inicio",
+        "visitantes":"Visitantes",
+        "leads":"Leads",
+        "carrito":"Agregados al carrito",
+        "whatsapp":"Whatsapp",
+        "formularios":"Formularios",
+        "clientes":"Clientes",
+        "compras":"Compras",
+        "fieles":"Fieles",
+        "recurrencia":"Posible Recurrencia",
+        "potencial":"Cliente Potencial",
+        "configuracion":"Configuración",
+        "descargar_plugins":"Descargar Plugins",
+        "cerrar_sesion":"Cerrar Sesión"
+    },
+    "inicion":{
+        "title":"Bienvenido a elios!",
+        "titleSite":"Sitios Conectados",
+        "text1":"Por favor comienza conectando",
+        "text2":"tu tienda virtual o sitio web.",
+        "titleList":"Selecciona la integración:",
+        "btn":{
+            "conectar":"CONECTAR",
+            "proximamente":"PROXIMAMENTE"
+        }
+    },
+    "configuraciones":{
+        "title":"Configuración",
+        "subtitle":"Configuraciones",
+        "config":[
+            {
+                "id":"perfil",
+                "title":"Perfil",
+                "text":"Ve y actualiza los detalles de tu cuenta, fotos de perfil, cambio de contraseña etc."
+            },
+            {
+                "id":"pagos_planes",
+                "title":"Pagos y Planes",
+                "text":"Ve la información del plan y gestiona lo que los empleados pueden ver o hacer en tu cuenta."
+            },
+            {
+                "id":"configuraciones",
+                "title":"Configuraciones",
+                "text":"Configura detalles generales de tu perfil."
+            },
+            {
+                "id":"idiomas",
+                "title":"Idiomas",
+                "text":"Gestiona el idioma  de tu cuenta de ELIOS."
+            }
+        ],
+        "pages":{
+            "idiomas":{
+                "title":"Idiomas",
+                "actual":"Idioma actual",
+                "languajes":[
+                    "es",
+                    "en"
+                ]
+            }
+        }
+    },
+    "table":{
+        "_id":"ID",
+        "ip":"IP",
+        "ipAddress":"IP",
+        "continentName":"Continente",
+        "countryCode":"Pais Code",
+        "countryName":"Pais",
+        "stateProv":"State",
+        "city":"Ciudad",
+        "os":"OS",
+        "platform":"Platforma",
+        "system":"Navegador",
+        "browser":"State",
+        "leads":"Leads",
+        "form":"Formularios",
+        "whatsapp":"Whatsapps",
+        "compras":"Compras",
+        "pageUrl":"Url",
+        "event":"Event",
+        "get":"GET",
+        "date":"Fecha",
+        "email":"Correo",
+        "phone":"Telefono",
+        "browser_ip":"IP",
+        "order_number":"Order Id",
+        "order_status_url":"Order Url",
+        "currency":"Moneda",
+        "gateway":"Metodo de Pago",
+        "subtotal_price":"Precio",
+        "total_weight":"Peso",
+        "customer":"Cliente",
+        "billing_address":"Direccion",
+        "shipping_address":"Direccion de Envio",
+        "line_items":"Productos",
+        "discount_codes":"Descuentos",
+        "note":"Notas",
+        "user_id":"Cliente ID",
+        "no_items":"No hay Items"
+    },
+    "login":{
+        "title":"Ingresar",
+        "google":"INGRESAR con Google",
+        "facebook":"INGRESAR con Facebook",
+        "recuperar_contrasena": "¿Olvidaste tu contraseña?"
+    },
+    "form":{
+        "login":{
+            "email":{
+                "placeholder":"Email",
+                "label":"Correo *"
+            },
+            "password":{
+                "placeholder":"**************",
+                "label":"Contraseña *"
+            },
+            "btn":"INGRESAR"
+        },
+        "ToCreateAccount":{
+            "title":"No tienes una cuenta?",
+            "btn":"CREAR CUENTA",
+            "tmc":"Ver Terminos y Condiciones"
+        },
+        "respond":{
+            
+        }
+    },
+    "filter":{
+        "search":"Buscar por"
+    },
+    "policy":{
+        "title":"Políticas de Privacidad",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore sunt blanditiis corporis ex excepturi, amet cumque necessitatibus molestiae iure provident eveniet odio impedit explicabo debitis nisi, veritatis dolores laudantium."
+    },
+    "addSite":{
+        "title":"Bienvenido a elios!",
+        "text1" : "Por favor comienza conectando",
+        "text2" : "tu tienda virtual o sitio web.",
+        "titleList" :"Selecciona la integración:",
+        "btn":{
+            "conectar":"CONECTAR",
+            "proximamente":"PROXIMAMENTE"
+        }
+    },
+    "connect":{
+        "wordpress":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Wordpress a Elios",
+            "list":["Descargar el Plugin","Instalar el Plugin","Activar el Plugin","Agregar Key","Confirmación"],
+            "btn":"Siguiente",
+            "index":{
+                "subtitle":"Descarga la extensión de píxeles de Elios",
+                "text1":"Haga clic en Descargar para obtener un archivo .zip que cargará",
+                "text2":"en su cuenta de Wordpress.",
+                "msj":"Esta integración es compatible con las versiones 3.0 y superiores de WooCommerce y las versiones 4.4 y superiores de WordPress.",
+                "btn1":"DESCARGAR",
+                "btn2":"Continuar"
+            },
+            "install":{
+                "title1":"Conecte su cuenta de",
+                "title2":"Wordpress a Elios",
+                "list": [
+                    "Seleccione Complementos y elija Agregar nuevo en el menú desplegable.",
+                    "Seleccione Cargar complemento.",
+                    "Haga clic en Elegir archivo y seleccione el archivo facebook-for-woocommerce.zip que descargó.",
+                    "Seleccione Instalar ahora."
+                ]
+            },
+            "active":{
+                "list":[
+                    "Haga clic en Activar complemento."
+                ]
+            },
+            "addkey":{
+                "list": [
+                    "Habrir panel de Elios",
+                    "Agregar key"
+                ],
+                "key":"Copiar Key"
+            },
+            "confirmacion":{
+                "title":"Sitios conectados",
+                "btn":"Inicio"
+            }
+        },
+        "woocommerce":{
+            "title1":"Conecte su cuenta de",
+            "title2":"Woocommerce a Elios"
+        }
+    },
+    "404":{
+        "text":"Lo sentimos la pagina que buscabas no pued3 ser encontrada",
+        "btn":"VOLVER AL INICIO"
+    }
+}

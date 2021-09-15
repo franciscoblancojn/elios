@@ -5,3 +5,6 @@
 .rdrDefinedRangesWrapper{
     display: none;
 }
+.rdrStartEdge,.rdrInRange,.rdrEndEdge,.rdrDateDisplayItemActive{
+    color:var(--periwinkle) !important;
+}

@@ -1,0 +1,17 @@
+.connect{
+    display: flex;
+    align-items: center;
+    .text{
+        color:var(--greyish);
+        font-size: 1.5rem;
+        &:after{
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background: var(--green);
+            margin: 0 10px;
+        }
+    }
+}

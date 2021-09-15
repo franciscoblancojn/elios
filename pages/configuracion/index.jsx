@@ -1,58 +1,12 @@
 import React, { Component } from "react"
 
-import Content from "@/components/content";
-import Card from "@/components/card/card";
-import MsgTop from "@/components/msg/top";
+import Islogin from "@/components/checkLogin/isLogin";
+import Lang from "@/components/lang/lang";
+import Page from "@/components/page/configuracion";
 
-import SvgUser from "@/components/svg/user";
-import SvgInfo from "@/components/svg/info";
-
-import languajes from "@/languajes/languaje";
-
-class Index extends React.Component {
-    state = {
-        title : "Configuración",
-        "subtitle":"Configuraciones",
-        "config":[
-            {
-                "id":"perfil",
-                "title":"Perfil",
-                "text":"Ve y actualiza los detalles de tu cuenta, fotos de perfil, cambio de contraseña etc."
-            },
-            {
-                "id":"pagos_planes",
-                "title":"Pagos y Planes",
-                "text":"Ve la información del plan y gestiona lo que los empleados pueden ver o hacer en tu cuenta."
-            },
-            {
-                "id":"configuraciones",
-                "title":"Configuraciones",
-                "text":"Configura detalles generales de tu perfil."
-            },
-            {
-                "id":"idiomas",
-                "title":"Idiomas",
-                "text":"Gestiona el idioma  de tu cuenta de ELIOS."
-            }
-        ]
-    }
-    loadLanguajes = async () => {
-        const lang = await languajes()
-        this.setState({
-            ...this.state,
-            title:lang.menu.configuracion,
-            ...lang.configuraciones
-        })
-    }
-    componentDidMount(){
-        this.loadLanguajes()
-    }
-    render() {
-        return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-configuracion"
-            >
+const Index = () => {
+    return (
+        <Islogin>
                 {/* <MsgTop
                     title="¡Bienvenido a tu versión de prueba Emprendedor!"
                     icon={<SvgInfo/>}
@@ -62,26 +16,10 @@ class Index extends React.Component {
                         </>
                     )}
                 /> */}
-                <div className="content-info-page">
-                    <h1>
-                        {this.state.subtitle}
-                    </h1>
-                    <div className="row">
-                        {
-                            this.state.config.map((e)=>(
-                                <Card
-                                key={e.id}
-                                title={e.title}
-                                icon={<SvgUser/>}
-                                link={`/configuracion/${e.id}`}
-                                >
-                                    {e.text}
-                                </Card>))
-                        }
-                    </div>
-                </div>
-            </Content>
-        )
-    }
+                <Lang>
+                    <Page/>
+                </Lang>
+        </Islogin>
+    )
 }
 export default Index
