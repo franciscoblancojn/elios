@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Head from 'next/head'
 
+import {updateSite} from '@/app/app'
 
 const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
     const Connected = () => {
@@ -10,8 +11,15 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
         });
         FB.login(function(response) {
             if (response.status === 'connected') {
-                var accessToken = response.authResponse.accessToken;
-                console.log(accessToken);
+                const tokenFacebook = response.authResponse.accessToken;
+                updateSite({
+                    where:{
+                        host:site
+                    },
+                    data : {
+                        tokenFacebook
+                    }
+                })
             } 
         });
     }
