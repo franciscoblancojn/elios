@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import Head from 'next/head'
 
-import {getUser} from '@/functions/index'
 
 const BusinessFacebook = ({lang,site}) => {
     return <>
@@ -14,7 +13,7 @@ const BusinessFacebook = ({lang,site}) => {
 
             </div>
             :
-            <div className="flex">
+            <div className="flex"> 
                 <img src="/icons/facebook.png" alt="facebook" style={{marginRight:"5px"}}/>
                 <button className="businessFacebook">
                     {lang.sites.conectar} Facebook
