@@ -11,6 +11,7 @@ import FilterDateShow from "@/components/filters/dateShow"
 import BtnDeleteSite from "@/components/btn/btnDeleteSite"
 import LoaderCircle from "@/components/loader/circle";
 import UploadImg from "@/components/form/uploadImg";
+import BusinessFacebook from "@/components/btn/businessFacebook";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
@@ -94,6 +95,15 @@ const Site = ({host,lang}) => {
                             <span className="text">{lang.sites.connect}</span>
                             <img src={`/icons/${site.cms}x2.png`} alt={site.cms}/>
                         </div>
+                    </div>
+                    <div className="textNameHost">
+                        <div className="name">
+                            {lang.sites.nameHost} : {host}
+                        </div>
+                        <a href={`https://${host}`} target="_blank">{host}</a>
+                    </div>
+                    <div>
+                        <BusinessFacebook lang={lang} site={site}/>
                     </div>
                 </div>
                 <div className="col-6 contectCardSite">

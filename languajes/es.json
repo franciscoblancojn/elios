@@ -22,7 +22,9 @@
     "sites":{
         "hi" :"Hola",
         "connect":"Conectado",
-        "invalidField":"Archivo Invalido"
+        "invalidField":"Archivo Invalido",
+        "nameHost":"Nombre de la cuenta",
+        "conectar":"Conecta tu Cuenta Publicitaria de "
     },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",
