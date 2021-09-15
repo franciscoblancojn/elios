@@ -4,15 +4,16 @@ import Head from 'next/head'
 import {updateSite} from '@/app/app'
 
 const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
+    console.log(site);
     const Connected = () => {
         FB.init({
             appId            : ID_APP_FACEBOOK,
             version          : 'v12.0'
         });
-        FB.login(function(response) {
+        FB.login(async function(response) {
             if (response.status === 'connected') {
                 const tokenFacebook = response.authResponse.accessToken;
-                updateSite({
+                await updateSite({
                     where:{
                         host:site.host
                     },
@@ -20,6 +21,7 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
                         tokenFacebook
                     }
                 })
+                window.location.reload()
             } 
         });
     }
@@ -28,7 +30,7 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
         </Head>
         {
-            site.facebook ? 
+            site.tokenFacebook ? 
             <div>
 
             </div>
