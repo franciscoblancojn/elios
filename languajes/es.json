@@ -228,5 +228,10 @@
     "404":{
         "text":"Lo sentimos la pagina que buscabas no pued3 ser encontrada",
         "btn":"VOLVER AL INICIO"
+    },
+    "modal":{
+        "seguro":"Estas completamente seguro",
+        "si":"si",
+        "no":"no"
     }
 }
