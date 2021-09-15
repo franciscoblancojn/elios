@@ -15,7 +15,7 @@ import BusinessFacebook from "@/components/btn/businessFacebook";
 
 import ArrowRight from "@/components/svg/right-arrow"
 
-const Site = ({host,lang}) => {
+const Site = ({host,lang,ID_APP_FACEBOOK}) => {
     const [loader, setLoader] = useState(true)
     const [query, setQuery] = useState(null)
     const [site, setSite] = useState({})
@@ -103,7 +103,7 @@ const Site = ({host,lang}) => {
                         <a href={`https://${host}`} target="_blank">{host}</a>
                     </div>
                     <div>
-                        <BusinessFacebook lang={lang} site={site}/>
+                        <BusinessFacebook lang={lang} site={site} ID_APP_FACEBOOK={ID_APP_FACEBOOK}/>
                     </div>
                 </div>
                 <div className="col-6 contectCardSite">

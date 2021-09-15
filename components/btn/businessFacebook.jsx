@@ -2,11 +2,10 @@ import { useState, useEffect } from "react"
 import Head from 'next/head'
 
 
-const BusinessFacebook = ({lang,site}) => {
+const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
     const Connected = () => {
-        console.log(process.env);
         FB.init({
-            appId            : process.env.ID_APP_FACEBOOK,
+            appId            : ID_APP_FACEBOOK,
             version          : 'v12.0'
         });
         FB.login(function(response) {

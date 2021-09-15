@@ -8,7 +8,7 @@ import Content from "@/components/content";
 import Site from "@/components/sites";
 
 
-const Index = ({id}) => {
+const Index = ({id,ID_APP_FACEBOOK}) => {
     return (
         <Islogin>
             <Lang>
@@ -17,7 +17,7 @@ const Index = ({id}) => {
                 className="cMenu page-leads"
                 >
                     <ExistOneSite>
-                        <Site host={id}/>
+                        <Site host={id} ID_APP_FACEBOOK={ID_APP_FACEBOOK}/>
                     </ExistOneSite>
                 </Content>
             </Lang>
@@ -26,6 +26,6 @@ const Index = ({id}) => {
 }
 
 export async function getServerSideProps({ params }) {
-    return { props: { id : params.id } }
+    return { props: { id : params.id , ID_APP_FACEBOOK : process.env.ID_APP_FACEBOOK} }
 }
 export default Index
