@@ -14,7 +14,7 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
                 const tokenFacebook = response.authResponse.accessToken;
                 updateSite({
                     where:{
-                        host:site
+                        host:site.host
                     },
                     data : {
                         tokenFacebook
