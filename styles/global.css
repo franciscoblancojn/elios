@@ -403,7 +403,8 @@ template {
   --greyish-brown:#4e4e4e;
   --pinkish-grey-three:#bbbbbb;
   --peachy-pink:#fe8989;
-  --green:#00FF6E; }
+  --green:#00FF6E;
+  --bg-fb:#4267B2; }
 
 * {
   box-sizing: border-box; }
@@ -770,6 +771,30 @@ button-correo,
         font-size: 14px;
         width: 100%;
         padding-left: 45px; }
+  button.businessFacebook,
+  .btn.businessFacebook,
+  button-2.businessFacebook,
+  .businessFacebook.btn-2,
+  button-select ul.businessFacebook,
+  .btn-select ul.businessFacebook,
+  button-3.businessFacebook,
+  .businessFacebook.btn-3,
+  button-rs.businessFacebook,
+  .businessFacebook.btn-rs,
+  button-google.businessFacebook,
+  .businessFacebook.btn-google,
+  button-facebook.businessFacebook,
+  .businessFacebook.btn-facebook,
+  button-correo.businessFacebook,
+  .businessFacebook.btn-correo {
+    width: auto;
+    height: auto;
+    min-height: auto;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: none;
+    background: var(--bg-fb); }
 
 .before {
   font-size: 1.6875rem;
