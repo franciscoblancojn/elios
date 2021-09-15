@@ -247,3 +247,24 @@ button,
         }
     }
 }
+.connectFacebook{
+    font-size: 1.5rem;
+    .conectada{
+        color: var(--greyish-three);
+        font-size: 1.2rem;
+        &::after{
+            content: "";
+            display: inline-block;
+            width: .7rem;
+            height: .7rem;
+            background-color: var(--green);
+            border-radius: 100%;
+            margin-left: 5px;
+        }
+    }
+    .deconectar{
+        color:var(--peachy-pink);
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+}

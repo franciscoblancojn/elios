@@ -24,7 +24,10 @@
         "connect":"Conectado",
         "invalidField":"Archivo Invalido",
         "nameHost":"Nombre de la cuenta",
-        "conectar":"Conecta tu Cuenta Publicitaria de "
+        "conectar":"Conecta tu Cuenta Publicitaria de ",
+        "conectado":"Cuenta Publicitaria de ",
+        "conectada":"Conectada",
+        "deconectar":"Deconectar"
     },
     "btnSites":{
         "addNewSite":"AGREGAR SITIO NUEVO",

@@ -836,6 +836,24 @@ button-correo,
       .btn-delete-site .verifit-delete .content-button button.delete {
         background: var(--peachy-pink); }
 
+.connectFacebook {
+  font-size: 1.5rem; }
+  .connectFacebook .conectada {
+    color: var(--greyish-three);
+    font-size: 1.2rem; }
+    .connectFacebook .conectada::after {
+      content: "";
+      display: inline-block;
+      width: .7rem;
+      height: .7rem;
+      background-color: var(--green);
+      border-radius: 100%;
+      margin-left: 5px; }
+  .connectFacebook .deconectar {
+    color: var(--peachy-pink);
+    cursor: pointer;
+    font-size: 1.2rem; }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -2001,6 +2019,8 @@ footer {
   flex-wrap: wrap; }
   .flex-between {
     justify-content: space-between; }
+  .flex-align-top {
+    align-items: flex-start; }
   .flex-align-center {
     align-items: center; }
 

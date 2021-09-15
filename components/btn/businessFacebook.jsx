@@ -4,7 +4,6 @@ import Head from 'next/head'
 import {updateSite} from '@/app/app'
 
 const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
-    console.log(site);
     const Connected = () => {
         FB.init({
             appId            : ID_APP_FACEBOOK,
@@ -31,8 +30,19 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
         </Head>
         {
             site.tokenFacebook ? 
-            <div>
-
+            <div className="flex flex-align-top"> 
+                <img src="/icons/facebook.png" alt="facebook" style={{marginRight:"5px"}}/>
+                <div className="connectFacebook">
+                    {lang.sites.conectado} Facebook
+                    <div className="flex flex-between">
+                        <span className="conectada">
+                        {lang.sites.conectada}
+                        </span>
+                        <span className="deconectar">
+                            {lang.sites.deconectar}
+                        </span>
+                    </div>
+                </div>
             </div>
             :
             <div className="flex"> 

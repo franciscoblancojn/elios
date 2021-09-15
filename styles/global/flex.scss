@@ -5,6 +5,9 @@
         justify-content: space-between;
     }
     &-align{
+        &-top{
+            align-items: flex-start;
+        }
         &-center{
             align-items: center;
         }
