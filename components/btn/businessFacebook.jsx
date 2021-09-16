@@ -23,7 +23,7 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
                         tokenFacebook
                     }
                 })
-                window.location.reload()
+                //window.location.reload()
             } 
         });
     }
