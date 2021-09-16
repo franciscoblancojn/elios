@@ -12,6 +12,7 @@ const BusinessFacebook = ({lang,site,ID_APP_FACEBOOK}) => {
             version          : 'v12.0'
         });
         FB.login(async function(response) {
+            console.log(response);
             if (response.status === 'connected') {
                 const tokenFacebook = response.authResponse.accessToken;
                 await updateSite({
