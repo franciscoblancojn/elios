@@ -103,7 +103,7 @@ const Site = ({host,lang,ID_APP_FACEBOOK}) => {
                         <a href={`https://${host}`} target="_blank">{host}</a>
                     </div>
                     <div>
-                        <BusinessFacebook lang={lang} site={site} ID_APP_FACEBOOK={ID_APP_FACEBOOK}/>
+                        {/* <BusinessFacebook lang={lang} site={site} ID_APP_FACEBOOK={ID_APP_FACEBOOK}/> */}
                     </div>
                 </div>
                 <div className="col-6 contectCardSite">
