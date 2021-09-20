@@ -4,7 +4,7 @@ import InputText from "@/components/input/inputText"
 import InputSelect from "@/components/input/inputSelect"
 import InputCheckboxt from "@/components/input/inputCheckbox"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
-import {PutQuestionnaire} from "@/components/app"
+import {PutQuestionnaire} from "@/app/app"
 
 const ROL = [
     "Dueño de negocio o fundador",
@@ -61,8 +61,6 @@ class Questionnaire extends React.Component {
         e.preventDefault()
         if(!this.validatePreSend())return;
         PutQuestionnaire({
-            uid:this.props.currentUser.uid,
-            email:this.props.currentUser.email,
             questionnaire:{
                 I_am : this.state.I_am,
                 n_employees : this.state.n_employees,

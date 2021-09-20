@@ -1,0 +1,12 @@
+.user-live{
+    font-size: getRemSize(30px);
+    color: var(--greyish-three);
+    display: flex;
+    align-items: center;
+    img{
+        margin-right: 20px;
+    }
+    .count{
+        margin-right: 5px;
+    }
+}

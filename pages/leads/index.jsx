@@ -1,33 +1,30 @@
 import React, { Component } from "react"
 
+import Islogin from "@/components/checkLogin/isLogin";
+import ExistOneSite from "@/components/checkSite/existOneSite";
+import Lang from "@/components/lang/lang";
 import Content from "@/components/content";
 import TableLeads from "@/components/table/tableLeads";
 
-import languajes from "@/languajes/languaje";
-
 class Index extends React.Component {
-    state = {
-        title : "Leads",
-    }
-    loadLanguajes = async () => {
-        const lang = await languajes()
-        this.setState({
-            ...this.state,
-            title:lang.menu.leads
-        })
-    }
-    componentDidMount(){
-        this.loadLanguajes()
-    }
     render() {
         return (
-            <Content 
-            title={this.state.title}
-            className="cMenu page-leads"
-            >
-                <TableLeads></TableLeads>
-            </Content>
+            <Islogin>
+                <Lang>
+                    <Content 
+                    title="leads"
+                    className="cMenu page-leads"
+                    >
+                        <ExistOneSite>
+                            <TableLeads queryUrl={this.props.queryUrl || {}}></TableLeads>
+                        </ExistOneSite>
+                    </Content>
+                </Lang>
+            </Islogin>
         )
     }
+}
+export async function getServerSideProps({query}) {
+    return { props: { queryUrl : query } }
 }
 export default Index

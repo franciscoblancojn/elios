@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import InputText from "@/components/input/inputText"
 import BtnPrincipal from "@/components/btn/btnPrincipal"
 
-import {loginEmailPassword} from "@/components/firebase"
+import {loginEmailPassword} from "@/firebase/firebase"
 
 class Login extends React.Component {
     state = {
@@ -39,8 +39,8 @@ class Login extends React.Component {
                     id="email"
                     name="email"
                     type="email"
-                    label="Correo *"
-                    placeholder="Email"
+                    label={this.props.lang.form.login.email.label}
+                    placeholder={this.props.lang.form.login.email.placeholder}
                     className="inputLogin"
                     onChange={this.changeState}
                 />
@@ -48,16 +48,16 @@ class Login extends React.Component {
                     id="password"
                     name="password"
                     type="password"
-                    label="Contraseña *"
-                    placeholder="**************"
+                    label={this.props.lang.form.login.password.label}
+                    placeholder={this.props.lang.form.login.password.placeholder}
                     className="inputLogin"
                     onChange={this.changeState}
                 />
-                <p className="result">{this.state.message}</p>
+                <p className="result">{this.props.lang.form.respond[this.state.message] || this.state.message}</p>
                 <BtnPrincipal
                     className="inputSubmit"
                 >
-                    INGRESAR
+                    {this.props.lang.form.login.btn}
                 </BtnPrincipal>
             </form>
         )

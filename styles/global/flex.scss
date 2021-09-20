@@ -1,0 +1,15 @@
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    &-between{
+        justify-content: space-between;
+    }
+    &-align{
+        &-top{
+            align-items: flex-start;
+        }
+        &-center{
+            align-items: center;
+        }
+    }
+}
