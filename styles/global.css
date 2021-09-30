@@ -797,20 +797,48 @@ button-correo,
     background: var(--bg-fb); }
   buttonExport,
   .btnExport {
-    font-size: 1.125rem;
-    text-decoration: none;
-    width: auto;
-    height: auto;
-    padding: 0;
-    min-height: 0;
-    text-transform: capitalize;
-    background: transparent;
-    color: var(--brownish-grey);
+    display: flex;
+    align-items: center;
     position: relative; }
-    buttonExport svg,
-    .btnExport svg {
-      width: 1.5rem;
-      margin-right: 5px; }
+    buttonExport button,
+    .btnExport button {
+      font-size: 1.125rem;
+      text-decoration: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      min-height: 0;
+      text-transform: capitalize;
+      background: transparent;
+      color: var(--brownish-grey); }
+      buttonExport button svg,
+      .btnExport button svg {
+        width: 1.5rem;
+        margin-right: 5px; }
+    buttonExport .listExport,
+    .btnExport .listExport {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--white);
+      box-shadow: 0 3px 6px var(--black-16);
+      padding: 15px 10px;
+      min-width: 200px;
+      border-radius: 10px;
+      z-index: 99999; }
+      buttonExport .listExport .optionExport,
+      .btnExport .listExport .optionExport {
+        color: var(--warm-grey-six);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 5px 0; }
+        buttonExport .listExport .optionExport img,
+        .btnExport .listExport .optionExport img {
+          margin-right: 5px; }
+        buttonExport .listExport .optionExport:not(:last-child),
+        .btnExport .listExport .optionExport:not(:last-child) {
+          border-bottom: 1px solid var(--black-16); }
 
 .before {
   font-size: 1.6875rem;
