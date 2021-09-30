@@ -233,5 +233,9 @@
         "seguro":"Estas completamente seguro",
         "si":"si",
         "no":"no"
+    },
+    "btnExport":{
+        "text":"Exportar",
+        "excel":"Excel"
     }
 }

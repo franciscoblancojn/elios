@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Link from 'next/link'
 
+import BtnExpor from "@/components/btn/btnExport"
 import Pagination from "@/components/table/pagination"
 import NoItem from "@/components/table/noItems"
 import Filter from "@/components/table/filter"
@@ -31,6 +32,7 @@ const Table = ({rows=[],countItems,keys,page,setNpage,npage,setPage,setFilter,se
         :
         <div className="content-table">
             <div className="top-table">
+                <BtnExpor lang={lang} rows={rows}/>
                 <Pagination page={page} setPage={setPage} npage={npage} setNpage={setNpage} countItems={countItems} lang={lang}/>
             </div>
             <div className="overflow" >
