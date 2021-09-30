@@ -196,6 +196,22 @@ button,
         text-transform: none;
         background: var(--bg-fb);
     }
+    &Export{
+        font-size: getRemSize(12px);
+        text-decoration: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+        min-height: 0;
+        text-transform: capitalize;
+        background: transparent;
+        color: var(--brownish-grey);
+        position: relative;
+        svg{
+            width: getRemSize(16px);
+            margin-right: 5px;
+        }
+    }
 }
 
 .before{

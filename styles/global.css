@@ -795,6 +795,22 @@ button-correo,
     border-radius: 5px;
     text-transform: none;
     background: var(--bg-fb); }
+  buttonExport,
+  .btnExport {
+    font-size: 1.125rem;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    min-height: 0;
+    text-transform: capitalize;
+    background: transparent;
+    color: var(--brownish-grey);
+    position: relative; }
+    buttonExport svg,
+    .btnExport svg {
+      width: 1.5rem;
+      margin-right: 5px; }
 
 .before {
   font-size: 1.6875rem;
