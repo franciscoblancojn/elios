@@ -83,30 +83,30 @@ class Index extends React.Component {
                                     type : "string",
                                     filter : 'search'
                                 },
-                                {
-                                    id : "customer",
-                                    name : "Customer",
-                                    type : "object",
-                                    filter : 'search'
-                                },
-                                {
-                                    id : "billing_address",
-                                    name : "Billing Address",
-                                    type : "object",
-                                    filter : 'search'
-                                },
-                                {
-                                    id : "shipping_address",
-                                    name : "Shipping Address",
-                                    type : "object",
-                                    filter : 'search'
-                                },
-                                {
-                                    id : "line_items",
-                                    name : "Line Items",
-                                    type : "object",
-                                    filter : 'search'
-                                },
+                                // {
+                                //     id : "customer",
+                                //     name : "Customer",
+                                //     type : "object",
+                                //     filter : 'search'
+                                // },
+                                // {
+                                //     id : "billing_address",
+                                //     name : "Billing Address",
+                                //     type : "object",
+                                //     filter : 'search'
+                                // },
+                                // {
+                                //     id : "shipping_address",
+                                //     name : "Shipping Address",
+                                //     type : "object",
+                                //     filter : 'search'
+                                // },
+                                // {
+                                //     id : "line_items",
+                                //     name : "Line Items",
+                                //     type : "object",
+                                //     filter : 'search'
+                                // },
                                 {
                                     id : "discount_codes",
                                     name : "Discount Codes",

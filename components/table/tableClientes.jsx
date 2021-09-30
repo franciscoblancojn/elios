@@ -109,6 +109,7 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
     const [filter, setFilter] = useState({})
     const [sort, setSort] = useState({date:-1})
     const [selects,setSelects] = useState({})
+    const [rowsLengthNoFilters, setRowsLengthNoFilters] = useState(null)
 
     const loadClients = async (defaultQuery={}) => {
         setContent(<LoaderCircle/>)
@@ -124,6 +125,9 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
             npage,
         })
         console.log(result);
+        if(rowsLengthNoFilters === null){
+            setRowsLengthNoFilters(result.countClients)
+        }
         setCountItems(result.countClients)
         setRows(result.clients)
     }
@@ -166,6 +170,7 @@ const TableClients = ({query,KEYS=null,queryUrl={},lang,url="visitantes"}) => {
                 sort={sort}
                 selects={selects}
                 lang={lang}
+                rowsLengthNoFilters={rowsLengthNoFilters}
                 />)
         }
     }, [rows,selects])
