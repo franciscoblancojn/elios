@@ -1,6 +1,6 @@
 import {getCookie} from "@/functions/index";
 
-const RUTE = "https://pixeltracking.startscoinc.com/api"
+const RUTE = process.env.DEV == "TRUE" ? "https://pixeltracking.startscoinc.com/dev/api" : "https://pixeltracking.startscoinc.com/api"
 const VERSION = "v2"
 
 const request = async ({method = "GET", json = {}, rute = ""}) => {
